@@ -85,7 +85,7 @@ Kritik dan saran tersebut dapat dikirim melalui URL
 %--------------------------------------------------------------------%
 \documentclass[11pt, a4paper, onecolumn, oneside, final]{book}
 
-\input{if-itb-thesis.sty}
+\input{configs/if-itb-thesis.sty}
 \makeatletter
 \makeatother
 %\bibliography{references}
@@ -101,13 +101,13 @@ Kritik dan saran tersebut dapat dikirim melalui URL
 }
 
 \frontmatter
-\input{000-cover}
-\input{001-approval}
-\input{002-statement}
+\input{frontpages/000-cover}
+\input{frontpages/001-approval}
+\input{frontpages/002-statement}
 \pagestyle{plain}
-\input{003-abstract-id}
+\input{frontpages/003-abstract-id}
 %\input{004-abstract-en}
-\input{005-forewords}
+\input{frontpages/005-forewords}
 \titleformat*{\section}{\centering\bfseries\Large\MakeUpperCase}
 \tableofcontents
 \addcontentsline{toc}{chapter}{DAFTAR ISI}
@@ -139,11 +139,11 @@ Kritik dan saran tersebut dapat dikirim melalui URL
 % Dafter Bab
 % Untuk menambahkan daftar bab, buat berkas bab misalnya `chapter-6` di direktori `chapters`, dan masukkan ke sini.
 %----------------------------------------------------------------%
-\input{01-chapter-1}
-\input{02-chapter-2}
-\input{03-chapter-3}
-\input{04-chapter-4}
-\input{05-chapter-5}
+\input{chapters/01-chapter-1}
+\input{chapters/02-chapter-2}
+\input{chapters/03-chapter-3}
+\input{chapters/04-chapter-4}
+\input{chapters/05-chapter-5}
 %----------------------------------------------------------------%
 
 % Daftar pustaka
@@ -177,8 +177,8 @@ Kritik dan saran tersebut dapat dikirim melalui URL
 {\Large\bfseries}
 \titlespacing*{\chapter}{0pt}{-25pt}{10pt}
 
-\input{0A1-appendix-1}
-\input{0A2-appendix-2}
+\input{appendixes/0A1-appendix-1}
+\input{appendixes/0A2-appendix-2}
 
 \end{document}
 
@@ -194,7 +194,9 @@ Kritik dan saran tersebut dapat dikirim melalui URL
 # REV04 Fri 23 Jul 2021 21:00:00 WIB
 # START Tue Jul 12 15:02:37 WIB 2016
 
-all:	thesis
+all:	thesis move clean
+
+cleans: clean cleanpdf
 
 thesis:	thesis.tex
 	pdflatex thesis
@@ -202,12 +204,14 @@ thesis:	thesis.tex
 	bibtex   thesis
 	pdflatex thesis
 	pdflatex thesis
-        # # This is GitHub Page related. You might delete it ###############
 	python3 scripts/includeScript.py < LaTeX05.pmd > LaTeX05.md
+
+move:
+	mv thesis.pdf output/
 
 clean:
 	rm -f *.aux *.log *.idx *.toc *.bbl *.blg
-	rm -f *.lof *.lol *.lot *.out
+	rm -f *.lof *.lol *.lot *.out *.fls *.fdb_latexmk
 
 cleanpdf:	clean
 	rm -f *.pdf
