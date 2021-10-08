@@ -1,0 +1,150 @@
+%-------------------------------------------------------------------%
+%
+% Konfigurasi dokumen LaTeX untuk laporan tesis IF ITB
+%
+% @author Petra Novandi
+%
+%-------------------------------------------------------------------%
+%
+% Berkas asli berasal dari Steven Lolong
+%
+%-------------------------------------------------------------------%
+
+% Ukuran kertas
+\special{papersize=210mm,297mm}
+
+% Setting margin
+\usepackage[top=3cm,bottom=4cm,left=4cm,right=3cm]{geometry}
+
+\usepackage{mathptmx}
+
+% Judul bahasa Indonesia
+\usepackage[bahasa]{babel}
+
+% Format citation
+%\usepackage[backend=bibtex,citestyle=authoryear]{biblatex}
+\usepackage{natbib}
+
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{blindtext}
+\usepackage{sectsty}
+\usepackage{chngcntr}
+\usepackage{etoolbox}
+\usepackage{hyperref}       % Package untuk link di daftar isi.
+\usepackage{titlesec}       % Package Format judul
+\usepackage{parskip}
+%\usepackage{pgfgantt}
+\usepackage{ragged2e}
+\usepackage{libertine}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{textcase}
+\usepackage{setspace}
+\usepackage{afterpage}
+%\usepackage{tocloft}
+\usepackage{amsmath,amsfonts}
+
+\captionsetup[longtable]{skip=0.1em}
+
+% Hypenation
+\include{hypenation-id}
+%\hyphenpenalty=5000
+%\tolerance=1000
+%\lefthyphenmin=2
+%\righthyphenmin=2
+\hyphenpenalty=10000
+\tolerance=1
+\lefthyphenmin=99
+\righthyphenmin=99
+\sloppy
+
+% Line satu setengah spasi
+\renewcommand{\baselinestretch}{1.5}
+
+% Kode lebih kecil
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\footnotesize{#1}}}
+
+% Listing Code thingy
+\lstset{frame=tb,
+  breaklines=true,
+  showstringspaces=false,
+  columns=flexible,
+  numbers=none,
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  tabsize=3
+}
+\renewcommand{\lstlistingname}{Kode}
+\newcommand{\listingsfont}{\ttfamily}
+
+% Add comma between Author and Year
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
+
+% Setting judul
+\chapterfont{\centering \Large}
+\titleformat{\chapter}[display]
+  {\Large\centering\bfseries}
+  {\chaptertitlename\ \thechapter}{0pt}
+    {\Large\bfseries\uppercase}
+\titlespacing*{\chapter}{0pt}{-25pt}{40pt}
+
+% Setting nomor pada subbsubsubbab
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titlespacing*{\section} {0pt}{2.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{2.25ex plus 1ex minus .2ex}{0.5ex plus .2ex}
+
+\makeatletter
+\makeatother
+
+% Counter untuk figure dan table.
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+
+% For Gantt Chart
+\newcounter{myWeekNum}
+\stepcounter{myWeekNum}
+%
+\newcommand{\myWeek}{\themyWeekNum
+    \stepcounter{myWeekNum}
+    \ifnum\themyWeekNum=53
+         \setcounter{myWeekNum}{1}
+    \else\fi
+}
+%
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\makeatletter
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+                         \refstepcounter{chapter}%
+                         \typeout{\@chapapp\space\thechapter.}%
+                         \addcontentsline{toc}{chapter}%
+                                   {\protect{BAB \numberline{\thechapter}\texorpdfstring{\uppercase{#1}}{#1}}}%
+                    \else
+                      \addcontentsline{toc}{chapter}{\texorpdfstring{\uppercase{#1}}{#1}}%
+                    \fi
+                    \chaptermark{#1}%
+                    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+                    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+                    \if@twocolumn
+                      \@topnewpage[\@makechapterhead{#2}]%
+                    \else
+                      \@makechapterhead{#2}%
+                      \@afterheading
+                    \fi}
+\makeatother
