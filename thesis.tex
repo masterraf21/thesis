@@ -5,10 +5,12 @@
 %--------------------------------------------------------------------%
 % Berkas ini berisi struktur utama dokumen LaTeX yang akan dibuat.
 %--------------------------------------------------------------------%
-\documentclass[11pt, a4paper, onecolumn, oneside, final]{book}
+\documentclass[12pt, a4paper, onecolumn, oneside, final]{book}
 
 \input{configs/if-itb-thesis.sty}
+
 \makeatletter
+
 \makeatother
 %\bibliography{references}
 \begin{document}
@@ -26,12 +28,18 @@
 \input{frontpages/000-cover}
 \input{frontpages/001-approval}
 \input{frontpages/002-statement}
+
 \pagestyle{plain}
+
 \input{frontpages/003-abstract-id}
 %\input{004-abstract-en}
 \input{frontpages/005-forewords}
+
 \titleformat*{\section}{\centering\bfseries\Large\MakeUpperCase}
+
+\clearpage
 \tableofcontents
+
 \addcontentsline{toc}{chapter}{DAFTAR ISI}
 % \afterpage{\null\newpage}
 % \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
