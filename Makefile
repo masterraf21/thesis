@@ -12,7 +12,6 @@ thesis:	thesis.tex
 	bibtex   thesis
 	pdflatex thesis
 	pdflatex thesis
-	python3 scripts/includeScript.py < LaTeX05.pmd > LaTeX05.md
 
 move:
 	mv thesis.pdf output/
