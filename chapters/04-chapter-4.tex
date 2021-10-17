@@ -107,33 +107,6 @@ Pada aplikasi Ethercalc, modul yang ditambahkan akan berada di bawah modul \text
 \subsection{Arsitektur}
 Aplikasi dibuat dengan menggunakan bantuan Docker sehingga diharapkan dapat dengan mudah dipasang pada berbagai \textit{platform}. Aplikasi terdiri dari tiga \textit{docker container} yakni untuk aplikasi utama, basis data redis, dan basis data MySQL. \textit{File} \texttt{docker-compose.yml} yang dibuat untuk mendefinisikan \textit{docker container} yang digunakan dapat dilihat pada Kode \ref{KodeCompose}
 
-\begin{lstlisting}[frame=single, basicstyle=\linespread{1}\scriptsize\listingsfont, captionpos=b, caption={Kode pada docker-compose.yml}, label=KodeCompose]
-	ethercalc:
-	  build: .
-	  ports:
-	    - "80:8000"
-	  links:
-	    - redis:redis
-	    - mysql:mysql
-	  restart: always
-	redis:
-	  image: redis:latest
-	  volumes:
-	    - /var/lib/redis:/data
-	  command: redis-server --appendonly yes
-	  restart: always
-	mysql:
-	  image: mysql:5.7
-	  volumes:
-	    - db_data:/var/lib/mysql
-	  restart: always
-	  environment:
-	    MYSQL_ROOT_PASSWORD: root
-	    MYSQL_DATABASE: TA
-	    MYSQL_USER: user
-	    MYSQL_PASSWORD: user
-	\end{lstlisting}
-
 Untuk menyimpan \textit{state} konfigurasi tabel dan \textit{mapping} \textit{metadata table} dengan data pada basis data, digunakan dua tabel basis data yang sudah didefinisikan sebelumnya. Kedua tabel basis data ini dinamakan s\_database\_state dan s\_database\_wlog, kedua tabel ini tidak memiliki keterhubungan. Atribut yang terdapat pada kedua tabel ini dapat dilihat pada diagram struktur basis data pada Gambar \ref{StructureDiagram}.
 
 \begin{figure}[htb]
@@ -239,53 +212,7 @@ Tabel akan dibuat pada basis data yang ditentukan, setiap tabel merepresentasika
 \subsection{Modul Hierarchyfinder}
 Modul \texttt{hierarchyfinder} menggunakan algoritma kNN jenis \textit{hierarchical clustering} untuk dapat mengetahui mana yang merupakan suatu kesatuan tabel pada suatu \textit{sheet}. Modul ini dapat menentukan tabel-tabel yang terdapat pada suatu \textit{sheet} yang selanjutnya akan dilakukan identifikasi label oleh modul \texttt{framefinder}. Algoritma \textit{hierarchical clustering} yang digunakan menganggap setiap sel pada \textit{spreadsheet} merupakan suatu node. Sel-sel yang bersebelahan dengan sel tersebut akan dianggap tetangga sehingga memiliki jarak sama dengan 0. Sel yang digabungkan dengan sel lain akan dihitung sebagai satu \textit{node}. Aturan perhitungan jarak antar \textit{node} dapat dilihat pada kode di Kode \ref{KodeJarak}.\\
 
-\begin{lstlisting}[frame=single, basicstyle=\linespread{1}\scriptsize\listingsfont, captionpos=b, caption={Perhitungan Jarak \textit{Node}}, label=KodeJarak]
-	# Fungsi cellDistance(v1, v2)
-	# Parameter pada fungsi adalah v1 (node 1) dan v2 (node 2)
-	t = new Table null, null
-	colD = t.GetCellCol(v1[0]) - t.GetCellCol(v2[0])
-	rowD = t.GetCellRow(v1[0]) - t.GetCellRow(v2[0])
 
-	# Jika sel saling bertetangga tetapi bukan secara diagonal
-	# Jika bertetangga, jarak kedua sel adalah 0
-	if colD == 0
-		if rowD == 1 or rowD == -1
-			return 0
-	if rowD == 0
-		if colD == 1 or colD == -1
-			return 0
-
-	# Jika tidak, cek apakah sel bertetangga secara diagonal
-	# Jika bertetangga, jarak kedua sel adalah 0
-	leftTop = [[v1[1], v1[2]], [v2[1], v2[2]]]
-	leftBot = [[v1[1], (v1[2] + v1[4])], [v2[1], (v2[2] + v2[4])]]
-	righTop = [[(v1[1] + v1[3]), v1[2]], [(v2[1] + v2[3]), v2[2]]]
-	righBot = [[(v1[1] + v1[3]), (v1[2] + v1[4])], [(v2[1] + v2[3]), (v2[2] + v2[4])]]
-
-	if (leftTop[0][0] == righTop[1][0] and leftTop[0][1] == righTop[1][1])
-		return 0
-	if (leftBot[0][0] == righBot[1][0] and leftBot[0][1] == righBot[1][1])
-		return 0
-
-	if (leftTop[1][0] == righTop[0][0] and leftTop[1][1] == righTop[0][1])
-		return 0
-	if (leftBot[1][0] == righBot[0][0] and leftBot[1][1] == righBot[0][1])
-		return 0
-
-	if (leftTop[0][0] == leftBot[1][0] and leftTop[0][1] == leftBot[1][1])
-		return 0
-	if (righTop[0][0] == righBot[1][0] and righTop[0][1] == righBot[1][1])
-		return 0
-
-	if (leftTop[1][0] == leftBot[0][0] and leftTop[1][1] == leftBot[0][1])
-		return 0
-	if (righTop[1][0] == righBot[0][0] and righTop[1][1] == righBot[0][1])
-		return 0
-
-	# Jika tidak juga, hitung jarak menggunakan teknik Euclidian
-	dist = Math.sqrt(Math.pow((v2[1] + (v2[3]/2)) - (v1[1] + (v1[3]/2)), 2) + Math.pow((v2[2] + (v2[4]/2)) - (v1[2] + (v1[4]/2)), 2));
-	return dist
-	\end{lstlisting}
 
 Hasil dari pengelompokan ini berupa kelompok-kelompok tabel pada \textit{spreadsheet}. Setiap tabel yang teridentifikasi selanjutnya akan dicari bagian \textit{header} dan \textit{label} menggunakan modul \texttt{framefinder}.
 
@@ -328,13 +255,7 @@ Fitur-fitur di atas mengikuti fitur yang didefinisikan pada penelitian yang dila
 \subsubsection{Kelas PredictSheetRows}
 Kelas PredictSheetRows memiliki tugas untuk melakukan konversi fitur-fitur yang telah didapatkan pada kelas FeatureSheetRow menjadi bentuk file teks yang dapat dibaca oleh program CRFPP yang akan menjalankan algoritma CRF pada file tersebut. Contoh file yang dihasilkan oleh kelas ini dapat dilihat pada Kode \ref{KodeFile}.\\
 
-\begin{lstlisting}[frame=single, basicstyle=\linespread{1}\scriptsize\listingsfont, captionpos=b, caption={File Berisikan Fitur Tiap Baris}, label=KodeFile]
-	DeadlineTA.xls____Sheet1____1 1 0 1 0 0 1 0 1 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 Header
-	DeadlineTA.xls____Sheet1____2 0 1 1 0 0 1 0 0 0 0 0 1 0 0 1 0 1 1 0 0 0 0 0 Data
-	DeadlineTA.xls____Sheet1____3 0 1 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 Data
-	DeadlineTA.xls____Sheet1____4 0 1 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 Data
-	DeadlineTA.xls____Sheet1____5 0 1 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 Data
-	\end{lstlisting}
+
 
 File tersebut ditulis dalam format \texttt{namafile\_namasheet\_bariske [fitur-fitur pada baris] label}. File ini yang akan diolah oleh algoritma dan digunakan untuk memprediksi label dari setiap baris tersebut. Algoritma yang digunakan adalah Conditional Random Field dan menggunakan aplikasi CRFPP yang berjalan eksternal diluar kelas ini untuk membaca file, membaca model, serta memprediski label.
 

@@ -24,10 +24,10 @@
 \author{Rafi Abbel Mohammad}
 \newcommand{\nim}{18218027}
 
-% \pagenumbering{roman}
-% \setcounter{page}{0}
-
 \frontmatter
+\pagenumbering{roman}
+\setcounter{page}{0}
+
 \input{frontpages/000-cover}
 \input{frontpages/001-approval}
 \input{frontpages/002-statement}
@@ -59,7 +59,6 @@
     \renewcommand{\numberline}{\tablename~\oldnumberline}%
     \listoftables%
 }
-
 \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 
 {%
@@ -69,18 +68,20 @@
 }
 \addcontentsline{toc}{chapter}{DAFTAR KODE}
 
+\newpage
+\setcounter{savepage}{\arabic{page}}
 
-% \titleformat*{\section}{\bfseries\large}
+\titleformat*{\section}{\bfseries\large}
 
 %----------------------------------------------------------------%
 % Konfigurasi Bab
 %----------------------------------------------------------------%
 \renewcommand{\chaptername}{BAB}
 \renewcommand{\thechapter}{\Roman{chapter}}
-% \pagenumbering{bychapter}
-% \setlength{\parindent}{1cm}
+\pagenumbering{bychapter}
+\setlength{\parindent}{1cm}
 %----------------------------------------------------------------%
-\titleformat*{\section}{\bfseries\large}
+
 \mainmatter
 %----------------------------------------------------------------%
 % Dafter Bab

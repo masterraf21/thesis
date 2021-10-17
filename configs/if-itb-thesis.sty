@@ -26,46 +26,51 @@
 \usepackage{natbib}
 
 \usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{makecell}
 \usepackage{csquotes}
 \usepackage{graphicx}
+\usepackage{hyperref}       % Package untuk link di daftar isi.
+\usepackage{tabto}
+\usepackage{comment}
+\usepackage[labelfont=bf]{caption}
+\usepackage{tocbibind}
+\usepackage{tocloft}
+\usepackage{float}
+\usepackage{indentfirst}
+\usepackage[auto]{chappg}
 \usepackage{titling}
 \usepackage{blindtext}
 \usepackage{sectsty}
 \usepackage{chngcntr}
 \usepackage{etoolbox}
-\usepackage{hyperref}       % Package untuk link di daftar isi.
-\usepackage{titlesec}       % Package Format judul
 \usepackage{parskip}
-%\usepackage{pgfgantt}
 \usepackage{ragged2e}
 \usepackage{libertine}
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage{array}
-\usepackage{caption}
 \usepackage{enumitem}
 \usepackage{listings}
-% \usepackage{protobuf/lang}  % include language definition for protobuf
-% \usepackage{protobuf/style} % include custom style for proto declarations.
+\usepackage{titlesec}
 \usepackage{textcase}
 \usepackage{setspace}
 \usepackage{afterpage}
-%\usepackage{tocloft}
 \usepackage{amsmath,amsfonts}
 \usepackage{tabularx}
-\captionsetup[longtable]{skip=0.1em}
+\usepackage[htt]{hyphenat}
 
 % Hypenation
-\include{hypenation-id}
-%\hyphenpenalty=5000
-%\tolerance=1000
-%\lefthyphenmin=2
-%\righthyphenmin=2
-\hyphenpenalty=10000
-\tolerance=1
-\lefthyphenmin=99
-\righthyphenmin=99
-\sloppy
+% \include{hypenation-id}
+% %\hyphenpenalty=5000
+% %\tolerance=1000
+% %\lefthyphenmin=2
+% %\righthyphenmin=2
+% \hyphenpenalty=10000
+% \tolerance=1
+% \lefthyphenmin=99
+% \righthyphenmin=99
+% \sloppy
 
 % Line satu setengah spasi
 \renewcommand{\baselinestretch}{1.5}
@@ -77,30 +82,65 @@
   {\Large\centering\bfseries}
   {\chaptertitlename\ \thechapter}{0pt}
     {\Large\bfseries\uppercase}
-% \titlespacing*{\chapter}{0pt}{-25pt}{40pt}
 
 % Setting nomor pada subbsubsubbab
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{4}
 
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\makeatother
+
 % Counter untuk figure dan table.
 \counterwithin{figure}{chapter}
 \counterwithin{table}{chapter}
 
+% Counter untuk penomoran halaman lanjut
+\newcounter{savepage}
+
 % Kode lebih kecil
-\let\OldTexttt\texttt
-\renewcommand{\texttt}[1]{\OldTexttt{\footnotesize{#1}}}
+% \let\OldTexttt\texttt
+% \renewcommand{\texttt}[1]{\OldTexttt{\footnotesize{#1}}}
 
 % Pengaturan Caption
 \captionsetup{labelsep=space}
 
 % Pengaturan spasi untuk justify
 \pretolerance=10000
-\tolerance=2000
+\tolerance=2000 
 \emergencystretch=10pt
+%\tolerance=1
+%\emergencystretch=10pt
+%\hyphenpenalty=10000
+%\exhyphenpenalty=1000
+
+% Pengaturan untuk title Daftar Isi, Tabel, dan Gambar
+\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
+\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
+\renewcommand{\cftlottitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
+\renewcommand{\cftafterlottitle}{\hspace*{\fill}}
+\renewcommand{\cftloftitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
+\renewcommand{\cftafterloftitle}{\hspace*{\fill}} 
+\renewcommand{\cftequtitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
+\renewcommand{\cftafterequtitle}{\hspace*{\fill}} 
+\renewcommand{\cftalgtitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
+\renewcommand{\cftafteralgtitle}{\hspace*{\fill}} 
+
+\renewcommand{\cftchappresnum}{Bab }
+\renewcommand{\cftchapaftersnum}{}
+\renewcommand{\cftchapnumwidth}{3.7em}
+
+\setlength{\cftbeforetoctitleskip}{-4em}
+\setlength{\cftbeforeloftitleskip}{-4em}
+\setlength{\cftbeforelottitleskip}{-4em}
+\setlength{\cftbeforeequtitleskip}{-4em}
+\setlength{\cftbeforealgtitleskip}{-4em}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X
 
 % Listing Code thingy
-\lstset{frame=tb,
+\lstset{frame=single,
   breaklines=true,
   showstringspaces=false,
   columns=flexible,
@@ -111,22 +151,23 @@
 }
 \renewcommand{\lstlistingname}{Kode}
 \renewcommand{\lstlistlistingname}{Daftar \lstlistingname}
-\newcommand{\listingsfont}{\ttfamily}
+% \newcommand{\listingsfont}{\ttfamily}
 % https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+
+\cftsetpnumwidth{2em}
+
+
 
 % Add comma between Author and Year
 %\renewcommand*{\nameyeardelim}{\addcomma\space}
 
-\titleformat{\paragraph}
-{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-\titlespacing*{\paragraph}
-{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titleformat{\paragraph}
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+% \titlespacing*{\paragraph}
+% {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
-\titlespacing*{\section} {0pt}{2.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
-\titlespacing*{\subsection} {0pt}{2.25ex plus 1ex minus .2ex}{0.5ex plus .2ex}
-
-\makeatletter
-\makeatother
+% \titlespacing*{\section} {0pt}{2.5ex plus 1ex minus .2ex}{1.3ex plus .2ex}
+% \titlespacing*{\subsection} {0pt}{2.25ex plus 1ex minus .2ex}{0.5ex plus .2ex}
 
 % For Gantt Chart
 \newcounter{myWeekNum}
