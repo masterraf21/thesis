@@ -45,6 +45,8 @@
 \usepackage{caption}
 \usepackage{enumitem}
 \usepackage{listings}
+% \usepackage{protobuf/lang}  % include language definition for protobuf
+% \usepackage{protobuf/style} % include custom style for proto declarations.
 \usepackage{textcase}
 \usepackage{setspace}
 \usepackage{afterpage}
@@ -77,14 +79,15 @@
   breaklines=true,
   showstringspaces=false,
   columns=flexible,
-  numbers=none,
+  numbers=left,
   commentstyle=\color{dkgreen},
   stringstyle=\color{mauve},
-  tabsize=3
+  tabsize=4
 }
 \renewcommand{\lstlistingname}{Kode}
 \renewcommand{\lstlistlistingname}{Daftar Kode}
 \newcommand{\listingsfont}{\ttfamily}
+% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
 
 % Add comma between Author and Year
 %\renewcommand*{\nameyeardelim}{\addcomma\space}

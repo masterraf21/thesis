@@ -19,23 +19,23 @@ Setiap \textit{span} yang dibuat oleh setiap \textit{service} tersebut diteruska
 \textit{Trace} tersebut dapat dianalisis lebih lanjut dan disimpan untuk mendapatkan \textit{insight} mengenai \textit{service}.
 Berikut adalah ilustrasi sederhana mengenai \textit{trace}:
 \begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.6\textwidth]{resources/chapter-2-span-pic.png}
-    \caption{Ilustrasi Tracing}
-    \label{TracingIlllustration}
+      \centering
+      \includegraphics[width=0.6\textwidth]{resources/chapter-2-span-pic.png}
+      \caption{Ilustrasi Tracing}
+      \label{TracingIlllustration}
 \end{figure}
 
 Adapun komponen-komponen yang membangun sistem Distributed Tracing adalah sebagai berikut \citep{parker2020distributed}:
 \begin{enumerate}
-    \item Instrumentasi \\
-          Distributed Tracing membutuhkan data \textit{trace} agar dapat bekerja.
-          Data \textit{trace} dihasilkan dengan cara menginstrumentasikan proses-proses \textit{service} atau mentrasformasikan data telemetri yang sudah ada ke data \textit{trace}.
-    \item \textit{Deployment} \\
-          Setelah data \textit{trace} dihasilkan, kita perlu mengirimkan data tersebut ke suatu tempat.
-          Melakukan \textit{deployment} pada sistem \textit{tracing} membutuhkan pemahaman dimana perangkat lunak kita dijalankan di \textit{server} dan bagaimana perangkat tersebut dijalankan.
-          Agar dapat memaksimalkan kemampuan dari \textit{tracing} juga meminimalkan \textit{overhead} yang terjadi pada aplikasi, kita perlu memahami teknik yang cocok untuk melakukan deployment pada sistem Distributed Tracing yang akan kita gunakan.
-    \item Penyampaian \textit{Value} \\
-          Saat \textit{service} kita telah dapat menghasilkan data \textit{trace} dan kita telah memiliki infrastruktur yang diperlukan untuk mengolah data \textit{trace} tersebut, kita akan memerlukan kakas yang tepat untuk menggabungkan \textit{trace} dari berbagai \textit{service} dengan metadata lain seperti \textit{metrics} dan \textit{logs} untuk dapat menghasilkan \textit{value} yang berguna bagi proses \textit{debugging}, \textit{profiling}, dan \textit{monitoring} perangkat lunak terdistribusi.
+      \item Instrumentasi \\
+            Distributed Tracing membutuhkan data \textit{trace} agar dapat bekerja.
+            Data \textit{trace} dihasilkan dengan cara menginstrumentasikan proses-proses \textit{service} atau mentrasformasikan data telemetri yang sudah ada ke data \textit{trace}.
+      \item \textit{Deployment} \\
+            Setelah data \textit{trace} dihasilkan, kita perlu mengirimkan data tersebut ke suatu tempat.
+            Melakukan \textit{deployment} pada sistem \textit{tracing} membutuhkan pemahaman dimana perangkat lunak kita dijalankan di \textit{server} dan bagaimana perangkat tersebut dijalankan.
+            Agar dapat memaksimalkan kemampuan dari \textit{tracing} juga meminimalkan \textit{overhead} yang terjadi pada aplikasi, kita perlu memahami teknik yang cocok untuk melakukan deployment pada sistem Distributed Tracing yang akan kita gunakan.
+      \item Penyampaian \textit{Value} \\
+            Saat \textit{service} kita telah dapat menghasilkan data \textit{trace} dan kita telah memiliki infrastruktur yang diperlukan untuk mengolah data \textit{trace} tersebut, kita akan memerlukan kakas yang tepat untuk menggabungkan \textit{trace} dari berbagai \textit{service} dengan metadata lain seperti \textit{metrics} dan \textit{logs} untuk dapat menghasilkan \textit{value} yang berguna bagi proses \textit{debugging}, \textit{profiling}, dan \textit{monitoring} perangkat lunak terdistribusi.
 \end{enumerate}
 
 \subsection{Instrumentasi Distributed Tracing}
@@ -55,6 +55,9 @@ Dalam mendesain arsitektur, REST mendefinisikan beberapa aturan yaitu skalabilit
 
 \subsection{GraphQL}
 \subsection{gRPC}
+Berikut adalah contoh Kode gRPC:
+\lstinputlisting[captionpos=b, caption={Contoh File Proto}]{codes/ch2/hello.proto}
+
 \subsection{WebSocket}
 
 

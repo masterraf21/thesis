@@ -1,0 +1,15 @@
+// Definisi Service Greeter
+service Greeter {
+  // Kirim sebuah Greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// Pesan request yang berisi name
+message HelloRequest {
+  string name = 1;
+}
+
+// Response yang berisi Greeting
+message HelloReply {
+  string message = 1;
+}

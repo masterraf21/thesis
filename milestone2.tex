@@ -17,23 +17,23 @@
 
 %Basic configuration
 %\title{Pengembangan Aplikasi Pengumpulan Data Menggunakan \textit{Spreadsheet}}
-\title{Pengembangan Kakas Pengumpulan Data dalam Format \textit{Spreadsheet}}
+\title{Pengembangan Sistem Tracing untuk mendukung pelacakan Request Causality antar Service dalam Arsitektur Microservice}
 \date{}
 \author{
-    Feryandi Nurdiantoro \\
-    NIM : 13513042
+    Rafi Abbel Mohammad\\
+    NIM : 18218027
 }
 
 \frontmatter
-\input{frontpages/000-cover}
-\input{frontpages/001-approval}
-\input{frontpages/002-statement}
+\input{frontpages/000-cover.m2}
+\input{frontpages/001-approval.m2}
+% \input{frontpages/002-statement}
 
 \pagestyle{plain}
 
-\input{frontpages/003-abstract-id}
+% \input{frontpages/003-abstract-id}
 %\input{004-abstract-en}
-\input{frontpages/005-forewords}
+% \input{frontpages/005-forewords}
 
 \titleformat*{\section}{\centering\bfseries\Large\MakeUpperCase}
 
@@ -55,7 +55,12 @@
     \listoftables%
 }
 \addcontentsline{toc}{chapter}{DAFTAR TABEL}
-
+{%
+    \let\oldnumberline\numberline%
+    \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
+    \lstlistoflistings%
+}
+\addcontentsline{toc}{chapter}{DAFTAR KODE}
 %----------------------------------------------------------------%
 % Konfigurasi Bab
 %----------------------------------------------------------------%
@@ -71,9 +76,9 @@
 %----------------------------------------------------------------%
 \input{chapters/01-chapter-1}
 \input{chapters/02-chapter-2}
-\input{chapters/03-chapter-3}
-\input{chapters/04-chapter-4}
-\input{chapters/05-chapter-5}
+% \input{chapters/03-chapter-3}
+% \input{chapters/04-chapter-4}
+% \input{chapters/05-chapter-5}
 %----------------------------------------------------------------%
 
 % Daftar pustaka
@@ -100,15 +105,15 @@
 %\addcontentsline{toc}{part}{LAMPIRAN}
 
 % Setting judul appendix
-\chapterfont{\Large}
-\titleformat{\chapter}[hang]
-{\Large\bfseries}
-{\chaptertitlename\ \thechapter.\ }{0pt}
-{\Large\bfseries}
-\titlespacing*{\chapter}{0pt}{-25pt}{10pt}
+% \chapterfont{\Large}
+% \titleformat{\chapter}[hang]
+% {\Large\bfseries}
+% {\chaptertitlename\ \thechapter.\ }{0pt}
+% {\Large\bfseries}
+% \titlespacing*{\chapter}{0pt}{-25pt}{10pt}
 
-\input{appendixes/0A1-appendix-1}
-\input{appendixes/0A2-appendix-2}
+% \input{appendixes/0A1-appendix-1}
+% \input{appendixes/0A2-appendix-2}
 
 \end{document}
 
