@@ -71,19 +71,33 @@
 \renewcommand{\baselinestretch}{1.5}
 
 % Setting judul
+\titlespacing*{\chapter}{0pt}{-50pt}{10pt}
 \chapterfont{\centering \Large}
 \titleformat{\chapter}[display]
   {\Large\centering\bfseries}
   {\chaptertitlename\ \thechapter}{0pt}
     {\Large\bfseries\uppercase}
-\titlespacing*{\chapter}{0pt}{-25pt}{40pt}
+% \titlespacing*{\chapter}{0pt}{-25pt}{40pt}
 
 % Setting nomor pada subbsubsubbab
 \setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{4}
+
+% Counter untuk figure dan table.
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
 
 % Kode lebih kecil
 \let\OldTexttt\texttt
 \renewcommand{\texttt}[1]{\OldTexttt{\footnotesize{#1}}}
+
+% Pengaturan Caption
+\captionsetup{labelsep=space}
+
+% Pengaturan spasi untuk justify
+\pretolerance=10000
+\tolerance=2000
+\emergencystretch=10pt
 
 % Listing Code thingy
 \lstset{frame=tb,
@@ -113,10 +127,6 @@
 
 \makeatletter
 \makeatother
-
-% Counter untuk figure dan table.
-\counterwithin{figure}{chapter}
-\counterwithin{table}{chapter}
 
 % For Gantt Chart
 \newcounter{myWeekNum}
