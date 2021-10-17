@@ -115,6 +115,21 @@
 %\hyphenpenalty=10000
 %\exhyphenpenalty=1000
 
+% Pengaturan untuk Daftar Rumus
+\newcommand{\listequationsname}{Daftar Rumus}
+\newlistof{myequations}{equ}{\listequationsname}
+\newcommand{\myequations}[1]{%
+\addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
+\setlength{\cftmyequationsnumwidth}{2.5em}
+
+\newcommand{\listalgorithmname}{Daftar Algoritme}
+\newlistof{algorithm}{alg}{\listalgorithmname}
+\newcommand{\algorithm}[1]{%
+\refstepcounter{algorithm}
+\par\noindent\centering\normalsize\textbf{Algoritme {\thechapter.\thealgorithm\ }\normalfont #1}
+\addcontentsline{alg}{algorithm}{\protect\numberline{\thechapter.\thealgorithm}#1}\par}
+\setlength{\cftalgorithmnumwidth}{2.5em}
+
 % Pengaturan untuk title Daftar Isi, Tabel, dan Gambar
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
 \renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
@@ -137,7 +152,7 @@
 \setlength{\cftbeforeequtitleskip}{-4em}
 \setlength{\cftbeforealgtitleskip}{-4em}
 
-\newcolumntype{Y}{>{\centering\arraybackslash}X
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 % Listing Code thingy
 \lstset{frame=single,
@@ -153,6 +168,7 @@
 \renewcommand{\lstlistlistingname}{Daftar \lstlistingname}
 % \newcommand{\listingsfont}{\ttfamily}
 % https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
 \cftsetpnumwidth{2em}
 

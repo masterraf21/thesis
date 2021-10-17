@@ -5,7 +5,7 @@
 %--------------------------------------------------------------------%
 % Berkas ini berisi struktur utama dokumen LaTeX yang akan dibuat.
 %--------------------------------------------------------------------%
-\documentclass[12pt, a4paper, onecolumn, oneside, final]{book}
+\documentclass[toc=listof,12pt, a4paper, onecolumn, oneside, final]{report}
 
 \input{configs/if-itb-thesis.sty}
 
@@ -24,7 +24,7 @@
 \author{Rafi Abbel Mohammad}
 \newcommand{\nim}{18218027}
 
-\frontmatter
+% \frontmatter
 \pagenumbering{roman}
 \setcounter{page}{0}
 
@@ -82,7 +82,7 @@
 \setlength{\parindent}{1cm}
 %----------------------------------------------------------------%
 
-\mainmatter
+% \mainmatter
 %----------------------------------------------------------------%
 % Dafter Bab
 % Untuk menambahkan daftar bab, buat berkas bab misalnya `chapter-6` di direktori `chapters`, dan masukkan ke sini.
@@ -107,7 +107,7 @@
 \bibliography{references}
 \bibliographystyle{apalike}
 
-\backmatter
+% \backmatter
 % Index
 \appendix
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
