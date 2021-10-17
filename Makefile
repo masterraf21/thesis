@@ -17,7 +17,7 @@ move:
 	mv thesis.pdf output/
 
 clean:
-	rm -f *.aux *.log *.idx *.toc *.bbl *.blg
+	rm -f *.aux *.log *.idx *.toc *.bbl *.blg *.synctex.gz
 	rm -f *.lof *.lol *.lot *.out *.fls *.fdb_latexmk
 
 cleanpdf:	clean
