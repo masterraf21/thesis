@@ -47,6 +47,7 @@
 % \afterpage{\null\newpage}
 
 % \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+\clearpage
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\figurename~\oldnumberline}%
@@ -54,6 +55,7 @@
 }
 \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
 
+\clearpage
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\tablename~\oldnumberline}%
@@ -61,6 +63,7 @@
 }
 \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 
+\clearpage
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
