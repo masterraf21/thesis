@@ -5,7 +5,7 @@
 %--------------------------------------------------------------------%
 % Berkas ini berisi struktur utama dokumen LaTeX yang akan dibuat.
 %--------------------------------------------------------------------%
-\documentclass[toc=listof,12pt, a4paper, onecolumn, oneside, final]{report}
+\documentclass[12pt, a4paper, onecolumn, oneside, final]{report}
 
 \input{configs/if-itb-thesis.sty}
 
@@ -22,7 +22,7 @@
 \newcommand{\yearsidang}{2022}
 \newcommand{\jenislaporan}{Tugas Akhir}
 \author{Rafi Abbel Mohammad}
-\newcommand{\nim}{18218027}
+\newcommand{\nim}{182180272}
 
 % \frontmatter
 \pagenumbering{roman}
@@ -42,7 +42,7 @@
 
 \clearpage
 \tableofcontents
-\addcontentsline{toc}{chapter}{DAFTAR ISI}
+% \addcontentsline{toc}{chapter}{DAFTAR ISI}
 
 % \afterpage{\null\newpage}
 
@@ -53,7 +53,7 @@
     \renewcommand{\numberline}{\figurename~\oldnumberline}%
     \listoffigures%
 }
-\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+% \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
 
 \clearpage
 {%
@@ -61,7 +61,7 @@
     \renewcommand{\numberline}{\tablename~\oldnumberline}%
     \listoftables%
 }
-\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+% \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 
 \clearpage
 {%
@@ -69,7 +69,7 @@
     \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
     \lstlistoflistings%
 }
-\addcontentsline{toc}{chapter}{DAFTAR KODE}
+\addcontentsline{toc}{chapter}{Daftar Kode}
 
 \newpage
 \setcounter{savepage}{\arabic{page}}
@@ -111,22 +111,30 @@
 \bibliographystyle{apalike}
 
 % \backmatter
+% % Index
+% \appendix
+% \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+
+% \cleardoublepage
+% \phantomsection
+% %\part*{Lampiran}
+% %\addcontentsline{toc}{part}{LAMPIRAN}
+
+% % Setting judul appendix
+% \chapterfont{\Large}
+% \titleformat{\chapter}[hang]
+% {\Large\bfseries}
+% {\chaptertitlename\ \thechapter.\ }{0pt}
+% {\Large\bfseries}
+% \titlespacing*{\chapter}{0pt}{-25pt}{10pt}
+
 % Index
+\clearpage
 \appendix
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-
-\cleardoublepage
-\phantomsection
-%\part*{Lampiran}
-%\addcontentsline{toc}{part}{LAMPIRAN}
-
-% Setting judul appendix
-\chapterfont{\Large}
-\titleformat{\chapter}[hang]
-{\Large\bfseries}
-{\chaptertitlename\ \thechapter.\ }{0pt}
-{\Large\bfseries}
-\titlespacing*{\chapter}{0pt}{-25pt}{10pt}
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{Lampiran }}
+\addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{6em}}
+\renewcommand{\chaptername}{Lampiran}
+\pagenumbering{bychapter}
 
 \input{appendixes/0A1-appendix-1}
 \input{appendixes/0A2-appendix-2}

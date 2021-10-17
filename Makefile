@@ -6,8 +6,12 @@ all:	thesis move clean
 
 cleans: clean cleanpdf
 
-thesis:	
-	latexmk -pdf -bibtex -cd thesis.tex
+thesis:	thesis.tex
+	pdflatex thesis
+	pdflatex thesis
+	bibtex   thesis
+	pdflatex thesis
+	pdflatex thesis
 
 move:
 	mv thesis.pdf output/
