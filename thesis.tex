@@ -17,12 +17,15 @@
 
 %Basic configuration
 %\title{Pengembangan Aplikasi Pengumpulan Data Menggunakan \textit{Spreadsheet}}
-\title{Pengembangan Kakas Pengumpulan Data dalam Format \textit{Spreadsheet}}
-\date{}
-\author{
-    Feryandi Nurdiantoro \\
-    NIM : 13513042
-}
+\title{Pengembangan Sistem Tracing untuk mendukung pelacakan Request Causality antar Service dalam Arsitektur Microservice}
+\date{15 Mei}
+\newcommand{\yearsidang}{2022}
+\newcommand{\jenislaporan}{Tugas Akhir}
+\author{Rafi Abbel Mohammad}
+\newcommand{\nim}{18218027}
+
+% \pagenumbering{roman}
+% \setcounter{page}{0}
 
 \frontmatter
 \input{frontpages/000-cover}
@@ -39,9 +42,10 @@
 
 \clearpage
 \tableofcontents
-
 \addcontentsline{toc}{chapter}{DAFTAR ISI}
+
 % \afterpage{\null\newpage}
+
 % \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
 {%
     \let\oldnumberline\numberline%
@@ -49,12 +53,15 @@
     \listoffigures%
 }
 \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\tablename~\oldnumberline}%
     \listoftables%
 }
+
 \addcontentsline{toc}{chapter}{DAFTAR TABEL}
+
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
@@ -62,14 +69,18 @@
 }
 \addcontentsline{toc}{chapter}{DAFTAR KODE}
 
+
+% \titleformat*{\section}{\bfseries\large}
+
 %----------------------------------------------------------------%
 % Konfigurasi Bab
 %----------------------------------------------------------------%
 \renewcommand{\chaptername}{BAB}
 \renewcommand{\thechapter}{\Roman{chapter}}
+% \pagenumbering{bychapter}
+% \setlength{\parindent}{1cm}
 %----------------------------------------------------------------%
 
-\titleformat*{\section}{\bfseries\large}
 \mainmatter
 %----------------------------------------------------------------%
 % Dafter Bab

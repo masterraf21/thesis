@@ -14,7 +14,7 @@
 \special{papersize=210mm,297mm}
 
 % Setting margin
-\usepackage[top=3cm,bottom=4cm,left=4cm,right=3cm]{geometry}
+\usepackage[top=3cm,bottom=2.5cm,left=4cm,right=2.5cm]{geometry}
 
 \usepackage{mathptmx}
 
@@ -70,28 +70,6 @@
 % Line satu setengah spasi
 \renewcommand{\baselinestretch}{1.5}
 
-% Kode lebih kecil
-\let\OldTexttt\texttt
-\renewcommand{\texttt}[1]{\OldTexttt{\footnotesize{#1}}}
-
-% Listing Code thingy
-\lstset{frame=tb,
-  breaklines=true,
-  showstringspaces=false,
-  columns=flexible,
-  numbers=left,
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  tabsize=4
-}
-\renewcommand{\lstlistingname}{Kode}
-\renewcommand{\lstlistlistingname}{Daftar Kode}
-\newcommand{\listingsfont}{\ttfamily}
-% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
-
-% Add comma between Author and Year
-%\renewcommand*{\nameyeardelim}{\addcomma\space}
-
 % Setting judul
 \chapterfont{\centering \Large}
 \titleformat{\chapter}[display]
@@ -101,7 +79,29 @@
 \titlespacing*{\chapter}{0pt}{-25pt}{40pt}
 
 % Setting nomor pada subbsubsubbab
-\setcounter{secnumdepth}{4}
+\setcounter{secnumdepth}{3}
+
+% Kode lebih kecil
+\let\OldTexttt\texttt
+\renewcommand{\texttt}[1]{\OldTexttt{\footnotesize{#1}}}
+
+% Listing Code thingy
+\lstset{frame=tb,
+  breaklines=true,
+  showstringspaces=false,
+  columns=flexible,
+  numbers=none,
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  tabsize=4
+}
+\renewcommand{\lstlistingname}{Kode}
+\renewcommand{\lstlistlistingname}{Daftar \lstlistingname}
+\newcommand{\listingsfont}{\ttfamily}
+% https://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+
+% Add comma between Author and Year
+%\renewcommand*{\nameyeardelim}{\addcomma\space}
 
 \titleformat{\paragraph}
 {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
