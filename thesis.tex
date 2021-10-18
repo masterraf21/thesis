@@ -12,7 +12,6 @@
 \makeatletter
 
 \makeatother
-%\bibliography{references}
 \begin{document}
 
 %Basic configuration
@@ -42,18 +41,13 @@
 
 \clearpage
 \tableofcontents
-% \addcontentsline{toc}{chapter}{DAFTAR ISI}
 
-% \afterpage{\null\newpage}
-
-% \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
 \clearpage
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\figurename~\oldnumberline}%
     \listoffigures%
 }
-% \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
 
 \clearpage
 {%
@@ -61,7 +55,6 @@
     \renewcommand{\numberline}{\tablename~\oldnumberline}%
     \listoftables%
 }
-% \addcontentsline{toc}{chapter}{DAFTAR TABEL}
 
 \clearpage
 {%
@@ -69,7 +62,6 @@
     \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
     \lstlistoflistings%
 }
-% \addcontentsline{toc}{chapter}{Daftar Kode}
 
 \newpage
 \setcounter{savepage}{\arabic{page}}
@@ -85,7 +77,6 @@
 \setlength{\parindent}{1cm}
 %----------------------------------------------------------------%
 
-% \mainmatter
 %----------------------------------------------------------------%
 % Dafter Bab
 % Untuk menambahkan daftar bab, buat berkas bab misalnya `chapter-6` di direktori `chapters`, dan masukkan ke sini.
@@ -106,24 +97,6 @@
 \setcounter{page}{\thesavepage}
 \bibliography{references}
 \bibliographystyle{apalike}
-
-% \backmatter
-% % Index
-% \appendix
-% \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
-
-% \cleardoublepage
-% \phantomsection
-% %\part*{Lampiran}
-% %\addcontentsline{toc}{part}{LAMPIRAN}
-
-% % Setting judul appendix
-% \chapterfont{\Large}
-% \titleformat{\chapter}[hang]
-% {\Large\bfseries}
-% {\chaptertitlename\ \thechapter.\ }{0pt}
-% {\Large\bfseries}
-% \titlespacing*{\chapter}{0pt}{-25pt}{10pt}
 
 % Index
 \clearpage
