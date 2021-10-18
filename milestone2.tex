@@ -5,7 +5,7 @@
 %--------------------------------------------------------------------%
 % Berkas ini berisi struktur utama dokumen LaTeX yang akan dibuat.
 %--------------------------------------------------------------------%
-\documentclass[12pt, a4paper, onecolumn, oneside, final]{book}
+\documentclass[12pt, a4paper, onecolumn, oneside, final]{report}
 
 \input{configs/if-itb-thesis.sty}
 
@@ -18,15 +18,18 @@
 %Basic configuration
 %\title{Pengembangan Aplikasi Pengumpulan Data Menggunakan \textit{Spreadsheet}}
 \title{Pengembangan Sistem Tracing untuk mendukung pelacakan Request Causality antar Service dalam Arsitektur Microservice}
-\date{}
-\author{
-    Rafi Abbel Mohammad\\
-    NIM : 18218027
-}
+\date{27 Oktober}
+\newcommand{\yearsidang}{2021}
+\newcommand{\jenislaporan}{Draf Bab 1 Tugas Akhir}
+\author{Rafi Abbel Mohammad}
+\newcommand{\nim}{182180272}
 
-\frontmatter
-\input{frontpages/000-cover.m2}
-\input{frontpages/001-approval.m2}
+% \frontmatter
+\pagenumbering{roman}
+\setcounter{page}{0}
+
+\input{frontpages/000-cover}
+\input{frontpages/001-approval}
 % \input{frontpages/002-statement}
 
 \pagestyle{plain}
@@ -39,37 +42,50 @@
 
 \clearpage
 \tableofcontents
+% \addcontentsline{toc}{chapter}{DAFTAR ISI}
 
-\addcontentsline{toc}{chapter}{DAFTAR ISI}
 % \afterpage{\null\newpage}
+
 % \addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+\clearpage
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\figurename~\oldnumberline}%
     \listoffigures%
 }
-\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+% \addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+
+\clearpage
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\tablename~\oldnumberline}%
     \listoftables%
 }
-\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+% \addcontentsline{toc}{chapter}{DAFTAR TABEL}
+
+\clearpage
 {%
     \let\oldnumberline\numberline%
     \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
     \lstlistoflistings%
 }
-\addcontentsline{toc}{chapter}{DAFTAR KODE}
+% \addcontentsline{toc}{chapter}{Daftar Kode}
+
+\newpage
+\setcounter{savepage}{\arabic{page}}
+
+\titleformat*{\section}{\bfseries\large}
+
 %----------------------------------------------------------------%
 % Konfigurasi Bab
 %----------------------------------------------------------------%
 \renewcommand{\chaptername}{BAB}
 \renewcommand{\thechapter}{\Roman{chapter}}
+\pagenumbering{bychapter}
+\setlength{\parindent}{1cm}
 %----------------------------------------------------------------%
 
-\titleformat*{\section}{\bfseries\large}
-\mainmatter
+% \mainmatter
 %----------------------------------------------------------------%
 % Dafter Bab
 % Untuk menambahkan daftar bab, buat berkas bab misalnya `chapter-6` di direktori `chapters`, dan masukkan ke sini.
@@ -84,27 +100,24 @@
 % Daftar pustaka
 % Bibliography to Daftar Pustaka
 \renewcommand{\bibname}{Daftar Pustaka}
-\cleardoublepage
+\clearpage
 \phantomsection
-\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
-%\printbibliography
-%\bibliography{references}
-%ZCZC RMS 202107023
-%\bibstyle{apa}
+\pagenumbering{roman}
+\setcounter{page}{\thesavepage}
 \bibliography{references}
 \bibliographystyle{apalike}
 
-\backmatter
-% Index
-\appendix
-\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+% \backmatter
+% % Index
+% \appendix
+% \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 
-\cleardoublepage
-\phantomsection
-%\part*{Lampiran}
-%\addcontentsline{toc}{part}{LAMPIRAN}
+% \cleardoublepage
+% \phantomsection
+% %\part*{Lampiran}
+% %\addcontentsline{toc}{part}{LAMPIRAN}
 
-% Setting judul appendix
+% % Setting judul appendix
 % \chapterfont{\Large}
 % \titleformat{\chapter}[hang]
 % {\Large\bfseries}
@@ -112,8 +125,16 @@
 % {\Large\bfseries}
 % \titlespacing*{\chapter}{0pt}{-25pt}{10pt}
 
+% Index
+% \clearpage
+% \appendix
+% \addtocontents{toc}{\protect\renewcommand{\protect\cftchappresnum}{Lampiran }}
+% \addtocontents{toc}{\protect\renewcommand{\protect\cftchapnumwidth}{6em}}
+% \renewcommand{\chaptername}{Lampiran}
+% \pagenumbering{bychapter}
+
 % \input{appendixes/0A1-appendix-1}
-% \input{appendixes/0A2-appendix-2}
+\input{appendixes/0A2-appendix-2}
 
 \end{document}
 
