@@ -23,3 +23,5 @@ clean:
 cleanpdf:	clean
 	rm -f *.pdf
 
+studio:
+	texstudio thesis.tex
