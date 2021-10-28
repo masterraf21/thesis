@@ -18,7 +18,6 @@ Metode lain untuk melakukan instrumentasi pada service adalah dengan menggunakan
 Namun dari solusi \textit{open source} yang ada, penulis menemukan adanya kekurangan dalam kakas visualisasi hasil \textit{tracing}. Penulis menemukan hanya Zipkin yang memiliki kakas visualisasi yang dapat langsung digunakan. Namun fitur visualisasi Zipkin masih berfokus pada penyediaan data \textit{tracing} dalam sebuah service dan untuk penyediaan data secara keseluruhan antar service masih belum dapat menampilkan data yang perlu untuk mencapai \textit{observability} bagi keseluruhan sistem Microservice. 
 
 
-
 \section{Rumusan Masalah}\label{RumusanMasalah}
 
 Seperti yang telah dijelaskan pada latar belakang, salah satu penggunaan aplikasi \textit{spreadsheet} adalah sebagai media pengumpulan data. Beberapa permasalahan yang muncul dalam pengumpulan data adalah kolaborasi, validasi, dan penyimpanan data. Pengumpulan data dapat dilakukan oleh banyak orang secara bersama-sama sehingga dapat menyebabkan konflik pada data masukan. Konflik ini bisa terjadi karena terdapat lebih dari satu versi file yang diubah secara bersama-sama. Di samping itu, data yang dimasukkan biasanya tidak melalui proses validasi sehingga dapat menyalahi domain data yang seharusnya. Setelah data dikumpulkan ke dalam bentuk \textit{spreadsheet}, diperlukan media penyimpanan data sehingga data tidak terisolasi. Contoh dari media penyimpanan tersebut adalah menggunakan basis data.
