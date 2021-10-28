@@ -13,8 +13,8 @@ thesis:	thesis.tex
 	pdflatex thesis
 	pdflatex thesis
 
-move:
-	mv thesis.pdf output/
+rename:
+	cp milestone2.pdf output/'Draf Pendahuluan Tugas Akhir - 18218027.pdf'
 
 clean:
 	rm -f *.aux *.log *.idx *.toc *.bbl *.blg *.synctex.gz
