@@ -15,7 +15,7 @@ Sudah terdapat beberapa solusi \textit{tracing} yang ada sepanjang beberapa tahu
 
 Metode lain untuk melakukan instrumentasi pada service adalah dengan menggunakan \textit{library} pada level kode untuk memberikan konteks dan informasi kepada agen \textit{tracing}. Sudah ada beberapa \textit{library} ataupun \textit{framework} \textit{open source} yang menyediakan solusi untuk melakukan instrumentasi pada level kode seperti contohnya adalah OpenTracing, Zipkin, dan Jaeger \citep{opentracing, zipkin, jaeger}. Metode untuk melakukan tracing ini disebut juga dengan \textit{active tracing}. Dengan metode ini, data yang diperoleh dari instrumentasi akan lebih kaya, salah satunya adalah dapat memberikan konteks pemanggilan ke service lain yang nantinya dapat diolah lebih lanjut untuk mendapatkan gambaran yang lebih besar yaitu \textit{request causality} antar service.
 
-Namun dari solusi \textit{open source} yang ada, penulis menemukan adanya kekurangan dalam kakas visualisasi hasil \textit{tracing}. Penulis menemukan hanya Zipkin yang memiliki kakas visualisasi yang dapat langsung digunakan. 
+Namun dari solusi \textit{open source} yang ada, penulis menemukan adanya kekurangan dalam kakas visualisasi hasil \textit{tracing}. Penulis menemukan hanya Zipkin yang memiliki kakas visualisasi yang dapat langsung digunakan. Namun fitur visualisasi Zipkin masih berfokus pada penyediaan data \textit{tracing} dalam sebuah service dan untuk penyediaan data secara keseluruhan antar service masih belum dapat menampilkan data yang perlu untuk mencapai \textit{observability} bagi keseluruhan sistem Microservice. 
 
 
 
