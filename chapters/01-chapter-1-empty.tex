@@ -1,0 +1,122 @@
+\chapter{Pendahuluan}
+
+%Pada bab ini akan dibahas mengenai gambaran dasar dari pelaksanaan Tugas Akhir dalam bentuk penjelasan latar belakang yang mendasari pemilihan topik. Dari latar belakang tersebut, akan diurai kembali menjadi rumusan masalah, tujuan, batasan masalah, metodologi, serta sistematika pembahasan tugas akhir.                                                                        
+%
+%\section{Latar Belakang}
+%
+%
+%Dengan banyaknya adopsi penggunaan arsitektur Microservice yang berbasis sistem terdistribusi saat ini, semakin banyak juga tantangan yang muncul terkait dengan adopsi gaya arsitektur tersebut. Arsitektur Microservice menawarkan beberapa keuntungan antara lain heterogenitas teknologi, resiliensi, kemudahan \textit{scaling}, kemudahan \textit{deployment}, kemudahan dalam melakukan penyelarasan secara tim teknologi, fleksibilitas dalam menentukan komposisi aplikasi, dan sistem yang teroptimasi untuk melakukan penggantian kompoen satu sama lain \citep{building-microservices}. Keuntungan-keuntungan tersebut menjadikan adopsi aristektur Microservice cukup marak terutama pada aplikasi-aplikasi yang membutuhkan \textit{scalability} untuk melayani kebutuhan pelanggan yang semakin banyak.  
+%
+%Salah satu perusahaan yang mengadopsi arsitektur Microservice secara masif adalah Netflix \citep{netflix-nginx, netflix-infoq}. Dengan menggunakan arsitektur Microservice, para \textit{developer} di Netflix dapat melakukan dekomposisi secara \textit{decoupling} yang dapat memungkinkan \textit{developer} untuk menggunakan berbagai \textit{framework} atau bahasa pemrgoraman yang berbeda untuk setiap service nya. Hal tersebut menjadi keuntungan besar sebab para \textit{developer} dapat mendesain sebuah service dengan kemampuan dan tujuan tertentu dengan sebuah bahasa pemrograman yang sesuai dengan tujuan dari service tersebut. Kemampuan untuk melakukan hal tersebut didukung oleh teknologi \textit{container} yang dipopulerkan dengan kehadiran dari Docker dan juga teknologi \textit{container orchestration} oleh Kubernetes. Dengan adanya Kubernetes, sistem dapat melakukan \textit{scale up} dan \textit{scale down} sebuah service ketika dirasa ada \textit{workload} lebih besar yang dibutuhkan untuk mengakomodasi kebutuhan \textit{request}.
+%
+%Dari banyaknya keuntungan yang ditawarkan oleh arsitektur Microservice, timbul suatu permasalahan yang secara alami muncul ketika jumlah service bertambah yaitu meningkatnya kompleksitas dari sistem \citep{fowler-complexity}. Salah satu dari banyaknya kompleksitas muncul adalah dalam proses \textit{debugging}. Pada umumnya, dalam aplikasi dengan aristektur Monolith, proses \textit{debugging} hanya dilakukan pada satu sumber, sehingga jika terdapat masalah maka akan mudah ditemukan. Namun, dalam model aplkasi dengan arsitektur Microservice yang bisa memiliki ratusan bahkan ribuan service sekaligus, hal tersebut tidak akan menjadi mudah, sebab suatu \textit{bug} tertentu akan sulit dilacak jika masih menggunakan metode biasa. Hal tersebut wajar terjadi mengingat sifat terdistribusi dari service yang ada. Dari permasalahan \textit{debugging} yang terdistribusi itulah muncul suatu inisiatif untuk membuat kakas yang dapat melakukan pelacakan sistem terdistribusi atau \textit{distributed tracing} dari service-service pada suatu sistem Microservice agar para \textit{developer} dapat mendapatkan petunjuk atau \textit{observability} mengenai kondisi internal yang terjadi pada sebuah service.
+%
+%Sudah terdapat beberapa solusi \textit{tracing} yang ada sepanjang beberapa tahun ke belakang, dimulai dengan dipublikasikannya \textit{paper} dari Google yang mengajukan solusi \textit{tracing} untuk sistem terdistribusi bernama Dapper \citep{dapper-paper} hingga yang terbaru solusi \textit{tracing} berbasis transparan yang bernama Inkle \citep{tracing-abram}. Solusi \textit{tracing} yang diajukan Inkle berfokus untuk membuat kakas instrumentasi \textit{tracing} yang transparan, artinya proses instrumentasi tidak mengubah sama sekali kode dari sebuah service, melainkan melakukan instrumentasi data dari service dengan melakukan \textit{intercept} \textit{traffic} jaringan dari service tersebut. Metode \textit{tracing} seperti itu disebut juga dengan \textit{passive tracing}. Hasil dari metode \textit{tracing} seperti yang dilakukan Inkle adalah \textit{tracing} dapat tetap dilakukan tanpa adanya intervensi sama sekali pada level kode di dalam service, namun kekurangannya adalah akurasi hasil \textit{tracing} yang rendah dan juga hasil \textit{tracing} antar service tidak dapat menampilkan kausalitas atau hubungan sebab akibat dari \textit{request} yang dilakukan.
+%
+%Metode lain untuk melakukan instrumentasi pada service adalah dengan menggunakan \textit{library} pada level kode untuk memberikan konteks dan informasi kepada agen \textit{tracing}. Sudah ada beberapa \textit{library} ataupun \textit{framework} \textit{open source} yang menyediakan solusi untuk melakukan instrumentasi pada level kode seperti contohnya adalah OpenTracing, Zipkin, dan Jaeger \citep{opentracing, zipkin, jaeger}. Metode untuk melakukan tracing ini disebut juga dengan \textit{active tracing}. Dengan metode ini, data yang diperoleh dari instrumentasi akan lebih kaya, salah satunya adalah dapat memberikan konteks pemanggilan ke service lain yang nantinya dapat diolah lebih lanjut untuk mendapatkan gambaran yang lebih besar yaitu \textit{request causality} antar service.
+%
+%Namun dari solusi \textit{open source} yang ada, penulis menemukan adanya kekurangan dalam kakas visualisasi hasil \textit{tracing}. Penulis menemukan hanya Zipkin yang memiliki kakas visualisasi yang dapat langsung digunakan. Namun fitur visualisasi Zipkin masih berfokus pada penyediaan data \textit{tracing} dalam sebuah service dan untuk penyediaan data secara keseluruhan antar service masih belum dapat menampilkan data yang perlu untuk mencapai \textit{observability} bagi keseluruhan sistem Microservice. Dari kondisi itulah penulis menilai perlu adanya kakas yang dapat menyediakan \textit{developer} informasi yang diperlukan untuk mencapai \textit{observability} dalam sebuah sistem Microservice secara utuh. 
+%
+%
+%\section{Rumusan Masalah}\label{RumusanMasalah}
+%
+%Seperti yang telah dijelaskan dalam Latar Belakang, masih adanya kekurangan dalam kakas untuk membuat visualisasi hasil \textit{distributed tracing} yang bersifat \textit{open source}. Oleh karena itu rumusan masalah yang akan dijawab pada Tugas Akhir ini adalah "Bagaimana membangun kakas solusi \textit{distributed tracing} yang dapat menampilkan visualisasi dari hasil instrumentasi \textit{tracing} pada sistem Microservice yang berjalan di atas Kubernetes?".
+%
+%\section{Tujuan}
+%
+%Tujuan yang ingin dicapai dalam Tugas Akhir ini adalah:
+%\begin{enumerate}
+%	\item Mengembangkan kakas solusi \textit{distributed tracing}  yang dapat menampilkan visualisasi dari hasil \textit{tracing} pada sistem Microservice yang berjalan di atas Kubernetes sehingga \textit{developer} dapat mendapatkan \textit{observability} dari sebuah sistem Microservice secara utuh
+%	\item Mengukur \textit{overhead} yang diakibatkan oleh kakas solusi \textit{distributed tracing} baik pada level aplikasi maupun level infrastruktur
+%\end{enumerate}
+%
+%
+%\section{Batasan Masalah}
+%
+%Dalam pengerjaan Tugas Akhir ini, terdapat beberapa batasan-batasan yang perlu diperhatikan. Batasan tersebut ditujukan untuk memperjelas dan memfokuskan objek penelitian dan pengembangan tugas akhir. Batasan-batasan masalah pengerjaan tugas akhir adalah sebagai berikut,
+%
+%\begin{enumerate}
+%	\item \textit{Library} instrumentasi yang digunakan pada level kode Microservice tidak akan dibuat dari awal namun akan mengimplementasikan \textit{library} instrumentasi \textit{open source}
+%	\item Protokol komunikasi Microservice yang akan diuji terbatas pada protokol REST API, GraphQL, dan gRPC
+%	\item Kasus yang diuji terbatas pada komunikasi antar aplikasi Microservice yang berjalan di atas Kubernetes
+%	\item Kasus yang diuji tidak termasuk komunikasi antar aplikasi Microservice yang menggunakan protokol HTTPS
+%\end{enumerate}
+%
+%\section{Metodologi}
+%
+%Metodologi yang digunakan dalam pengerjaan Tugas Akhir ini yakni:
+%\begin{enumerate}
+%    \item Studi Literatur \\
+%          Pengerjaan tugas akhir diawali dengan mencari dan mempelajari referensi berupa buku, jurnal ilmiah dan solusi \textit{Open Source}  yang telah ada sebelumnya yang dapat membantu pengembangan kakas yang dibuat pada tugas akhir ini. Literatur yang dicari dan dipelajari berkaitan dengan topik tugas akhir yaitu mengenai \textit{Distributed Tracing},  protokol komunikasi Microservice, Kubernetes, serta hal-hal lain yang masih berkaitan dengan topik tugas akhir ini.
+%
+%    \item Analisis Masalah \\
+%          Pada tahap ini dilakukan analisis permasalahan yang berkaitan dengan topik yang diangkat pada tugas akhir ini. Diantaranya adalah menganalisis kebutuhan instrumentasi pada protokol Microservice, kebutuhan visualisasi dari hasil \textit{tracing}, dan kebutuhan infrastruktur \textit{deployment} pada Kubernetes.
+%
+%    \item Perancangan Solusi \\
+%          Pada tahap ini dilakukan perancangan solusi yang dapat menyelesaikan masalah-masalah yang telah dijelaskan pada bagian analisis masalah. Bagian perancangan ini juga menjelaskan arsitektur yang digunakan untuk membangun perangkat lunak berdasarkan spesifikasi dan metode yang digunakan.
+%
+%    \item Implementasi \\
+%          Pada tahap ini dilakukan pembangunan kakas sesuai dengan kebutuhan dan spesifikasi dari hasil analisis masalah serta rancangan solusi yang diajukan.
+%
+%    \item Pengujian dan Analisis Hasil \\
+%          Pada tahap ini dilakukan pengujian dengan menggunakan data set uji yang sesuai dengan batasan masalah ke dalam kakas yang diimplementasikan. Selanjutnya dilakukan analisis hasil pengujian dan penarikan kesimpulan.
+%
+%\end{enumerate}
+%
+%\section{Sistematika Pembahasan}
+%
+%Penulisan tugas akhir ini terdiri dari 5 bab, yaitu: BAB I Pendahuluan, BAB II Studi Literatur, BAB III Analisis dan Perancangan, BAB IV Rancangan, Implementasi, dan Pengujian, dan BAB V Penutup.
+%
+%Bab satu membahas mengenai latar belakang permasalahan, rumusan masalah, tujuan, batasan masalah, metodologi serta sistematika pembahasan yang digunakan. Bab ini juga menjelaskan secara umum isi dari tugas besar serta gambaran dasar dari pelaksanaan tugas akhir.
+%
+%Bab dua menjelaskan mengenai dasar teori yang digunakan di dalam menyelesaikan permasalahan yang diangkat. Teori yang digunakan berasal dari literatur dan referensi yang berhubungan dengan permasalahan yang diangkat seperti hal-hal yang berkaitan dengan \textit{Distributed Tracing}, protokol komunikasi Microservice, dan Kubernetes. Dasar teori ini menjadi dasar analisis dan rancangan solusi pada bab selanjutnya.
+%
+%Bab tiga memaparkan analisis permasalahan yang terkait dengan visualisasi hasil Distributed Tracing pada Microservice beserta rancangan solusi yang akan digunakan untuk mengatasi permasalahan tersebut. Selanjutnya solusi umum tersebut akan dibuat rancangan dan arsitekturnya agar dapat diimplementasikan.
+%
+%Bab empat memperlihatkan rancangan perangkat lunak yang dibuat serta hasil implementasinya. Pada akhir bab akan ditunjukkan hasil pengujian yang dilakukan kepada kakas yang dibuat dan pembahasan dari pengujian tersebut. Pengujian dilakukan untuk mengetahui keberhasilan kakas yang dibuat untuk menyelesaikan permasalahan yang di definisikan pada rumusan masalah.
+%
+%Bab lima berisikan kesimpulan terhadap hasil implementasi dan solusi yang dipaparkan untuk menyelesaikan permasalahan. Di samping itu, terdapat bagian saran yang memaparkan saran pengembangan dan perbaikan yang dapat dilakukan untuk memperkaya fitur dan menyelesaikan permasalahan yang lebih luas.
+%
+% \section{Jadwal Pelaksanaan}
+% \newsavebox\mybox
+% \begin{lrbox}{\mybox}
+%     \begin{ganttchart}[
+%     vgrid={*{6}{draw=none}, dotted},
+%     x unit=.05cm,
+%     y unit title=.6cm,
+%     y unit chart=.6cm,
+%     time slot format=isodate,
+%     time slot format/start date=2016-09-01]{2021-09-01}{2022-04-30}
+%     \ganttset{bar height=.6}
+%     \gantttitlecalendar{year, month} \\
+%     \ganttbar[bar/.append style={fill=blue}]{Tahap 1}{2021-09-01}{2021-11-30}\\
+%     \ganttbar[bar/.append style={fill=blue}]{Tahap 2}{2021-10-01}{2021-11-15}\\
+%     \ganttbar[bar/.append style={fill=blue}]{Tahap 3}{2021-11-01}{2021-12-15}\\
+%     \ganttbar[bar/.append style={fill=blue}]{Tahap 4}{2021-12-15}{2022-03-01}\\
+%     \ganttbar[bar/.append style={fill=blue}]{Tahap 5}{2022-02-01}{2022-04-30}
+%     \end{ganttchart}
+% \end{lrbox}
+%
+% Pengerjaan tugas akhir ini direncanakan mulai pada September 2021 sampai April 2022. Pelaksanaan tugas akhir ini dibagi menjadi 5 tahap yang dapat dipetakan kepada metodologi pengerjaan sebagai berikut,
+% \begin{enumerate}
+%     \item Tahap 1: Studi Literatur
+%     \item Tahap 2: Analisis Masalah
+%     \item Tahap 3: Perancangan Solusi
+%     \item Tahap 4: Implementasi
+%     \item Tahap 5: Pengujian dan Analisis Hasil
+% \end{enumerate}
+% Jadwal pelaksanaan tugas akhir berdasarkan metodologi pengerjaan tugas akhir dapat dilihat pada Tabel \ref{Gantt-Chart} dibawah ini.
+% \begin{table}[htb]
+% \centering
+% \caption{Gantt Chart jadwal pelaksanaan tugas akhir}
+% \label{Gantt-Chart}
+% \tikz{
+%   \node[inner sep=0pt,outer sep=0pt] (gantt)
+%   {\begin{tabular}{c}
+%     \toprule
+%     \resizebox{\textwidth}{!}{\usebox\mybox} \\
+%     \bottomrule
+%    \end{tabular}%
+%    };
+% }   
+% \end{table}
