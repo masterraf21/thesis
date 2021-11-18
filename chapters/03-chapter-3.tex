@@ -32,25 +32,21 @@ Kakas yang digunakan untuk membantu mencapai \textit{observability} penting untu
 Berbeda dengan tujuan untuk meningkatkan performa \textit{baseline}, tujuan lainnya yaitu untuk mengembalikan performa \textit{baseline} bukanlah suatu hal yang dapat begitu saja direncanakan. Regresi dalam performa dapat muncul tiba-tiba seperti terjadinya \textit{outtage} atau pemberhentian tiba-tiba dari sebuah \textit{cluster} sistem terdistribusi. Melihat sifat dari sistem terdistribusi, mencari penyebab utama dari sebuah \textit{outtage} bukanlah sebuah hal yang mudah terlebih jika ada ratusan bahkan ribuan \textit{node} yang terdapat pada \textit{cluster} dan masing-masing \textit{node} saling terhubung dengan yang lainnya. Jika hal semacam tersebut terjadi dalam lingkungan aplikasi \textit{production} maka dampaknya akan terasa langsung oleh pelanggan dan dalam jangka panjang dapat menimbulkan kerugian material. Oleh karena itu, penting untuk segera mengetahui sumber atau akar dari suatu kejadian yang menyebabkan regresi pada performa sistem.
 
 Dari solusi \textit{distributed tracing} \textit{open source} yang tersedia saat ini, Zipkin dan Jaeger adalah dua solusi \textit{tracing} yang sudah menyediakan komponen instrumentasi, \textit{deployment}, dan \textit{value delivery} dalam bentuk \textit{application programming interface} (API) dan \textit{user interface} secara \textit{default}. Untuk Tugas Akhir ini, penulis akan menganalisis dan membandingkan fitur dari \textit{user interface} berbasis Web yang dimiliki Zipkin dan Jaeger saja. Berikut adalah tabel perbandingan dari fitur \textit{user interface} web Zipkin dan Jaeger:
-
 \begin{small}
 	\begin{table}[]
 		\caption{Tabel perbandingan fitur \textit{user interface} Zipkin dan Jaeger}
 		\label{ui-comparison} 
-		\begin{table}[]
-			\centering
-			\begin{tabular}{@{}lll@{}}
-				\toprule
-				\multicolumn{1}{c}{Nama Fitur}    & \multicolumn{1}{c}{Jaeger} & Zipkin                \\ \midrule
-				\multicolumn{1}{|l|}{Service Map} & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{} \\ \midrule
-				\multicolumn{1}{|l|}{}            & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{} \\ \midrule
-				\multicolumn{1}{|l|}{}            & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{} \\ \midrule
-				\multicolumn{1}{|l|}{}            & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{} \\ \midrule
-				\multicolumn{1}{|l|}{}            & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{} \\ \midrule
-				\multicolumn{1}{|l|}{}            & \multicolumn{1}{l|}{}      & \multicolumn{1}{l|}{} \\ \midrule
-				&                            &                       \\ \bottomrule
-			\end{tabular}
-		\end{table}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			\multicolumn{1}{|c|}{Nama Fitur} & \multicolumn{1}{c|}{Jaeger} & Zipkin \\ \hline
+			Service Map                      &                             &        \\ \hline
+			&                             &        \\ \hline
+			&                             &        \\ \hline
+			&                             &        \\ \hline
+			&                             &        \\ \hline
+			&                             &        \\ \hline
+			&                             &        \\ \hline
+		\end{tabular}
 	\end{table}
 \end{small}
 
