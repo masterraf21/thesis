@@ -31,24 +31,12 @@ Kakas yang digunakan untuk membantu mencapai \textit{observability} penting untu
 
 Berbeda dengan tujuan untuk meningkatkan performa \textit{baseline}, tujuan lainnya yaitu untuk mengembalikan performa \textit{baseline} bukanlah suatu hal yang dapat begitu saja direncanakan. Regresi dalam performa dapat muncul tiba-tiba seperti terjadinya \textit{outtage} atau pemberhentian tiba-tiba dari sebuah \textit{cluster} sistem terdistribusi. Melihat sifat dari sistem terdistribusi, mencari penyebab utama dari sebuah \textit{outtage} bukanlah sebuah hal yang mudah terlebih jika ada ratusan bahkan ribuan \textit{node} yang terdapat pada \textit{cluster} dan masing-masing \textit{node} saling terhubung dengan yang lainnya. Jika hal semacam tersebut terjadi dalam lingkungan aplikasi \textit{production} maka dampaknya akan terasa langsung oleh pelanggan dan dalam jangka panjang dapat menimbulkan kerugian material. Oleh karena itu, penting untuk segera mengetahui sumber atau akar dari suatu kejadian yang menyebabkan regresi pada performa sistem.
 
-Dari solusi \textit{distributed tracing} bersifat \textit{open source} yang tersedia saat ini, Zipkin dan Jaeger adalah dua solusi \textit{tracing} yang sudah menyediakan komponen instrumentasi, \textit{deployment}, dan \textit{value delivery} dalam bentuk \textit{application programming interface} (API) dan \textit{user interface} secara \textit{default}. Untuk Tugas Akhir ini, penulis akan menganalisis dan membandingkan fitur dari \textit{user interface} berbasis Web yang dimiliki Zipkin dan Jaeger saja. Beberapa fitur yang ada pada \textit{user interface} Zipkin antara lain :
-\begin{enumerate}
-	\item a 
-	\item b
-\end{enumerate}
-Sementara itu, fitur yang ada pada \textit{user interface} Jaeger antara lain:
-\begin{enumerate}
-	\item a
-	\item b
-\end{enumerate}
-
-
-Berikut adalah tabel perbandingan dari fitur \textit{user interface} web Zipkin dan Jaeger.
+Dari solusi \textit{distributed tracing} bersifat \textit{open source} yang tersedia saat ini, Zipkin dan Jaeger adalah dua solusi \textit{tracing} yang sudah menyediakan komponen instrumentasi, \textit{deployment}, dan \textit{value delivery} dalam bentuk \textit{application programming interface} (API) dan \textit{user interface} secara \textit{default}. Berikut adalah tabel perbandingan dari fitur \textit{user interface} web Zipkin dan Jaeger.
 
 
 \begin{small}
-	\begin{longtable}{ | p{4cm} | p{1.5cm} | p{1.5cm} | }
-		\caption{Perbandingan fitur \textit{user interface} Zipkin dan Jaeger}
+	\begin{longtable}{ | p{4cm} | p{6cm} | p{6cm} | }
+		\caption{Perbandingan fiturZipkin dan Jaeger}
 		\label{ui-comparison}                                                                                                                \\ \hline
 		\centering\bfseries{Nama Fitur} & \centering\bfseries{Zipkin} & \centering\bfseries{Jaeger} \tabularnewline \hline
 		\endfirsthead
@@ -64,7 +52,7 @@ Dari perbandingan fitur di atas, .
 Dari pemaparan mengenai kedua tujuan dari \textit{observability} di atas, penulis menyimpulkan bahwa ada dua hal yang dapat dilakukan oleh \textit{distributed tracing} untuk mencapai kedua tujuan tersebut:
 \begin{enumerate}
 	\item Membuat Service Map untuk mencapai tujuan pertama yaitu meningkatkan performa baseline
-	\item Membuat kakas untuk melakukan Root Cause Analysis (RCA) untuk mencapai tujuan kedua yaitu mengembalikan performa baseline ketika terjadi regresi pada sistem
+	\item Membuat kakas untuk melakukaRoot Cause Analysis (RCA) untuk mencapai tujuan kedua yaitu mengembalikan performa baseline ketika terjadi regresi pada sistem
 \end{enumerate}
 
 Service Map merupakan visualisasi dari sebuah sistem Microservice yang melakukan dekomposisi pada semua komponen \textit{service} dan menggambarkan dependensi yang terlihat antar \textit{service} tersebut secara \textit{real-time}, sehingga \textit{developer} dapat mengidentifikasi \textit{bottleneck} yang ada dan memahami bagaimana data mengalir dalam aristektur \citep{datadog-svcmap}. Untuk dapat membantu meningkatkan performa \textit{baseline}, sebuah Service Map harus dapat menyediakan informasi mengenai hubungan interdependensi antara \textit{service}, jumlah \textit{request} yang diterima oleh service per satuan waktu, dan ukuran performa pada \textit{service} tersebut dalam merespon \textit{service} lainnya. Ukuran performa yang dapat dijadikan \textit{baseline} antara lain adalah \textit{latency}, \textit{failure rate}, \textit{traffic rate}, dan saturasi, namun biasanya \textit{developer} hanya berfokus pada pengukuran \textit{latency} dan \textit{failure rate} \citep{parker2020distributed}.
