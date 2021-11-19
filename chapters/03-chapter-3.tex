@@ -57,9 +57,9 @@ Dari pemaparan mengenai kedua tujuan dari \textit{observability} di atas dan ber
 
 Service Map merupakan visualisasi dari sebuah sistem Microservice yang melakukan dekomposisi pada semua komponen \textit{service} dan menggambarkan dependensi yang terlihat antar \textit{service} tersebut secara \textit{real-time}, sehingga \textit{developer} dapat mengidentifikasi \textit{bottleneck} yang ada dan memahami bagaimana data mengalir dalam aristektur \citep{datadog-svcmap}. Untuk dapat membantu meningkatkan performa \textit{baseline}, sebuah Service Map harus dapat menyediakan informasi mengenai hubungan interdependensi antara \textit{service}, jumlah \textit{request} yang diterima oleh service per satuan waktu, dan ukuran performa pada \textit{service} tersebut dalam merespon \textit{service} lainnya. Ukuran performa yang dapat dijadikan \textit{baseline} antara lain adalah \textit{latency}, \textit{failure rate}, \textit{traffic rate}, dan saturasi, namun biasanya \textit{developer} hanya berfokus pada pengukuran \textit{latency} dan \textit{failure rate} \citep{parker2020distributed}.
 
-Selain digunakan untuk mendapatkan gambaran mengenai komponen yang ada pada suatu \textit{cluster} sistem terdistribusi, salah satu teknik yang dapat digunakan oleh Service Map untuk meningkatkan performa \textit{baseline}  disebut \textit{Correlation Analysis}.
+Selain digunakan untuk mendapatkan gambaran mengenai komponen yang ada pada suatu \textit{cluster} sistem terdistribusi, salah satu pendekatan yang dapat digunakan oleh Service Map untuk meningkatkan performa \textit{baseline}  disebut \textit{Correlation Analysis}.
 
-Di sisi lain, kakas untuk melakukan Root Cause Analysis dapat digunakan untuk memberikan petunjuk kepada \textit{developer} mengenai komponen mana dari Microservice yang mengalami regresi sehingga \textit{developer} dapat mengatasi permasalahan tersebut dengan segera. 
+Di sisi lain, kakas untuk melakukan Root Cause Analysis dapat digunakan untuk memberikan petunjuk kepada \textit{developer} mengenai komponen mana dari Microservice yang mengalami regresi sehingga \textit{developer} dapat mengatasi permasalahan tersebut dengan segera. Salah satu pendekatan yang bisa dilakukan untuk mengembalikan performa adalah dengan pendekatan 
 
 
 
