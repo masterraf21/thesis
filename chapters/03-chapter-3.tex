@@ -61,6 +61,26 @@ Selain digunakan untuk mendapatkan gambaran mengenai komponen yang ada pada suat
 
 Di sisi lain, kakas untuk melakukan Root Cause Analysis dapat digunakan untuk memberikan petunjuk kepada \textit{developer} mengenai komponen mana dari Microservice yang mengalami regresi sehingga \textit{developer} dapat mengatasi permasalahan tersebut dengan segera. Salah satu pendekatan yang bisa dilakukan untuk mengembalikan performa adalah dengan pendekatan \textit{Aggregate and Correlation Root Cause Analysis}. Tidak jauh berbeda dengan pendekatan yang telah terlebih dahulu disebutkan pada Service Map, pendekatan ini menggunakan agregasi dari beberapa \textit{trace} untuk mendapatkan koefisien korelasi mengenai keadaan performa sebuah \textit{service}. 
 
+Adapun dari pemaparan di atas mengenai fitur analisis \textit{distributed tracing}, penulis menyimpulkan kebutuhan fungsional apa saja yang diperlukan pada pembuatan kakas visualisasi \textit{distributed tracing}:
+
+\begin{small}
+	\begin{longtable}{ | p{2cm} | p{10cm} | }
+		\caption{Kasus Penggunaan oleh Pengguna}
+		\label{KebutuhanPengguna}                                                                                                                     \\ \hline
+		\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+		\endfirsthead
+		\hline
+		\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+		\endhead
+		UC-01                   & Pengguna dapat menentukan basis data tujuan dengan konfigurasi basis data yang diinginkan.                          \\ \hline
+		UC-02                   & Pengguna dapat menyimpan data yang dikumpulkan ke dalam basis data pada saat dibutuhkan.                            \\ \hline
+		UC-03                   & Pengguna dapat mendefinisikan \textit{metadata table} yang ingin disimpan secara manual maupun otomatis oleh kakas. \\ \hline
+		UC-04                   & Pengguna dapat mengubah metadata pada \textit{metadata table} yang ingin disimpan.                                  \\ \hline
+		UC-05                   & Pengguna dapat mendefinisikan aturan validasi data.                                                                 \\ \hline
+		UC-06                   & Pengguna dapat mengunggah berkas \textit{spreadsheet} ke dalam aplikasi.                                            \\ \hline
+	\end{longtable}
+\end{small}
+
 
 
 
