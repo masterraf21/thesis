@@ -13,6 +13,11 @@ Dari banyaknya keuntungan yang ditawarkan oleh arsitektur Microservice, timbul s
 
 Ada tiga pilar untuk mencapai \textit{observability} pada sebuah sistem terdistribusi, yaitu melalui \textit{log}, \textit{metric}, dan \textit{trace} \citep{sridharan2018distributed}. \textit{Log} atau \textit{event log} adalah suatu catatan yang bersifat \textit{immutable} dari \textit{event} yang terjadi sepanjang waktu. Sebuah \textit{event log} pada umumnya terdiri dari informasi mengenai \textit{timestamp} dan \textit{payload} yang berisikan konteks. \textit{Metric} dan \textit{trace} merupakan abstraksi yang dibuat di atas \textit{log} yang melakukan pra-pemrosesan dan melakukan dekode informasi berdasarkan dua sumbu, yang satu bersifat \textit{request} sentris yaitu \textit{trace}, dan yang lainnya bersifat sistem sentris yaitu \textit{metric}.
 
+Pada akhirnya \textit{observability} hanya memiliki dua tujuan utama menurut \citep{parker2020distributed}, yaitu:
+\begin{enumerate}
+	\item Meningkatkan performa \textit{baseline} pada sistem
+	\item Mengembalikan performa \textit{baseline} setelah terjadi regresi pada sistem
+\end{enumerate}
 
 %Sudah terdapat beberapa solusi \textit{tracing} yang ada sepanjang beberapa tahun ke belakang, dimulai dengan dipublikasikannya \textit{paper} dari Google yang mengajukan solusi \textit{tracing} untuk sistem terdistribusi bernama Dapper \citep{dapper-paper} hingga yang terbaru solusi \textit{tracing} berbasis transparan yang bernama Inkle \citep{tracing-abram}. Solusi \textit{tracing} yang diajukan Inkle berfokus untuk membuat kakas instrumentasi \textit{tracing} yang transparan, artinya proses instrumentasi tidak mengubah sama sekali kode dari sebuah service, melainkan melakukan instrumentasi data dari service dengan melakukan \textit{intercept} \textit{traffic} jaringan dari service tersebut. Metode \textit{tracing} seperti itu disebut juga dengan \textit{passive tracing}. Hasil dari metode \textit{tracing} seperti yang dilakukan Inkle adalah \textit{tracing} dapat tetap dilakukan tanpa adanya intervensi sama sekali pada level kode di dalam service, namun kekurangannya adalah akurasi hasil \textit{tracing} yang rendah dan juga hasil \textit{tracing} antar service tidak dapat menampilkan kausalitas atau hubungan sebab akibat dari \textit{request} yang dilakukan.
 %
