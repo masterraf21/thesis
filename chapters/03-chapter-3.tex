@@ -6,7 +6,7 @@
 
 \section{Analisis Masalah}
 
-\section{Alternatif Solusi}
+\section{Analisis Alternatif Solusi}
 
 \section{Rancangan Solusi}
 
@@ -15,6 +15,50 @@
 \subsection{Aristektur Solusi}
 
 \section{Rancangan Pengukuran \textit{Overhead}}
+
+ \section{Jadwal Pelaksanaan}
+ \newsavebox\mybox
+ \begin{lrbox}{\mybox}
+	     \begin{ganttchart}[
+		     vgrid={*{6}{draw=none}, dotted},
+		     x unit=.05cm,
+		     y unit title=.6cm,
+		     y unit chart=.6cm,
+		     time slot format=isodate,
+		     time slot format/start date=2016-09-01]{2021-09-01}{2022-04-30}
+		     \ganttset{bar height=.6}
+		     \gantttitlecalendar{year, month} \\
+		     \ganttbar[bar/.append style={fill=blue}]{Studi Literatur}{2021-09-01}{2021-11-30}\\
+		     \ganttbar[bar/.append style={fill=blue}]{Analisis Masalah}{2021-10-01}{2021-11-15}\\
+		     \ganttbar[bar/.append style={fill=blue}]{Perancangan Solusi}{2021-11-01}{2021-12-15}\\
+		     \ganttbar[bar/.append style={fill=blue}]{Implementasi}{2021-12-15}{2022-03-01}\\
+		     \ganttbar[bar/.append style={fill=blue}]{Pengujian dan Analisis Hasil}{2022-02-01}{2022-04-30}
+		     \end{ganttchart}
+	 \end{lrbox}
+
+ Pengerjaan tugas akhir ini direncanakan mulai pada September 2021 sampai April 2022. Pelaksanaan tugas akhir ini dibagi menjadi 5 tahap yang dapat dipetakan kepada metodologi pengerjaan sebagai berikut,
+ \begin{enumerate}
+	     \item Tahap 1: Studi Literatur
+	     \item Tahap 2: Analisis Masalah
+	     \item Tahap 3: Perancangan Solusi
+	     \item Tahap 4: Implementasi
+	     \item Tahap 5: Pengujian dan Analisis Hasil
+	 \end{enumerate}
+ Jadwal pelaksanaan tugas akhir berdasarkan metodologi pengerjaan tugas akhir dapat dilihat pada Tabel \ref{Gantt-Chart} dibawah ini.
+ \begin{table}[htb]
+	 \centering
+	 \caption{Gantt Chart jadwal pelaksanaan tugas akhir}
+	 \label{Gantt-Chart}
+	 \tikz{
+		   \node[inner sep=0pt,outer sep=0pt] (gantt)
+		   {\begin{tabular}{c}
+				     \toprule
+				     \resizebox{\textwidth}{!}{\usebox\mybox} \\
+				     \bottomrule
+				    \end{tabular}%
+			    };
+		 }   
+	 \end{table}
 
 % Pada masa sebelum adopsi arsitektur Microservice dan kebanyakan dari aplikasi masih menggunakan arsitektur Monolith, proses seperti \textit{debugging} adalah hal yang sederhana sebab jika terdapat suatu \textit{error} akan mudah untuk ditelusuri dari mana asal \textit{error} tersebut sebab hanya ada satu aplikasi yang digunakan. Hal tersebut tidak berlaku jika aplikasi menggunakan model Sistem Terdistribusi, salah satu contohnya adalah Microservice. Sifat dari Microservice yang melakukan \textit{decoupling} aplikasi menjadi bagian yang lebih kecil membuat proses \textit{debugging} menjadi tidak mudah sebab untuk mencari penyebab \textit{error} aplikasi yang terdistribusi, kita harus mengetahui terlebih dahulu sumber dari \textit{error} tersebut. Kompleksitas akan bertambah dalam proses debugging jika ternyata ditemukan bahwa sautu \textit{error} pada sebuah \textit{service} bukanlah akar atau penyebab utama dari \textit{error} tersebut melainkan suatu \textit{service} lainnya. Kompleksitas akan bertambah jika metode \textit{debugging} yang digunakan mengharuskan \textit{developer} yang menangani \textit{error} tersebut harus menelusuri satu per satu \textit{service} yang terdampak sampai menemukan akar dari masalahnya. Dari masalah tersebutlah timbul suatu kebutuhan untuk mendapatkan gambaran mengenai \textit{state} sebuah Sistem Terdistribusi ataupun yang disebut juga dengan \textit{observability}.
 % 
@@ -106,15 +150,4 @@
 %Isu visualisasi 
 %Overhead
 
-
-%\section{Analisis Alternatif Solusi}
-%Hewo
-%
-%\section{Rancangan Solusi}
-%
-%Hewoooo
-%
-%\section{Rancangan Perhitugan \textit{Overhead}}
-
-%Overhead disini
 
