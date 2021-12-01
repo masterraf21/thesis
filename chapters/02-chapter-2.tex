@@ -52,31 +52,7 @@ Adapun komponen-komponen yang membangun sistem Distributed Tracing adalah sebaga
 %\label{bab2-dtracing-causality}
 
 \section{gRPC}
-gRPC adalah sebuah \textit{framework} Remote Procedure Call (RPC) Open Source berperforma tinggi yang dapat dijalankan di berbagai environment \citep{grpc}.
-gRPC dapat secara efisien menghubungkan \textit{service} yang berada di dalam dan antara data center dengan berbagai dukungan untuk melakukan load balancing, tracing, pengecekan kesehatan, dan autentikasi.
-gRPC juga dapat diaplikasikan pada server yang terdistribusi untuk menghubungkan berbagai perangkat mulai dari aplikasi mobile dan browser ke layanan backend.
-Seperti RPC pada umumnya, gRPC memungkinkan \textit{service} yang terpisah untuk mengakses fungsi layaknya objek lokal. Ada beberapa skenario penggunaan utama dari gRPC:
-\begin{enumerate}
-	\item Menghubungkan service-service yang bersifat poliglot seperti dalam arsitektur Microservice.
-	\item Menghubungkan perangkat mobile, browser client ke service backend.
-	\item Menghasilkan library bagi sisi client yang efisien.
-\end{enumerate}
 
-Secara default, gRPC menggunakan Protocol Buffers sebagai Interface Definition Language (IDL) dan juga sebagai format pertukaran pesannya (walaupun juga bisa menggunakan JSON sebagai format pertukaran data).
-Langkah pertama ketika menggunakan Protocol Buffers adalah dengan mendefinisikan struktur dari data yang ingin diserialisasi dalam sebuah file proto, yaitu sebuah file teks biasa yang memiliki ekstensi “.proto”.
-Data dari Protocol Buffers distrukturkan sebagai messages yang masing-masing memiliki catatan mengenai data yang berbentuk pasangan name-value yang disebut dengan fields.
-Berikut adalah contoh sederhana dari file proto:
-\lstinputlisting[captionpos=b, caption={Contoh File Proto}]{codes/ch2/hello.proto}
-
-Ketika struktur data sudah dibuat, kode Proto tersebut perlu di compile menggunakan kakas bernama protoc yang akan membuat akses data dalam bahsa pemrograman yang dipilih.
-gRPC menggunakan protoc untuk menghasilkan kode dari file Proto berupa: kode gRPC bagi client dan server, dan juga kode Protocol Buffer biasa yang digunakan untuk melakukan populasi, serialisasi, dan kode untuk mendapatkan tipe pesan.
-
-Adapun penggunaan gRPC pada sistem client dan server adalah sebagai berikut:
-\begin{enumerate}
-	\item Mendefinisikan service beserta method apa saja yang bisa dipanggil beserta parameter dan juga return type bagi masing-masing method.
-	\item  Server akan mengimplementasi interface hasil kompilasi protoc yang berasal dari method-method yang didefinisikan pada file proto.
-	\item Client akan memanggil method yang sudah didefinisikan pada server.
-\end{enumerate}
 
 %\section{Protokol Komunikasi Microservice}
 %Pada subbab ini akan dijelaskan beberapa protokol komunikasi yang bisa digunakan dalam arsitektur Microsevice.
