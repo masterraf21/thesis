@@ -32,7 +32,7 @@ Berbeda dengan tujuan untuk meningkatkan kinerja \textit{baseline}, tujuan lainn
  
 Di sisi lain, muncul suatu teknologi berupa protokol komunikasi antar Microservice bernaama gRPC \citep{grpc} yang merupakan hasil inkubasi dari Cloud Native Computing Foundation (CNCF) yang menawarkan keunggulan kinerja dibandingkan protokol komunikasi REST. Mengingat gRPC merupakan suatu protokol yang baru dan adopsi dalam lingkungan industri maupun akademisi belum seluas penggunaan protokol seperti REST, sehingga belum banyak eksplorasi mengenai \textit{debugging} pada protokol ini.
   
-Pada tugas akhir ini, dilakukan pengembangan kakas yang akan berfokus untuk melakukan \textit{Performance Regression Detection} (PRD) menggunakan hasil \textit{trace} dari \textit{distributed tracing} yang akan dapat membantu para \textit{developer} untuk mengembalikan kinerja Microservice setelah terjadinya regresi pada sistem sesuai dengan tujuan kedua dari \textit{observability}. 
+Pada tugas akhir ini, dilakukan pengembangan kakas yang akan berfokus untuk melakukan \textit{Performance Regression Analysis} (PRD) menggunakan hasil \textit{trace} dari \textit{distributed tracing} yang akan dapat membantu para \textit{developer} untuk mengembalikan kinerja Microservice setelah terjadinya regresi pada sistem sesuai dengan tujuan kedua dari \textit{observability}. 
 
 %Ide dasar dari \textit{tracing}  adalah dengan mengidentifikasi sebuah titik spesifik, dapat jadi sebuah pemanggilan \textit{remote procedure call} (RPC) dalam sebuah aplikasi, \textit{library}, ataupun \textit{middleware} dalam jalur sebuah \textit{request} yang merepresentasikan kedua hal berikut:
 %\begin{enumerate}
@@ -48,7 +48,7 @@ Pada tugas akhir ini, dilakukan pengembangan kakas yang akan berfokus untuk mela
 
 \section{Rumusan Masalah}\label{RumusanMasalah}
 
-Berdasarkan latar belakang yang telah dijelaskan pada Subbab \ref{ch1-latbel} terdapat beberapa permasalahan terkait \textit{Performance Regression Detection} pada Microservice. Rumusan masalah yang akan diselesaikan pada Tugas Akhir ini adalah sebagai berikut:
+Berdasarkan latar belakang yang telah dijelaskan pada Subbab \ref{ch1-latbel} terdapat beberapa permasalahan terkait \textit{Performance Regression Analysis} pada Microservice. Rumusan masalah yang akan diselesaikan pada Tugas Akhir ini adalah sebagai berikut:
 \begin{enumerate}
 %	Tambahin yg algo itu gan
 	\item Bagaimana
@@ -85,7 +85,7 @@ Metodologi yang digunakan dalam pengerjaan Tugas Akhir ini yakni:
           Pengerjaan tugas akhir diawali dengan mencari dan mempelajari referensi berupa buku, jurnal ilmiah dan solusi \textit{Open Source}  yang telah ada sebelumnya yang dapat membantu pengembangan kakas yang dibuat pada tugas akhir ini. Literatur yang dicari dan dipelajari berkaitan dengan topik tugas akhir yaitu mengenai \textit{Distributed Tracing},  protokol komunikasi Microservice, Kubernetes, serta hal-hal lain yang masih berkaitan dengan topik tugas akhir ini.
 
     \item Analisis Masalah \\
-          Pada tahap ini dilakukan analisis permasalahan yang berkaitan dengan topik yang diangkat pada tugas akhir ini. Diantaranya adalah menganalisis kebutuhan instrumentasi pada protokol Microservice, kebutuhan untuk melakukan \textit{Performance Regression Detection}, dan kebutuhan infrastruktur \textit{deployment} pada Kubernetes.
+          Pada tahap ini dilakukan analisis permasalahan yang berkaitan dengan topik yang diangkat pada tugas akhir ini. Diantaranya adalah menganalisis kebutuhan instrumentasi pada protokol Microservice, kebutuhan untuk melakukan \textit{Performance Regression Analysis}, dan kebutuhan infrastruktur \textit{deployment} pada Kubernetes.
 
     \item Perancangan Solusi \\
           Pada tahap ini dilakukan perancangan solusi yang dapat menyelesaikan masalah-masalah yang telah dijelaskan pada bagian analisis masalah. Bagian perancangan ini juga menjelaskan arsitektur yang digunakan untuk membangun perangkat lunak berdasarkan spesifikasi dan metode yang digunakan.
@@ -106,7 +106,7 @@ Bab satu membahas mengenai latar belakang permasalahan, rumusan masalah, tujuan,
 
 Bab dua menjelaskan mengenai dasar teori yang digunakan di dalam menyelesaikan permasalahan yang diangkat. Teori yang digunakan berasal dari literatur dan referensi yang berhubungan dengan permasalahan yang diangkat seperti hal-hal yang berkaitan dengan \textit{distributed tracing}, protokol komunikasi Microservice, dan Kubernetes. Dasar teori ini menjadi dasar analisis dan rancangan solusi pada bab selanjutnya.
 
-Bab tiga memaparkan analisis permasalahan yang terkait \textit{Performance Regression Detection} menggunakan \textit{distributed tracing} pada Microservice, rancangan solusi yang akan digunakan untuk mengatasi permasalahan tersebut, beserta rancangan untuk mengukur \textit{overhead} implikasi dari pemasangan solusi yang diterapkan pada aplikasi maupun infrastruktur. Selanjutnya solusi umum tersebut akan dibuat rancangan dan arsitekturnya agar dapat diimplementasikan.
+Bab tiga memaparkan analisis permasalahan yang terkait \textit{Performance Regression Analysis} menggunakan \textit{distributed tracing} pada Microservice, rancangan solusi yang akan digunakan untuk mengatasi permasalahan tersebut, beserta rancangan untuk mengukur \textit{overhead} implikasi dari pemasangan solusi yang diterapkan pada aplikasi maupun infrastruktur. Selanjutnya solusi umum tersebut akan dibuat rancangan dan arsitekturnya agar dapat diimplementasikan.
 
 Bab empat memperlihatkan rancangan perangkat lunak yang dibuat serta hasil implementasinya. Pada akhir bab akan ditunjukkan hasil pengujian yang dilakukan kepada kakas yang dibuat dan pembahasan dari pengujian tersebut. Pengujian dilakukan untuk mengetahui keberhasilan kakas yang dibuat untuk menyelesaikan permasalahan yang di definisikan pada rumusan masalah.
 
