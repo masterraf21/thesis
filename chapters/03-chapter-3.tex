@@ -16,6 +16,12 @@ Terdapat dua pendekatan yang dapat dilakukan untuk mengatasi permasalahan regres
 
 Mengingat sifat dari Microservice yang terdistribusi, akan menjadi sulit bagi \textit{developer} jika pendeteksian regresi dilakukan dengan pendekatan individual pada masing-masing service yang ada terlebih ketika jumlah service yang ada sudah sangat banyak dan hubungan interdependensi antar service menjadi rumit. Oleh karena itu, untuk mengatasi regresi kinerja pada aplikasi berbasis Microservice, dibutuhkanlah sebuah pendekatan yang tidak mengharuskan \textit{developer} untuk melakukan pencarian sumber masalah pada masing-masing service.
 
+Secara umum, alur kerja yang harus dilakukan oleh sistem \textit{Performance Regression Analysis} adalah sebagai berikut:
+\begin{enumerate}
+	\item Sistem harus dapat mendeteksi ketika terjadi regresi pada kinerja keseluruhan aplikasi Microservice
+	\item 
+\end{enumerate}
+
 Secara umum, langkah-langkah berikut dapat dilakukan untuk menganalisis penyebab regresi kinerja pada Microservice \citep{parker2020distributed}, yaitu:
 \begin{enumerate}
 	\item Tentukan \textit{baseline} atau pengukuran dasar dari beberapa kinerja service
