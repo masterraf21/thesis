@@ -15,7 +15,7 @@ thesis:	thesis.tex
 
 rename:
 	cp milestone2.pdf output/'Draf Pendahuluan Tugas Akhir - 18218027.pdf'
-
+	cp milestone3.pdf output/'Draf Analisis Masalah Tugas Akhir - 18218027.pdf'
 clean:
 	rm -f *.aux *.log *.idx *.toc *.bbl *.blg *.synctex.gz
 	rm -f *.lof *.lol *.lot *.out *.fls *.fdb_latexmk
