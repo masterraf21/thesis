@@ -16,9 +16,9 @@ Terdapat dua pendekatan yang dapat dilakukan untuk mengatasi permasalahan regres
 
 Mengingat sifat dari Microservice yang terdistribusi, akan menjadi sulit bagi \textit{developer} jika pendeteksian regresi dilakukan dengan pendekatan individual pada masing-masing service yang ada terlebih ketika jumlah service yang ada sudah sangat banyak dan hubungan interdependensi antar service menjadi rumit. Oleh karena itu, untuk mengatasi regresi kinerja pada aplikasi berbasis Microservice, dibutuhkanlah sebuah pendekatan yang tidak mengharuskan \textit{developer} untuk melakukan pencarian sumber masalah pada masing-masing service secara individu.
 
-Salah satu teknologi yang dapat menyediakan \textit{developer} kakas untuk melakukan \textit{monitoring} sebuah sistem terdistribusi secara keseluruhan adalah \textit{distributed tracing}. Dengan memanfaat
+%Salah satu teknologi yang dapat menyediakan \textit{developer} kakas untuk melakukan \textit{monitoring} sebuah sistem terdistribusi secara keseluruhan adalah \textit{distributed tracing}. Dengan memanfaat
 
-Secara umum, alur kerja yang harus dilakukan oleh sistem \textit{Performance Regression Analysis} adalah sebagai berikut:
+Oleh karena itu, dapat dirumuskan alur kerja yang harus dilakukan oleh sistem \textit{Performance Regression Analysis} adalah sebagai berikut:
 \begin{enumerate}
 	\item Sistem harus dapat mendeteksi ketika terjadi regresi pada kinerja keseluruhan aplikasi Microservice
 	\item Sistem harus dapat menentukan sumber atau akar permasalahan dari regresi
