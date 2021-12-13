@@ -270,7 +270,7 @@ Pada Subbab ini, akan dibahas beberapa pendekatan dan algoritme yang dapat digun
 \subsubsection{Analisiis hasil \textit{Trace} individual}
 Melihat hasil \textit{trace} individu adalah salah satu cara paling sederhana dalam memanfaatkan \textit{distributed tracing} sebagai bagian dari respon terhadap insiden dan analisis akar masalah \citep{parker2020distributed}. Hasil \textit{trace} individual dapat berguna terutama ketika kesalahan mudah diidentifikasi, seperti contohnya ada perubahan yang mengakibatkan kerusakan pada sebuah \textit{service}. Hal tersebut berarti semua \textit{request}, atau sebagian besar, gagal dalam eksekusinya, sehingga mudah untuk mengidentifikasi satu \textit{request} tersebut.
 
-
+Risiko dari hanya menggunakan hasil \textit{trace} individual adalah karena perubahan dalam \textit{service} berjalan dengan cepat, akan sangat mungkin untuk menggeneralisir sebuah hasil \textit{trace} individual dan menyimpulkan penyebab yang salah dari sebuah insiden. 
 
 
 \subsubsection{Analisis sampel \textit{trace} bias}
