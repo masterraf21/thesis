@@ -323,7 +323,7 @@ Setelah dimiliki dua kelompok sampel (misal sampel A dan B) dan juga sekelompok 
 
 Metrik-metrik seperti \textit{latency}, \textit{error}, \textit{tag}, dan metadata lainnya dapat menjadi fitur yang berharga dari \textit{trace} yang dapat digunakan untuk memahami perubahan apa yang telah terjadi. Salah satu keunggulan dari penggunaan \textit{distributed tracing} adalah dapat menempatkan perubahan kinerja dalam konteks apa yang terjadi pada alur keberjalanan aplikasi. Ketika menentukan atribut apa dari \textit{trace} mana saja yang akan digunakan sebagai bagian dari analisis korelasi, harus diingat bahwa atribut tersebut haruslah berasal dari setiap \textit{span} pada \textit{trace} yang ada, bukan hanya yang terkait dengan sebuah \textit{service} tertentu.
 
-Sebagai contoh, andaikan telah terjadi peningkatan \textit{latency} pada \textit{service} yang ada dan sebagai tindakannya kita membandingkan sampel \textit{trace} yang terjadi pada lima menit terakhir dengan sampel \textit{trace} yang terjadi pada satu jam yang lalu. 
+Sebagai contoh, andaikan telah terjadi peningkatan \textit{latency} pada \textit{service} yang ada dan sebagai tindakannya kita membandingkan sampel \textit{trace} yang terjadi pada lima menit terakhir dengan sampel \textit{trace} yang terjadi pada satu jam yang lalu. Tabel \ref{corr-tab-1} menunjukkan 
 
 \begin{small}
 	\begin{longtable}{ | p{10cm} | p{2cm} | }
