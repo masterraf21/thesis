@@ -292,18 +292,18 @@ Risiko dari hanya menggunakan hasil \textit{trace} individual adalah karena peru
 
 Salah satu cara untuk mengetahui kondisi metrik dari suatu sistem adalah dengan menggunakan histogram. Histogram sendiri adalah sebuah grafik yang menunjukkan perbandingan antara frekuensi kemunculan pada sumbu y dan metrik pada sumbu x. Artinya dengan histogram dapat ditunjukkan kondisi metrik dalam suatu sistem terdistribusi lewat tangkapan \textit{trace} secara keseluruhan. Salah satu metrik yang umum digunakan adalah latensi.
 
-\newpage
-\vfill
+%\newpage
+%\vfill
 
-\begin{figure}[htb]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=1\textwidth]{resources/ch3/histogram-og.png}
 	\caption{Contoh Histogram \citep{parker2020distributed}}
 	\label{histogram}
 \end{figure}
 
-\vfill
-\clearpage
+%\vfill
+%\clearpage
 
 
 Ada beberapa teknik statistik yang dapat digunakan untuk mengetahui apakah dua buah sampel diambil dari sebuah distribusi yang sama. Salah satu teknik yang dapat digunakan adalah statistik Kolmogorov-Smirnov (K-S). Statistik K-S menghitung perbedaan dua buah distribusi sebagai sebuah bilangan skalar \citep{kolmogorov_1951}. Untuk mendapatkan distribusi tersebut, data yang berasal dari histogram akan terlebih dahulu diubah sebagai fungsi dengan fungsi distribusi kumulatif atau \textit{cumulative distribution function} (CDF). Ada dua perbedaan utama antara histogram dengan CDF. Pertama seperti namanya, CDF akan mengakumulasikan perhitungan, sehingga setiap titik pada CDF merupakan penjumlahan dari semua titik yang ada pada histogram di sebelah kiri. Kedua, sumbu y pada CDF dinormalisasi sehingga nilainya akan berkisar antara nol hingga satu. 
