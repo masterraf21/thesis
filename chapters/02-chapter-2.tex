@@ -323,7 +323,23 @@ Setelah dimiliki dua kelompok sampel (misal sampel A dan B) dan juga sekelompok 
 
 Metrik-metrik seperti \textit{latency}, \textit{error}, \textit{tag}, dan metadata lainnya dapat menjadi fitur yang berharga dari \textit{trace} yang dapat digunakan untuk memahami perubahan apa yang telah terjadi. Salah satu keunggulan dari penggunaan \textit{distributed tracing} adalah dapat menempatkan perubahan kinerja dalam konteks apa yang terjadi pada alur keberjalanan aplikasi. Ketika menentukan atribut apa dari \textit{trace} mana saja yang akan digunakan sebagai bagian dari analisis korelasi, harus diingat bahwa atribut tersebut haruslah berasal dari setiap \textit{span} pada \textit{trace} yang ada, bukan hanya yang terkait dengan sebuah \textit{service} tertentu.
 
-Sebagai contoh, andaikan telah terjadi peningkatan \textit{latency} pada \textit{}
+Sebagai contoh, andaikan telah terjadi peningkatan \textit{latency} pada \textit{service} yang ada dan sebagai tindakannya kita membandingkan sampel \textit{trace} yang terjadi pada lima menit terakhir dengan sampel \textit{trace} yang terjadi pada satu jam yang lalu. 
+
+\begin{small}
+	\begin{longtable}{ | p{2cm} | p{10cm} | }
+			\caption{Kebutuhan Fungsional kakas visualisasi}
+			\label{fr-vis}                                                                                                                     \\ \hline
+			\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+			\endfirsthead
+			\hline
+			\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+			\endhead
+			FR-01 & Kakas dapt menampilkan hubungan interdependensi antara \textit{service} \\ \hline
+			FR-02 & Kakas dapat menampilkan pengukuran performa \textit{latency} pada setiap \textit{service} \\ \hline
+			FR-03 & Kakas dapat melakukan \textit{Correlation Analysis} untuk menentukan komponen mana dari Microservice yang dapat ditingkatkan performanya \\ \hline
+			FR-04 & Kakas dapat melakukan Root Cause Analysis (RCA) ketika terjadi sebuah regresi pada sistem dengan menggunakan pendekatan \textit{Aggregate and Correlation Root Cause Analysis} \\ \hline
+		\end{longtable}
+\end{small}
 
 
 
