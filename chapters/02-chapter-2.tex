@@ -347,7 +347,7 @@ Tabel \ref{corr-tab-1} menunjukkan bahwa ada korelasi kuat antara versi baru dar
 
 Analisis agregasi juga dapat membantu untuk mengidentifikasi perubahan yang tidak terlalu nampak pada kinerja sebuah \textit{service}. Ketika membandingkan dua buah kumpulan \textit{trace}, kita dapat juga melihat kontribusi \textit{latency} yang terkait dengan \textit{tag}, operasi, dan \textit{service} dan juga melihat bagaimana kontribusi tersebut berubah sepanjang waktu.
 
-Salah satu cara untuk melakukannya adalah dengan melihat bagaimana \textit{critical path} berubah diantara kumpulan \textit{trace} dari baseline dan juga kumpulan \textit{trace} yang terdampak regresi. \textit{Critical path} sendiri telah dibahas sebelumnya pada \ref{crit-path}. Dengan metode ini, \textit{critical path} akan dihitung pada setiap \textit{trace}. Rata-rata kontribusi metrik seperti \textit{latency} dari setiap \textit{service} dan operasinya akan ditentukan dari setiap kumpulan. 
+Salah satu cara untuk melakukannya adalah dengan melihat bagaimana \textit{critical path} berubah diantara kumpulan \textit{trace} dari baseline dan juga kumpulan \textit{trace} yang terdampak regresi. \textit{Critical path} sendiri telah dibahas sebelumnya pada \ref{crit-path}. Dengan metode ini, \textit{critical path} akan dihitung pada setiap \textit{trace}. Rata-rata kontribusi metrik seperti \textit{latency} dari setiap \textit{service} dan operasinya akan ditentukan dari setiap kumpulan. Kemudian perbedaan rata-rata dari kontribusi metrik dari kumpulan \textit{baseline} dan regresi akan dihitung dan diurutkan sehingga dapat terlihat operasi atau \textit{service} mana yang sebenarnya menjadi akar dari penyebab regresi.
 
 
 
