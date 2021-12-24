@@ -470,13 +470,13 @@ Untuk melakukan \textit{tracing} pada sebuah sistem terdistribusi, \textit{servi
 Zipkin \citep{zipkin} adalah sebuah sistem \textit{distributed tracing} yang mengumpulkan data yang dibutuhkan untuk menyelesaikan permasalahan \textit{tracing} pada sistem berbasis Microservice. Zipkin menyediakan \textit{User Interface} (UI) yang memberikan informasi perilaku sebuah \textit{request} seperti persentase waktu sebuah \textit{request} berada dalam sebuah \textit{service}, indikasi apakah \textit{request} mengalami \textit{error}, dan diagram \textit{dependency} yang menunjukkan berapa \textit{request} yang melewati setiap \textit{service}. Teknik instrumentasi yang digunakan oleh Zipkin mirip dengan X-Trace dan Dapper yaitu menyisipkan metadata berbentuk \textit{header} pada \textit{request} dan umumnya digunakan menggunakan \textit{library}. Ketika aplikasi mengirimkan \textit{request} ke aplikasi lain, \textit{library} yang sudah terinstrumentasi akan menambahkan beberapa \textit{header} seperti yang ada pada tabel \ref{} kepada \textit{request} dan akan mengirimkan \textit{request} yang telah termodifikasi ke Zipkin agar dapat dicatat dan digunakan untuk analisis selanjutnya. 
 
 \begin{small}
-	\begin{longtable}{ | p{5cm} | p{6cm} |}
+	\begin{longtable}{ | p{3cm} | p{10cm} |}
 		\caption{Rata-rata durasi \textit{span} dalam \textit{trace} \textit{baseline} dan regresi}
 		\label{corr-tab-3}                                                           
 		\\ \hline
 		\centering\bfseries{Nama \textit{Header}} & \centering\bfseries{Deskripsi}
 		\endfirsthead
-		\textit{x-request-id} & Digunakan untuk secara unik mengidentifikasi \textit{request}\\ \hline
+		\textit{x-request-id} & Digunakan untuk secara unik mengidentifikasi \textit{request} \\ \hline
 	\end{longtable}
 \end{small}
 
