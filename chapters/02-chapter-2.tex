@@ -444,6 +444,8 @@ Pada Dapper, node pada \textit{tree} adalah unit dasar yang disebut sebagai \tex
 	\label{ch2-dapper-1}
 \end{figure}
 
+Terlihat pada gambar \ref{ch2-dapper-1}, pada bagian (1), \textit{library} yang sudah terinstrumentasi akan menghasilkan \textit{log} yang berisi \textit{span}, lalu pada (2) Dapper Daemon dan Dapper Collector Infrastructure akan mengumpulkan semua \textit{log} yang tersebar di banyak mesin untuk disimpan (3) secara regional pada Dapper Bigtable Repositories. \textit{Trace} kemudian akan tersimpan sebagai satu entri pada \textit{Bigtable} dengan \textit{span} sebagai kolomnya. 
+
 \subsection{Open Tracing}
 
 \subsection{Open Telemetry}
