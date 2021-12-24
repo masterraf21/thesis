@@ -363,7 +363,22 @@ Salah satu cara untuk melakukannya adalah dengan melihat bagaimana \textit{criti
 	\end{longtable}
 \end{small}
 
+Metode lain untuk memahami perubahan pada kinerja adalah untuk mempertimbangkan setiap \textit{tag} yang ditemukan pada semua kumpulan \textit{trace}. Untuk setiap \textit{tag}, semua \textit{span} pada setiap kumpulan yang memiliki sebuah \textit{tag} tertentu akan dienumerasi dan rata-rata durasi dari \textit{span} tersebut akan dihitung untuk setiap kumpulan \textit{trace}. Kemudian sama seperti metode sebelumnya akan diurutkan berdasarkan perubahan durasi dari \textit{baseline} dan regresi.
 
+\begin{small}
+	\begin{longtable}{ | p{5cm} | p{2cm} | p{2cm} | p{2cm} | }
+		\caption{Rata-rata durasi \textit{span} dalam \textit{trace} \textit{baseline} dan regresi}
+		\label{corr-tab-2}                                                           
+		\\ \hline
+		\centering\bfseries{\textit{Service} / Operasi} & \centering\bfseries{\textit{Baseline}} & \centering\bfseries{Regresi} & \centering\bfseries{Perubahan} \tabularnewline \hline
+		\endfirsthead
+		inventory/write-cache & 63.1 ms & 368 ms & +305 ms \\ \hline
+		inventory-db/update & 1.75 ms & 2.26 ms & +0.51 ms \\ \hline
+		memcached/set & 4.94 ms & 4.71 ms & $\num{-0.23}$ ms \\ \hline
+		inventory/update-inventory & 15.2 ms & 14.8 ms & $\num{-0.47}$ ms \\ \hline
+		inventory/database-update & 32 ms & 30.6 ms & $\num{-1.4}$ ms \\ \hline
+	\end{longtable}
+\end{small}
 
 \section{Penelitian Terkait}
 
