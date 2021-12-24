@@ -396,7 +396,6 @@ Salah satu cara untuk melakukannya adalah dengan melihat bagaimana \textit{criti
 \end{small}
 
 Metode lain untuk memahami perubahan pada kinerja adalah untuk mempertimbangkan setiap \textit{tag} yang ditemukan pada semua kumpulan \textit{trace}. Untuk setiap \textit{tag}, semua \textit{span} pada setiap kumpulan yang memiliki sebuah \textit{tag} tertentu akan dienumerasi dan rata-rata durasi dari \textit{span} tersebut akan dihitung untuk setiap kumpulan \textit{trace}. Kemudian sama seperti metode sebelumnya akan diurutkan berdasarkan perubahan durasi dari \textit{baseline} dan regresi.
-
 \begin{small}
 	\begin{longtable}{ | p{5cm} | p{2cm} | p{2cm} | p{2cm} | }
 		\caption{Rata-rata durasi \textit{span} dalam \textit{trace} \textit{baseline} dan regresi}
@@ -468,6 +467,11 @@ Untuk melakukan \textit{tracing} pada sebuah sistem terdistribusi, \textit{servi
 %\subsection{Open Telemetry}
 
 \subsection{Zipkin}
+
+Zipkin \citep{zipkin} adalah sebuah sistem \textit{distributed tracing} yang mengumpulkan data yang dibutuhkan untuk menyelesaikan permasalahan \textit{tracing} pada sistem berbasis Microservice. Zipkin menyediakan \textit{User Interface} (UI) yang memberikan informasi perilaku sebuah \textit{request} seperti persentase waktu sebuah \textit{request} berada dalam sebuah \textit{service}, indikasi apakah \textit{request} mengalami \textit{error}, dan diagram \textit{dependency} yang menunjukkan berapa \textit{request} yang melewati setiap \textit{service}. Teknik instrumentasi yang digunakan oleh Zipkin mirip dengan X-Trace dan Dapper yaitu menyisipkan metadata berbentuk \textit{header} pada \textit{request} dan umumnya digunakan menggunakan \textit{library}. Ketika aplikasi mengirimkan \textit{request} ke aplikasi lain, \textit{library} yang sudah terinstrumentasi akan menambahkan beberapa \textit{header} seperti yang ada pada tabel \ref{} kepada \textit{request} dan akan mengirimkan \textit{request} yang telah termodifikasi ke Zipkin agar dapat dicatat dan digunakan untuk analisis selanjutnya. 
+
+   
+
 
 
 
