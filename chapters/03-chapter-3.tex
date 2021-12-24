@@ -41,7 +41,20 @@ Fase berikutnya adalah fase analisis secara \textit{realtime} yang akan membandi
 
 \subsection{Aristektur Solusi}
 
-Dari pemaparan alur sistem \textit{Performance Regression Analysis} pada \ref{analisis-masalah}, dapat dirumuskan beberapa kriteria sistem \textit{distributed tracing} yang akan digunakan
+Dari pemaparan alur sistem \textit{Performance Regression Analysis} pada \ref{analisis-masalah}, dapat dirumuskan beberapa kriteria sistem \textit{distributed tracing} yang akan digunakan sebagai berikut:
+\begin{small}
+	\begin{longtable}{ | p{3cm} | p{5cm} |}
+		\caption{Rata-rata durasi \textit{span} dalam \textit{trace} \textit{baseline} dan regresi}
+		\label{corr-tab-3}                                                           
+		\\ \hline
+		\centering\bfseries{\textit{Tag}} & \centering\bfseries{\textit{Baseline}} & \centering\bfseries{Regresi} & \centering\bfseries{Perubahan} \tabularnewline \hline
+		\endfirsthead
+		\textbf{item-type}: new & 114 ms & 1240 ms & +1130 ms \\ \hline
+		\textbf{client.browser}: mozilla68 & 111 ms & 548 ms & +437 ms \\ \hline
+		\textbf{db.instance}: cassandra.4 & 117 ms & 464 ms & +348 ms \\ \hline
+		\textbf{runinfo.host}: vm123 & 115 ms & 453 ms & +337 ms \\ \hline
+	\end{longtable}
+\end{small}
 
 
 Dari berbagai jenis solusi \textit{distributed tracing} yang sudah ada seperti pada subbab \ref{terkait}, penulis menilai Zipkin merupakan solusi yang tepat untuk digunakan sebab memenuhi kriteria pada tabel di atas.
