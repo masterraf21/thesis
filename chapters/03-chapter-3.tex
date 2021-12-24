@@ -18,21 +18,12 @@ Mengingat sifat dari Microservice yang terdistribusi, akan menjadi sulit bagi \t
 
 Salah satu teknologi yang dapat digunakan untuk melakukan \textit{monitoring} dan analisis regresi pada sebuah sistem terdistribusi seperti Microservice adalah \textit{distributed tracing}. Dengan bantuan mekanisme \textit{span} dari \textit{trace}, metrik-metrik kinerja dalam aplikasi berbasis Microservice dapat dilacak secara menyeluruh. Dalam kasus penggunaan seperti yang telah disebutkan sebelumnya, \textit{distributed tracing} cocok untuk digunakan dalam melakukan analisis regresi kinerja atau \textit{Performance Regression Analysis} dalam sebuah aplikasi berbasis Microservice sebab \textit{developer} tidak perlu menganalisis satu per satu \textit{service} yang ada terutama setelah \textit{service} sudah di-\textit{deploy}.
 
-%Salah satu teknologi yang dapat menyediakan \textit{developer} kakas untuk melakukan \textit{monitoring} sebuah sistem terdistribusi secara keseluruhan adalah \textit{distributed tracing}. Dengan memanfaat
 
 Oleh karena itu, dapat dirumuskan alur kerja yang harus dilakukan oleh sistem \textit{Performance Regression Analysis} (PRA) sebagai berikut:
 \begin{enumerate}
 	\item Sistem harus dapat mendeteksi ketika terjadi regresi pada aplikasi berbasis Microservice
 	\item Sistem harus dapat menentukan sumber atau akar permasalahan dari regresi setelah terdeteksi
 \end{enumerate}
-
-%Untuk dapat melakukan 
-
-%Adapun, langkah-langkah berikut dapat dilakukan untuk melakukan analisis penyebab regresi kinerja pada Microservice \citep{parker2020distributed}:
-%\begin{enumerate}
-%	\item Tentukan \textit{baseline} atau pengukuran dasar dari beberapa kinerja service
-%	\item Ten
-%\end{enumerate}
 
 Sudah terdapat beberapa pendekatan yang dapat digunakan untuk melakukan analisis regresi seperti yang ada pada subbab \ref{ch2-algo}. Melihat kebutuhan dari sistem PRA di atas, dari beberapa pendekatan yang ada pada subbab tersebut, penulis menilai ada dua pendekatan yang dapat digunakan yaitu pendekatan Analisis Kumulatif pada \ref{approach-cumulative} dan pendekatan Analisis Agregasi dan Korelasi pada \ref{approach-corr}. Analisis Kumulatif dapat digunakan untuk menentukan apakah telah terjadi regresi pada aplikasi dengan melakukan perbandingan antara CDF \textit{baseline} dengan CDF dari aplikasi yang sedang berjalan. Ketika didapatkan statistik K-S yang melebihi \textit{threshold}, sistem PRA akan melakukan analisis akar permasalahan dengan metode Analisis Agregasi dan Korelasi untuk mendapatkan penyebab dari regresi melalui analisis \textit{crtical path} pada \textit{service} yang terdeteksi memiliki koefisien korelasi tinggi. Penghitungan koefisien korelasi dapat dilakukan dengan menghitung koefisien korelasi antara hasil \textit{trace} ketika terdeteksi regresi dengan hasil \textit{trace} dari \textit{baseline}.
 
@@ -49,6 +40,8 @@ Fase berikutnya adalah fase analisis secara \textit{realtime} yang akan membandi
 \section{Rancangan Solusi}
 
 \subsection{Aristektur Solusi}
+
+Dari pemaparan alur sistem \textit{Performance Regression Analysis} pada 
 
 Dari berbagai jenis solusi \textit{distributed tracing} yang sudah ada seperti pada subbab \ref{terkait}, penulis menilai Zipkin merupakan solusi yang tepat untuk digunakan sebab memenuhi kriteria pada tabel di atas.
 
