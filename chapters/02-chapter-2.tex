@@ -70,7 +70,9 @@ Gambar \ref{ch2-cp-1} menunjukkan sebuah contoh \textit{trace} dengan \textit{cr
 
 Jika kita berupaya untuk mengurangi \textit{latency} dari \textit{request} tersebut, kita harus melihat pada \textit{span} B, D, E, atau bagian dair \textit{span} A dan C yang tidak dihalangi oleh \textit{span} lainnya. 
 
-Gambar \ref{ch2-cp-3} menunjukkan contoh \textit{trace} kedua. Pada contoh ini, dua \textit{span} merepresentasikan pekerjaan yang sama namun dilihat berbeda oleh \textit{client} (\textit{client} A) dan \textit{server} (\textit{server} A).
+Gambar \ref{ch2-cp-3} menunjukkan sebuah \textit{trace} dengan \textit{critical path} yang diwarnai. Dalam kasus ini, \textit{span} A memiliki dua anak \textit{span}, yaitu B dan C, yang merepresentasikan pekerjaan yang dieksekusi secara konkuren. Pada sebuah waktu t, A dapat dikatakan terhalangi pada kedua sisi dari anak \textit{span}, sehingga menurut definisi salah satu dari mereka dapat disebut sebagai \textit{critical path}.
+
+Namun pada kasus ini mengurangi panjang dari B tidak akan mengurangi panjang dari keseluruhan \textit{request}. Hanya dengan mengurangi panjang dari C panjang keseluruhan \textit{request} dapat dikurangi juga. Ketika ada beberapa \textit{span} yang dieksekusi secara konkurent, hanya \textit{span} yang terpanjang yang berada pada \textit{critical path}.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=1\textwidth]{resources/ch2/cp-3.png}
