@@ -480,6 +480,8 @@ Zipkin \citep{zipkin} adalah sebuah sistem \textit{distributed tracing} yang men
 		\textit{x-b3-traceid} & Data 64-bit yang digunakan Zipkin untuk secara unik mendefinisikan suatu \textit{trace} \\ \hline
 		\textit{x-b3-spanid} & Data 64-bit yang digunakan Zipkin untuk menentukan posisi operasi saat ini terhadap suatu \textit{trace} \\ \hline
 		\textit{x-b3-parentspanid} & Data 64-bit yang digunakan Zipkin untuk menentukan operasi \textit{parent} atau induk sebuah \textit{span} terhadap suatu \textit{trace} \\ \hline
+		\textit{x-b3-sampled} & Data bit yang digunakan untuk menandakan apakah data suatu \textit{trace} akan dilaporkan kepada \textit{collector} Zipkin \\ \hline
+		\textit{x-b3-flags} & Digunakan untuk menandakan opsi seperti \textit{debug} \\ \hline
 	\end{longtable}
 \end{small}
 
