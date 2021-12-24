@@ -60,6 +60,14 @@ Dalam sebuah sistem terdistribusi yang cukup kompleks, selalu ada banyak \textit
 
 Definisi diatas bisa untuk mendefinisikan \textit{critical path}, namun bisa jadi timbul keambiguan ketika terdapat beberapa anak \textit{span} yang konkuren. Untuk menghindari keambiguan, definisi yang lebih baik adalah sebagai berikut: \textit{span} A adalah bagian dari \textit{critical path} pada waktu t jika dan hanya jika mengurangi panjang dari A pada waktu t berarti mengurangi keseluruhan \textit{latency} dari \textit{request}.
 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\textwidth]{resources/ch2/cp-1.png}
+	\caption{Contoh \textit{trace} dengan \textit{critical path} \citep{parker2020distributed}}
+	\label{ch2-cp-1}
+\end{figure}
+
+
 
 %\subsection{Komponen Distributed Tracing}
 %
