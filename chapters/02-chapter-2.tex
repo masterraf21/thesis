@@ -22,7 +22,7 @@ Berikut adalah ilustrasi sederhana mengenai \textit{trace}:
       \centering
       \includegraphics[width=1\textwidth]{resources/ch2/tracing-illus.png}
       \caption{Ilustrasi \textit{Tracing} \citep{parker2020distributed}}
-      \label{TracingIlllustration}
+      \label{ch2-trace-illus}
 \end{figure}
 
 Salah satu keuntungan dari penggunaan \textit{distributed tracing} adalah \textit{span} yang dihasilkan akan terisolasi dan independen satu sama lain. Sehingga suatu \textit{span} tertentu hanya menggambarkan aliran \textit{request} yang dapat mencakup keseluruhan aplikasi. Gambar \ref{ch2-span} menggambarkan sebuah \textit{span} yang memiliki "anak" \textit{span} yang tergabung dalam sebuah "induk" \textit{span} sehingga suatu \textit{span} dapat menggambarkan konteks suatu \textit{request} yang terjadi tidak hanya pada satu \textit{service} saja, namun juga mencakup operasi yang ada di dalamnya dan jika \textit{request} mencakup aksi \textit{service} lainnya akan tercatat "anak" dari \textit{span} tersebut.
