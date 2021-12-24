@@ -434,7 +434,16 @@ Setiap \textit{node} yang mengidentifikasi adanya metadata X-Trace pada \textit{
 
 \subsection{Dapper}
 
-Dapper \citep{dapper-paper} merupakan salah satu metode pendekatan \textit{distributed tracing} yang dibuat oleh Google. 
+Dapper \citep{dapper-paper} merupakan salah satu metode pendekatan \textit{distributed tracing} yang dibuat untuk menyelesaikan permasalahan \textit{tracing} di Google. Dapper menggunakan pendekatan instrumentasi yang mirip dengan X-Trace namun memiliki sedikti perbedaan dengan melakukan instrumentasi hanya pada lokasi-lokasi tertentu dibandingkan X-Trace yang mengharuskan pengembang melakukan tugas instrumentasi dengan menyisipkan metadata pada setiap \textit{request}. Dapper melakukan instrumentasi pada level \textit{library} \textit{remote procedure call} (RPC) yang sudah ada pada hampir semua \textit{codebase} miliki Google. Selain itu, untuk meminimalisir \textit{overhead}, Dapper melakukan \textit{sampling} yang mengakibatkan tidak semua \textit{request} akan disimpan untuk menjadi \textit{trace}. 
+
+Pada Dapper, node pada \textit{tree} adalah unit dasar yang disebut sebagai \textit{span}. \textit{Edge} pada \textit{tree} akan menunjukkan hubungan sebab akibat antara \textit{span} dengan \textit{parent span}. \textit{Span} nantinya akan disimpan pada \textit{log} di setiap mesin secara lokal. 
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\textwidth]{resources/ch2/xtr-1.png}
+	\caption{Propagasi metadata \textit{trace} milik X-Trace \citep{xtrace}}
+	\label{ch2-dapper-1}
+\end{figure}
+
 \subsection{Open Tracing}
 
 \subsection{Open Telemetry}
