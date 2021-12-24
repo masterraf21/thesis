@@ -459,7 +459,7 @@ OpenTraciong adalah sebuah \textit{framework} vendor netral yang dapat digunakan
 Untuk melakukan \textit{tracing} pada sebuah sistem terdistribusi, \textit{service} yang terlibat harus dapat melanjutkan \textit{trace} yang telah di-\textit{inject} oleh \textit{client} yang mengirim setiap \textit{request}. OpenTracing memungkinkan hal ini dapat terjadi dengan menyediakan dua buah metode yaitu \textit{inject} dan metode \textit{extract}. Metode \textit{inject} akan meneruskan konteks dari \textit{trace} ke operator sedangkan metode \textit{extract} akan mengambil data \textit{trace} dari operator. Penggunaan metode \textit{inject} dan \textit{extract} dapat terlihat pada gambar \ref{ch2-opentracing-2}.
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.8\textwidth]{resources/ch2/ch2-opentracing-method.png}
+	\includegraphics[width=0.8\textwidth]{resources/ch2/inject-extract.png}
 	\caption{Metode \textit{inject} dan \textit{extract} pada OpenTracing \citep{opentracing}}
 	\label{ch2-opentracing-2}
 \end{figure}
