@@ -80,9 +80,9 @@ Namun pada kasus ini mengurangi panjang dari B tidak akan mengurangi panjang dar
 	\label{ch2-cp-3}
 \end{figure}
 
+Perlu diingat bahwa definisi hanya mengatakan bahwa beberapa pengurangan dari \textit{span} yang berada pada \textit{critical path} akan mengurangi keseluruhan \textit{latency} dari \textit{request}, tetapi bukan berarti semua pengurangan akan menghasilkan pengurangan yang sama pada keseluruhan \textit{latency}.
 
-
-
+Misalnya ada sebuah \textit{span} yang berada pada \textit{critical path} dan memiliki durasi 1 detik. Mengurangi panjangnya sebesar 500 ms tidak berarti mengurangi durasi dari keseluruhan \textit{request} sebesar 500 ms. Pada \textit{trace} yang ditunjukkan oleh gambar \ref{ch2-cp-3}, ketika panjang \textit{span} C dikurangi hingga kurang dari panjang B, \textit{span} C tidak akan lagi berada pada \textit{critical path} dan artinya adalah mengurangi durasinya tidak akan mengurangi durasi dari keseluruhan \textit{latency}.
 %\subsection{Komponen Distributed Tracing}
 %
 %\subsubsection{Instrumentasi}
