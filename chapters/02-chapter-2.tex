@@ -478,7 +478,8 @@ Zipkin \citep{zipkin} adalah sebuah sistem \textit{distributed tracing} yang men
 		\endfirsthead
 		\textit{x-request-id} & Digunakan untuk secara unik mengidentifikasi \textit{request} \\ \hline
 		\textit{x-b3-traceid} & Data 64-bit yang digunakan Zipkin untuk secara unik mendefinisikan suatu \textit{trace} \\ \hline
-		\textit{x-request-id} & Digunakan untuk secara unik mengidentifikasi \textit{request} \\ \hline
+		\textit{x-b3-spanid} & Data 64-bit yang digunakan Zipkin untuk menentukan posisi operasi saat ini terhadap suatu \textit{trace} \\ \hline
+		\textit{x-b3-parentspanid} & Digunakan untuk secara unik mengidentifikasi \textit{request} \\ \hline
 	\end{longtable}
 \end{small}
 
