@@ -52,6 +52,12 @@ Adapun komponen-komponen yang membangun sistem Distributed Tracing adalah sebaga
 \subsection{Mendefinisikan \textit{Critical Path}}
 \label{ch2-crit-path}
 
+Dalam sebuah sistem terdistribusi yang cukup kompleks, selalu ada banyak \textit{service} maupun \textit{remote procedure call} (RPC) yang lambat. Salah satu cara yang umum digunakan untuk memahami \textit{service} mana yang berdampak terhadap kinerja aplikasi yang terlihat kepada pengguna adalah pertama kali menentukan jalur kritis atau \textit{critical path} dari setiap \textit{request} yang tergolong lambat. Dalam konteks \textit{distributed tracing}, \textit{critical path} adalah bagian dari \textit{trace} yang merupakan sebuah hiimpunan bagian atau \textit{subset} dari \textit{span} \textit{trace} tersebut atau bahkan juga bisa bagian dari \textit{span} tersebut \cite{parker2020distributed}. Definisi lain mengatakan bahwa sebuah \textit{span} A adalah bagian dari \textit{critical path} pada suatu waktu t jika dan hanya jika memenuhi dua kondisi berikut:
+\begin{enumerate}
+	\item Induk dari A tidak dihalangi pada saat A selesai di waktu t
+	\item A tidak dihalangi pada selesainya anak \textit{span} di waktu t
+\end{enumerate}
+
 %\subsection{Komponen Distributed Tracing}
 %
 %\subsubsection{Instrumentasi}
