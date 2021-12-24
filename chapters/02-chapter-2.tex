@@ -484,7 +484,7 @@ Zipkin \citep{zipkin} adalah sebuah sistem \textit{distributed tracing} yang men
 	\end{longtable}
 \end{small}
 
-Gambar \ref{zipkin-arch} 
+Gambar \ref{zipkin-arch} menunjukkan arsitektur milik Zipkin yang digunakan dari pengumpulan data sampai dengan penyajian informasi pada UI. Setiap \textit{request} yang sudah terinstrumentasi akan mengirimkan datanya ke Zipkin \textit{collector} melalui beberapa jenis transport seperti HTTP, Kafka ataupun Scribe. Data \textit{request} yang sampai ke Zipkin \textit{collector} akan divalidasi, disimpan dan diindeks pada \textit{storage}. Dalam Zipkin, \textit{storage} dimplementasikan menggunakan Apache Cassandra setelah data disimpan dan diindeks, \textit{service query} milik Zipkin akan menyediakan API JSON untuk menyediakan data \textit{trace} pada Web UI. Komponen Web UI menyajikan informasi terhadap \textit{trace} berdasarkan \textit{service}, waktu, dan anotasi.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=1\textwidth]{resources/ch2/zipkin-arch.png}
