@@ -46,18 +46,18 @@ Jika terdeteksi terjadi regresi, tahap selanjutnya adalah melakukan analisis kor
 
 Dari pemaparan alur sistem \textit{Performance Regression Analysis} pada subbab \ref{analisis-masalah}, dapat dirumuskan beberapa kriteria sistem \textit{distributed tracing} yang akan digunakan. Daftar kriteria dapat dilihat pada Tabel \ref{ch3-trace-crit}.
 
-%\begin{small}
-%	\begin{longtable}{ | p{3cm} | p{10cm} |}
-%		\caption{Kriteria pemilihan solusi \textit{tracing}}
-%		\label{ch3-trace-crit}                                                           
-%		\\ \hline
-%		\centering\bfseries{ID Kriteria} & \centering\bfseries{Deskripsi} \tabularnewline \hline
-%		\endfirsthead
-%		TC-1 & Komponen instrumentasi dapat menyediakan informasi kausalitas antar \textit{service} yang terjadi selama \textit{request} pada \textit{span} \\ \hline
-%		TC-2 & Komponen \textit{deployment} menyediakan dukungan untuk Kubernetes \\ \hline
-%		TC-3 & Komponen \textit{deplyoment} menyediakan dukungan untuk \textit{storage} eksternal \\ \hline
-%	\end{longtable}
-%\end{small}
+\begin{small}
+	\begin{longtable}{ | p{3cm} | p{10cm} |}
+		\caption{Kriteria pemilihan solusi \textit{tracing}}
+		\label{ch3-trace-crit}                                                           
+		\\ \hline
+		\centering\bfseries{ID Kriteria} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+		\endfirsthead
+		TC-1 & Komponen instrumentasi dapat menyediakan informasi kausalitas antar \textit{service} yang terjadi selama \textit{request} pada \textit{span} \\ \hline
+		TC-2 & Komponen \textit{deployment} menyediakan dukungan untuk Kubernetes \\ \hline
+		TC-3 & Komponen \textit{deplyoment} menyediakan dukungan untuk \textit{storage} eksternal \\ \hline
+	\end{longtable}
+\end{small}
 
 Dari berbagai jenis solusi \textit{distributed tracing} yang sudah ada seperti pada subbab \ref{terkait}, penulis menilai Zipkin merupakan solusi yang tepat untuk digunakan sebab memenuhi semua kriteria pada tabel di atas. Untuk kriteria TC-1, Zipkin menggunakan metode instrumentasi secara \textit{active} dengan menambahkan informasi header \textit{span} induk dan \textit{span} anak pada setiap \textit{request} sehingga hubungan kausalitas antar \textit{service} dalam \textit{request} dapat dicatat sebagai hubungan induk-anak dalam \textit{span}. Untuk kriteria TC-2, sudah terdapat dukungan untuk membuat \textit{deployment} di Kubernetes dari komunitas \textit{Open Source} \citep{zipkin-ambassador}. Untuk kriteria TC-3, Zipkin menyediakan dukungan ekstensi bagi komponen \textit{collector} dan \textit{storage} dari pihak ketiga dan sudah didukung secara \textit{native} untuk beberapa komponen \citep{zipkin-storage}.
 
