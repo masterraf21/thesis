@@ -35,18 +35,6 @@ Di sisi lain, terdapat peningkatan tren penggunaan gRPC \citep{grpc} sebagai car
   
 Pada tugas akhir ini, dilakukan pengembangan kakas yang berfokus untuk melakukan \textit{Performance Regression Analysis} (PRA) yang akan melakukan deteksi pada aplikasi Microservice ketika terjadi regresi dan melakukan analisis untuk menentukan penyebab utama dari regresi tersebut. PRA akan dilakukan dengan menggunakan bantuan hasil \textit{trace} dari \textit{distributed tracing} yang akan dapat membantu para \textit{developer} untuk mengembalikan kinerja Microservice setelah terjadinya regresi pada sistem sesuai dengan tujuan kedua dari \textit{observability}. 
 
-%Ide dasar dari \textit{tracing}  adalah dengan mengidentifikasi sebuah titik spesifik, dapat jadi sebuah pemanggilan \textit{remote procedure call} (RPC) dalam sebuah aplikasi, \textit{library}, ataupun \textit{middleware} dalam jalur sebuah \textit{request} yang merepresentasikan kedua hal berikut:
-%\begin{enumerate}
-%	\item \textit{Fork} pada eksekusi di level Sistem Operasi
-%	\item Sebuah lompatan atau akses horizontal ke luar melalui jaringan
-%\end{enumerate}
-
-%
-%Metode lain untuk melakukan instrumentasi pada service adalah dengan menggunakan \textit{library} pada level kode untuk memberikan konteks dan informasi kepada agen \textit{tracing}. Sudah ada beberapa \textit{library} ataupun \textit{framework} \textit{open source} yang menyediakan solusi untuk melakukan instrumentasi pada level kode seperti contohnya adalah OpenTracing, Zipkin, dan Jaeger \citep{opentracing, zipkin, jaeger}. Metode untuk melakukan tracing ini disebut juga dengan \textit{active tracing}. Dengan metode ini, data yang diperoleh dari instrumentasi akan lebih kaya, salah satunya adalah dapat memberikan konteks pemanggilan ke service lain yang nantinya dapat diolah lebih lanjut untuk mendapatkan gambaran yang lebih besar yaitu \textit{request causality} antar service.
-%
-%Namun dari solusi \textit{open source} yang ada, penulis menemukan adanya kekurangan dalam kakas visualisasi hasil \textit{tracing}. Penulis menemukan hanya Zipkin yang memiliki kakas visualisasi yang dapat langsung digunakan. Namun fitur visualisasi Zipkin masih berfokus pada penyediaan data \textit{tracing} dalam sebuah service dan untuk penyediaan data secara keseluruhan antar service masih belum dapat menampilkan data yang perlu untuk mencapai \textit{observability} bagi keseluruhan sistem Microservice. Dari kondisi itulah penulis menilai perlu adanya kakas \textit{open source} yang dapat menyediakan \textit{developer} informasi yang diperlukan untuk mencapai \textit{observability} dalam sebuah sistem Microservice secara utuh. 
-
-
 \section{Rumusan Masalah}\label{RumusanMasalah}
 
 Berdasarkan latar belakang yang telah dijelaskan pada Subbab \ref{ch1-latbel} terdapat beberapa permasalahan terkait \textit{Performance Regression Analysis} pada Microservice. Rumusan masalah yang akan diselesaikan pada Tugas Akhir ini adalah sebagai berikut:
