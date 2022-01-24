@@ -1,135 +1,137 @@
-\chapter{Rancangan, Implementasi, dan Pengujian}
+\chapter{Implementasi, dan Pengujian}
 
-\section{Perancangan Perangkat Lunak} \label{PerancanganPL}
-Subbab perancangan perangkat lunak menjelaskan deskripsi aplikasi, analisis kebutuhan fungsional dan non-fungsional, desain perangkat lunak, serta interaksinya.
+%\section{Perancangan Perangkat Lunak} \label{PerancanganPL}
+%Subbab perancangan perangkat lunak menjelaskan deskripsi aplikasi, analisis kebutuhan fungsional dan non-fungsional, desain perangkat lunak, serta interaksinya.
+%
+%\subsection{Deskripsi Umum Kakas}
+%Kakas pengumpulan data yang dibuat merupakan pengembangan terhadap aplikasi \textit{spreadsheet} kolaboratif yang sudah ada sebelumnya yakni EtherCalc. Kakas yang ditambahkan ini yang akan melakukan pengaturan koneksi ke basis data. Saat pengguna menginginkan penyimpanan data ke dalam basis data yang dituju, kakas ini akan melakukan pencarian bagian label dan data dan melakukan validasi masukan sebelum memasukkan data ke dalam basis data.
+%
+%\subsection{Spesifikasi Kebutuhan}
+%Pada subbab ini akan dipaparkan \textit{use case} kakas yang akan dibuat serta kebutuhan fungsional dan non-fungsional dari kakas. Kasus penggunaan oleh pengguna diberi ID dengan format UC-XX dengan UC menyatakan \textit{use case} dan XX menyatakan nomor. Pengguna adalah pihak yang menggunakan aplikasi \textit{spreadsheet} yang sudah ditambahkan kakas pengumpulan data. Kasus penggunaan oleh pengguna dijelaskan pada Tabel \ref{KebutuhanPengguna}.
+%
+%\begin{small}
+%	\begin{longtable}{ | p{2cm} | p{10cm} | }
+%		\caption{Kasus Penggunaan oleh Pengguna}
+%		\label{KebutuhanPengguna}                                                                                                                     \\ \hline
+%		\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+%		\endfirsthead
+%		\hline
+%		\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+%		\endhead
+%		UC-01                   & Pengguna dapat menentukan basis data tujuan dengan konfigurasi basis data yang diinginkan.                          \\ \hline
+%		UC-02                   & Pengguna dapat menyimpan data yang dikumpulkan ke dalam basis data pada saat dibutuhkan.                            \\ \hline
+%		UC-03                   & Pengguna dapat mendefinisikan \textit{metadata table} yang ingin disimpan secara manual maupun otomatis oleh kakas. \\ \hline
+%		UC-04                   & Pengguna dapat mengubah metadata pada \textit{metadata table} yang ingin disimpan.                                  \\ \hline
+%		UC-05                   & Pengguna dapat mendefinisikan aturan validasi data.                                                                 \\ \hline
+%		UC-06                   & Pengguna dapat mengunggah berkas \textit{spreadsheet} ke dalam aplikasi.                                            \\ \hline
+%	\end{longtable}
+%\end{small}
+%
+%Untuk \textit{use case} dengan kode UC-06, sudah ditangani oleh aplikasi \textit{EtherCalc} sehingga tidak akan ditangani oleh kakas yang akan dikembangkan. Berdasarkan kasus penggunaan di atas, dirancang kebutuhan fungsional perangkat lunak yang diberi ID dengan format FR-XX dengan FR merupakan singkatan dari \textit{functional requirement} dan XX menyatakan nomor kebutuhan. Kebutuhan fungsional dijelaskan pada Tabel \ref{KebutuhanFungsional}.
+%
+%\begin{small}
+%	\begin{longtable}{ | p{2cm} | p{6cm} | p{4cm} | }
+%		\caption{Kebutuhan Fungsional Kakas}
+%		\label{KebutuhanFungsional}                                                                                                                                                                                                                                                                                                  \\ \hline
+%		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                                                                                                                                                                                   & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
+%		\endfirsthead
+%		\hline
+%		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                                                                                                                                                                                   & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
+%		\endhead
+%		FR-01                   & Kakas dapat melakukan koneksi kepada basis data yang ditentukan oleh pengguna melalui data masukan berupa \textit{host}, \textit{port}, \textit{username}, \textit{password}, dan \textit{database} dari basis data yang dituju. & UC-01                                                           \\ \hline
+%		FR-02                   & Kakas dapat melakukan perintah basis data kepada basis data yang dituju.                                                                                                                                                         & UC-01, UC-02                                                    \\ \hline
+%		FR-03                   & Kakas menyediakan fitur untuk dapat melakukan penyimpanan data saat pengguna ingin melakukan penyimpanan.                                                                                                                        & UC-02                                                           \\ \hline
+%		FR-04                   & Kakas menyediakan fitur menambah dan mengurangi \textit{metadata table} baik secara pendeteksian otomatis maupun manual.                                                                                                         & UC-03                                                           \\ \hline
+%		FR-05                   & Kakas dapat menampilkan hasil identifikasi label dan data dalam bentuk \textit{metadata table}.                                                                                                                                  & UC-03, UC-04                                                    \\ \hline
+%		FR-06                   & Kakas menyediakan fitur bagi pengguna agar dapat mengubah hasil identifikasi label dan data.                                                                                                                                     & UC-04                                                           \\ \hline
+%		FR-07                   & Kakas menyediakan fitur bagi pengguna agar dapat menambahkan dan mengubah batasan masukan pada suatu data.                                                                                                                       & UC-05                                                           \\ \hline
+%		FR-08                   & Kakas dapat melakukan validasi data masukan sesuai dengan batasan yang diberikan oleh pengguna.                                                                                                                                  & UC-05                                                           \\ \hline
+%		FR-09                   & Kakas dapat memberitahukan kesalahan validasi yang terjadi.                                                                                                                                                                      & UC-05                                                           \\ \hline
+%	\end{longtable}
+%\end{small}
+%
+%Selain kebutuhan fungsional, dijabarkan juga kebutuhan non-fungsional yang memiliki ID dengan format NF-XX dengan NF merupakan singkatan dari \textit{non-functional requrirement} dan XX menyatakan nomor. Kebutuhan non-fungsional disajikan pada Tabel \ref{KebutuhanNonfungsional}.
+%
+%\begin{small}
+%	\begin{longtable}{ | p{2cm} | p{6cm} | p{4cm} | }
+%		\caption{Kebutuhan Non-fungsional Kakas}
+%		\label{KebutuhanNonfungsional}                                                                                                                                    \\ \hline
+%		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                        & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
+%		\endfirsthead
+%		\hline
+%		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                        & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
+%		\endhead
+%		NF-01                   & Data masukan pengguna disimpan secara persisten.                      & UC-01, UC-02                                                    \\ \hline
+%		NF-02                   & Kakas dapat berjalan di atas aplikasi \textit{spreadsheet} EtherCalc. & -                                                               \\ \hline
+%	\end{longtable}
+%\end{small}
+%
+%\subsection{Kebutuhan Modul} \label{KebutuhanModul}
+%Pembangunan fitur ini di atas aplikasi EtherCalc terdiri dari lima buah modul, yaitu:
+%\begin{enumerate}
+%	\item Modul \texttt{player}, bertugas sebagai jembatan antara \textit{front-end} dan \textit{back-end} dari fitur.
+%	\item Modul \texttt{mysql}, bertugas untuk antarmuka baca tulis basis data.
+%	\item Modul \texttt{framefinder}, bertugas untuk mendeteksi secara otomatis bagian label dan data pada tabel.
+%	\item Modul \texttt{hierarchyfinder}, bertugas untuk mendeteksi secara otomatis tabel-tabel yang ada dalam suatu \textit{sheet}.
+%	\item Modul \texttt{table}, bertugas untuk mengelola \textit{metadata table}, melakukan validasi data, dan membuat representasi relasional.
+%\end{enumerate}
+%
+%Ketergantungan antar modul dapat dilihat pada Gambar \ref{ModuleDependency}
+%
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[width=0.4\textwidth]{resources/chapter-4-module-dependecy.png}
+%	\caption{Ketergantungan Antar Modul}
+%	\label{ModuleDependency}
+%\end{figure}
+%
+%\subsection{Kolaborasi Antar Modul}
+%Proses fitur ini akan dilakukan melalui modul \texttt{player} yang dapat menerima perintah pengguna melalui \textit{front-end}. Selanjutnya modul \texttt{framefinder} akan melakukan pendeteksian label dan data secara otomatis pada masing-masing tabel yang terdapat pada \textit{sheet}. Tabel-tabel tersebut didapatkan melalui modul \texttt{hierarchyfinder}. Selanjutnya, pada saat menerima perintah penyimpanan, modul \texttt{table} akan dipanggil oleh \texttt{player}. Jika data masukan sudah benar, maka modul \texttt{mysql} akan melakukan pennyimpanan ke dalam basis data. Kolaborasi antar modul disajikan pada Gambar \ref{ModuleFlow}.
+%
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{resources/chapter-4-module-flow.png}
+%	\caption{Kolaborasi Antar Modul}
+%	\label{ModuleFlow}
+%\end{figure}
+%
+%Pada aplikasi Ethercalc, modul yang ditambahkan akan berada di bawah modul \texttt{player} yang sudah ada. Ilustrasi penempatan modul yang dibuat pada aplikasi EtherCalc yang sudah ada dapat dilihat pada Gambar \ref{ModulePlacing}.
+%
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[width=0.6\textwidth]{resources/chapter-4-module-placing.png}
+%	\caption{Interaksi dengan Modul yang Sudah Ada}
+%	\label{ModulePlacing}
+%\end{figure}
+%
+%\subsection{Arsitektur}
+%Aplikasi dibuat dengan menggunakan bantuan Docker sehingga diharapkan dapat dengan mudah dipasang pada berbagai \textit{platform}. Aplikasi terdiri dari tiga \textit{docker container} yakni untuk aplikasi utama, basis data redis, dan basis data MySQL. \textit{File} \texttt{docker-compose.yml} yang dibuat untuk mendefinisikan \textit{docker container} yang digunakan dapat dilihat pada Kode \ref{KodeCompose}
+%
+%Untuk menyimpan \textit{state} konfigurasi tabel dan \textit{mapping} \textit{metadata table} dengan data pada basis data, digunakan dua tabel basis data yang sudah didefinisikan sebelumnya. Kedua tabel basis data ini dinamakan s\_database\_state dan s\_database\_wlog, kedua tabel ini tidak memiliki keterhubungan. Atribut yang terdapat pada kedua tabel ini dapat dilihat pada diagram struktur basis data pada Gambar \ref{StructureDiagram}.
+%
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{resources/chapter-4-architect-db.png}
+%	\caption{Diagram Struktur Tabel Penyimpanan Konfigurasi}
+%	\label{StructureDiagram}
+%\end{figure}
+%
+%\textit{metadata table} yang ditampilkan kepada pengguna akan berasal dari tabel s\_database\_state dan juga disimpan pada tabel tersebut. Kegunaan  s\_database\_wlog adalah mencatat pemetaan data kepada \textit{metadata table} sehingga saat \textit{metadata table} dihapus, data yang berasal dari \textit{metadata table} tersebut dapat juga dihapus.
+%
+%Kakas dibuat di atas aplikasi EtherCalc, sehingga akan diimplementasi tambahan modul maupun menggunakan modul yang sudah ada pada EtherCalc. Interaksi antar modul yang dibuat dengan modul yang sudah ada serta dengan data masukan dapat dilihat pada Gambar \ref{ArchDiagram}.
+%
+%\begin{figure}[htb]
+%	\centering
+%	\includegraphics[width=0.7\textwidth]{resources/chapter-4-architecture.png}
+%	\caption{Diagram Arsitektur Aplikasi}
+%	\label{ArchDiagram}
+%\end{figure}
+%
+%Pada diagram arsitektur terlihat bahwa masih terdapat dua basis data yakni redis dan MySQL. Hal ini dilakukan agar data mengenai format dan cara ditampilkan pada aplikasi EtherCalc tetap disimpan pada basis data redis sedangkan data yang ingin dikumpulkan dan digabungkan oleh pengguna dimasukkan pada basis data relasional MySQL.
+%
+%% Modul-modul dan fitur dibuat di atas aplikasi EtherCalc, sehingga arsitektur kakas akan mengikuti arsitektur aplikasi EtherCalc yang telah dijelaskan pada Subbab \ref{TeknologiSpreadsheet}.
 
-\subsection{Deskripsi Umum Kakas}
-Kakas pengumpulan data yang dibuat merupakan pengembangan terhadap aplikasi \textit{spreadsheet} kolaboratif yang sudah ada sebelumnya yakni EtherCalc. Kakas yang ditambahkan ini yang akan melakukan pengaturan koneksi ke basis data. Saat pengguna menginginkan penyimpanan data ke dalam basis data yang dituju, kakas ini akan melakukan pencarian bagian label dan data dan melakukan validasi masukan sebelum memasukkan data ke dalam basis data.
 
-\subsection{Spesifikasi Kebutuhan}
-Pada subbab ini akan dipaparkan \textit{use case} kakas yang akan dibuat serta kebutuhan fungsional dan non-fungsional dari kakas. Kasus penggunaan oleh pengguna diberi ID dengan format UC-XX dengan UC menyatakan \textit{use case} dan XX menyatakan nomor. Pengguna adalah pihak yang menggunakan aplikasi \textit{spreadsheet} yang sudah ditambahkan kakas pengumpulan data. Kasus penggunaan oleh pengguna dijelaskan pada Tabel \ref{KebutuhanPengguna}.
-
-\begin{small}
-	\begin{longtable}{ | p{2cm} | p{10cm} | }
-		\caption{Kasus Penggunaan oleh Pengguna}
-		\label{KebutuhanPengguna}                                                                                                                     \\ \hline
-		\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
-		\endfirsthead
-		\hline
-		\centering\bfseries{ID} & \centering\bfseries{Deskripsi} \tabularnewline \hline
-		\endhead
-		UC-01                   & Pengguna dapat menentukan basis data tujuan dengan konfigurasi basis data yang diinginkan.                          \\ \hline
-		UC-02                   & Pengguna dapat menyimpan data yang dikumpulkan ke dalam basis data pada saat dibutuhkan.                            \\ \hline
-		UC-03                   & Pengguna dapat mendefinisikan \textit{metadata table} yang ingin disimpan secara manual maupun otomatis oleh kakas. \\ \hline
-		UC-04                   & Pengguna dapat mengubah metadata pada \textit{metadata table} yang ingin disimpan.                                  \\ \hline
-		UC-05                   & Pengguna dapat mendefinisikan aturan validasi data.                                                                 \\ \hline
-		UC-06                   & Pengguna dapat mengunggah berkas \textit{spreadsheet} ke dalam aplikasi.                                            \\ \hline
-	\end{longtable}
-\end{small}
-
-Untuk \textit{use case} dengan kode UC-06, sudah ditangani oleh aplikasi \textit{EtherCalc} sehingga tidak akan ditangani oleh kakas yang akan dikembangkan. Berdasarkan kasus penggunaan di atas, dirancang kebutuhan fungsional perangkat lunak yang diberi ID dengan format FR-XX dengan FR merupakan singkatan dari \textit{functional requirement} dan XX menyatakan nomor kebutuhan. Kebutuhan fungsional dijelaskan pada Tabel \ref{KebutuhanFungsional}.
-
-\begin{small}
-	\begin{longtable}{ | p{2cm} | p{6cm} | p{4cm} | }
-		\caption{Kebutuhan Fungsional Kakas}
-		\label{KebutuhanFungsional}                                                                                                                                                                                                                                                                                                  \\ \hline
-		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                                                                                                                                                                                   & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
-		\endfirsthead
-		\hline
-		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                                                                                                                                                                                   & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
-		\endhead
-		FR-01                   & Kakas dapat melakukan koneksi kepada basis data yang ditentukan oleh pengguna melalui data masukan berupa \textit{host}, \textit{port}, \textit{username}, \textit{password}, dan \textit{database} dari basis data yang dituju. & UC-01                                                           \\ \hline
-		FR-02                   & Kakas dapat melakukan perintah basis data kepada basis data yang dituju.                                                                                                                                                         & UC-01, UC-02                                                    \\ \hline
-		FR-03                   & Kakas menyediakan fitur untuk dapat melakukan penyimpanan data saat pengguna ingin melakukan penyimpanan.                                                                                                                        & UC-02                                                           \\ \hline
-		FR-04                   & Kakas menyediakan fitur menambah dan mengurangi \textit{metadata table} baik secara pendeteksian otomatis maupun manual.                                                                                                         & UC-03                                                           \\ \hline
-		FR-05                   & Kakas dapat menampilkan hasil identifikasi label dan data dalam bentuk \textit{metadata table}.                                                                                                                                  & UC-03, UC-04                                                    \\ \hline
-		FR-06                   & Kakas menyediakan fitur bagi pengguna agar dapat mengubah hasil identifikasi label dan data.                                                                                                                                     & UC-04                                                           \\ \hline
-		FR-07                   & Kakas menyediakan fitur bagi pengguna agar dapat menambahkan dan mengubah batasan masukan pada suatu data.                                                                                                                       & UC-05                                                           \\ \hline
-		FR-08                   & Kakas dapat melakukan validasi data masukan sesuai dengan batasan yang diberikan oleh pengguna.                                                                                                                                  & UC-05                                                           \\ \hline
-		FR-09                   & Kakas dapat memberitahukan kesalahan validasi yang terjadi.                                                                                                                                                                      & UC-05                                                           \\ \hline
-	\end{longtable}
-\end{small}
-
-Selain kebutuhan fungsional, dijabarkan juga kebutuhan non-fungsional yang memiliki ID dengan format NF-XX dengan NF merupakan singkatan dari \textit{non-functional requrirement} dan XX menyatakan nomor. Kebutuhan non-fungsional disajikan pada Tabel \ref{KebutuhanNonfungsional}.
-
-\begin{small}
-	\begin{longtable}{ | p{2cm} | p{6cm} | p{4cm} | }
-		\caption{Kebutuhan Non-fungsional Kakas}
-		\label{KebutuhanNonfungsional}                                                                                                                                    \\ \hline
-		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                        & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
-		\endfirsthead
-		\hline
-		\centering\bfseries{ID} & \centering\bfseries{Deskripsi}                                        & \centering\bfseries{ID Use Case Terkait} \tabularnewline \hline
-		\endhead
-		NF-01                   & Data masukan pengguna disimpan secara persisten.                      & UC-01, UC-02                                                    \\ \hline
-		NF-02                   & Kakas dapat berjalan di atas aplikasi \textit{spreadsheet} EtherCalc. & -                                                               \\ \hline
-	\end{longtable}
-\end{small}
-
-\subsection{Kebutuhan Modul} \label{KebutuhanModul}
-Pembangunan fitur ini di atas aplikasi EtherCalc terdiri dari lima buah modul, yaitu:
-\begin{enumerate}
-	\item Modul \texttt{player}, bertugas sebagai jembatan antara \textit{front-end} dan \textit{back-end} dari fitur.
-	\item Modul \texttt{mysql}, bertugas untuk antarmuka baca tulis basis data.
-	\item Modul \texttt{framefinder}, bertugas untuk mendeteksi secara otomatis bagian label dan data pada tabel.
-	\item Modul \texttt{hierarchyfinder}, bertugas untuk mendeteksi secara otomatis tabel-tabel yang ada dalam suatu \textit{sheet}.
-	\item Modul \texttt{table}, bertugas untuk mengelola \textit{metadata table}, melakukan validasi data, dan membuat representasi relasional.
-\end{enumerate}
-
-Ketergantungan antar modul dapat dilihat pada Gambar \ref{ModuleDependency}
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.4\textwidth]{resources/chapter-4-module-dependecy.png}
-	\caption{Ketergantungan Antar Modul}
-	\label{ModuleDependency}
-\end{figure}
-
-\subsection{Kolaborasi Antar Modul}
-Proses fitur ini akan dilakukan melalui modul \texttt{player} yang dapat menerima perintah pengguna melalui \textit{front-end}. Selanjutnya modul \texttt{framefinder} akan melakukan pendeteksian label dan data secara otomatis pada masing-masing tabel yang terdapat pada \textit{sheet}. Tabel-tabel tersebut didapatkan melalui modul \texttt{hierarchyfinder}. Selanjutnya, pada saat menerima perintah penyimpanan, modul \texttt{table} akan dipanggil oleh \texttt{player}. Jika data masukan sudah benar, maka modul \texttt{mysql} akan melakukan pennyimpanan ke dalam basis data. Kolaborasi antar modul disajikan pada Gambar \ref{ModuleFlow}.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.5\textwidth]{resources/chapter-4-module-flow.png}
-	\caption{Kolaborasi Antar Modul}
-	\label{ModuleFlow}
-\end{figure}
-
-Pada aplikasi Ethercalc, modul yang ditambahkan akan berada di bawah modul \texttt{player} yang sudah ada. Ilustrasi penempatan modul yang dibuat pada aplikasi EtherCalc yang sudah ada dapat dilihat pada Gambar \ref{ModulePlacing}.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.6\textwidth]{resources/chapter-4-module-placing.png}
-	\caption{Interaksi dengan Modul yang Sudah Ada}
-	\label{ModulePlacing}
-\end{figure}
-
-\subsection{Arsitektur}
-Aplikasi dibuat dengan menggunakan bantuan Docker sehingga diharapkan dapat dengan mudah dipasang pada berbagai \textit{platform}. Aplikasi terdiri dari tiga \textit{docker container} yakni untuk aplikasi utama, basis data redis, dan basis data MySQL. \textit{File} \texttt{docker-compose.yml} yang dibuat untuk mendefinisikan \textit{docker container} yang digunakan dapat dilihat pada Kode \ref{KodeCompose}
-
-Untuk menyimpan \textit{state} konfigurasi tabel dan \textit{mapping} \textit{metadata table} dengan data pada basis data, digunakan dua tabel basis data yang sudah didefinisikan sebelumnya. Kedua tabel basis data ini dinamakan s\_database\_state dan s\_database\_wlog, kedua tabel ini tidak memiliki keterhubungan. Atribut yang terdapat pada kedua tabel ini dapat dilihat pada diagram struktur basis data pada Gambar \ref{StructureDiagram}.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.5\textwidth]{resources/chapter-4-architect-db.png}
-	\caption{Diagram Struktur Tabel Penyimpanan Konfigurasi}
-	\label{StructureDiagram}
-\end{figure}
-
-\textit{metadata table} yang ditampilkan kepada pengguna akan berasal dari tabel s\_database\_state dan juga disimpan pada tabel tersebut. Kegunaan  s\_database\_wlog adalah mencatat pemetaan data kepada \textit{metadata table} sehingga saat \textit{metadata table} dihapus, data yang berasal dari \textit{metadata table} tersebut dapat juga dihapus.
-
-Kakas dibuat di atas aplikasi EtherCalc, sehingga akan diimplementasi tambahan modul maupun menggunakan modul yang sudah ada pada EtherCalc. Interaksi antar modul yang dibuat dengan modul yang sudah ada serta dengan data masukan dapat dilihat pada Gambar \ref{ArchDiagram}.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=0.7\textwidth]{resources/chapter-4-architecture.png}
-	\caption{Diagram Arsitektur Aplikasi}
-	\label{ArchDiagram}
-\end{figure}
-
-Pada diagram arsitektur terlihat bahwa masih terdapat dua basis data yakni redis dan MySQL. Hal ini dilakukan agar data mengenai format dan cara ditampilkan pada aplikasi EtherCalc tetap disimpan pada basis data redis sedangkan data yang ingin dikumpulkan dan digabungkan oleh pengguna dimasukkan pada basis data relasional MySQL.
-
-% Modul-modul dan fitur dibuat di atas aplikasi EtherCalc, sehingga arsitektur kakas akan mengikuti arsitektur aplikasi EtherCalc yang telah dijelaskan pada Subbab \ref{TeknologiSpreadsheet}.
 
 \section{Implementasi}
 Implementasi dilakukan dengan membangun modul yang telah dijabarkan pada Subbab \ref{KebutuhanModul} dengan menggunakan bahasa Javascript, menyesuaikan dengan modul lain yang telah ada pada aplikasi EtherCalc. Pada bagian ini akan dijelaskan antarmuka dan modul-modul yang diimplementasikan.
