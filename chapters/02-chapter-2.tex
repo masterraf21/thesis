@@ -372,6 +372,7 @@ Sebagai contoh, andaikan telah terjadi peningkatan \textit{latency} pada \textit
 			\textbf{runinfo.host}: vm73 & 0.41 \\ \hline
 			\textbf{service}: inventory, \textbf{service.version}: 1.14.1 &  $\num{-0.65}$ \\ \hline
 		\end{longtable}
+	}
 \end{small}
 
 Tabel \ref{corr-tab-1} menunjukkan bahwa ada korelasi kuat antara versi baru dari \textit{service} "inventory" dengan hasil \textit{trace} terbaru. Terdapat korelasi yang kuat juga antara versi sebelumnya dengan hasil \textit{trace} yang berasal dari satu jam yang lalu. Hal tersebut memberikan cukup bukti untuk melakukan tindakan seperti melakukan \textit{rollback} ke versi sebelumnya untuk mengembalikan kinerja seperti semula.
