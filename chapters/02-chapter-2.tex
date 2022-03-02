@@ -361,18 +361,18 @@ Metrik-metrik seperti \textit{latency}, \textit{error}, \textit{tag}, dan metada
 
 Sebagai contoh, andaikan telah terjadi peningkatan \textit{latency} pada \textit{service} yang ada dan sebagai tindakannya kita membandingkan sampel \textit{trace} yang terjadi pada lima menit terakhir dengan sampel \textit{trace} yang terjadi pada satu jam yang lalu. Tabel \ref{corr-tab-1} menunjukkan sampel kecil dari fitur yang dapat diidentifikasi oleh analisis ini.
 
-\begin{small}
-	\begin{longtable}{ | p{10cm} | p{2cm} | }
-			\caption{Contoh analisis korelasi}
-			\label{corr-tab-1}                                                           
-			\\ \hline
-			\centering\bfseries{Fitur} & \centering\bfseries{Koefisien Korelasi} \tabularnewline \hline
-			\endfirsthead
-			\textbf{service}: inventory, \textbf{service.version}: 1.14.2 & 0.65 \\ \hline
-			\textbf{runinfo.host}: vm73 & 0.41 \\ \hline
-			\textbf{service}: inventory, \textbf{service.version}: 1.14.1 &  $\num{-0.65}$ \\ \hline
-		\end{longtable}
-\end{small}
+%\begin{small}
+%	\begin{longtable}{ | p{10cm} | p{2cm} | }
+%			\caption{Contoh analisis korelasi}
+%			\label{corr-tab-1}                                                           
+%			\\ \hline
+%			\centering\bfseries{Fitur} & \centering\bfseries{Koefisien Korelasi} \tabularnewline \hline
+%			\endfirsthead
+%			\textbf{service}: inventory, \textbf{service.version}: 1.14.2 & 0.65 \\ \hline
+%			\textbf{runinfo.host}: vm73 & 0.41 \\ \hline
+%			\textbf{service}: inventory, \textbf{service.version}: 1.14.1 &  $\num{-0.65}$ \\ \hline
+%		\end{longtable}
+%\end{small}
 
 Tabel \ref{corr-tab-1} menunjukkan bahwa ada korelasi kuat antara versi baru dari \textit{service} "inventory" dengan hasil \textit{trace} terbaru. Terdapat korelasi yang kuat juga antara versi sebelumnya dengan hasil \textit{trace} yang berasal dari satu jam yang lalu. Hal tersebut memberikan cukup bukti untuk melakukan tindakan seperti melakukan \textit{rollback} ke versi sebelumnya untuk mengembalikan kinerja seperti semula.
 
