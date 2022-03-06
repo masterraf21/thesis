@@ -6,19 +6,7 @@ Bab ini akan membahas seluruh proses implementasi yang dilakukan untuk menerapka
 \section{Implementasi}
 Implementasi sistem \textit{Performance Regression Analysis} (PRA) akan dibuat berdasarkan rancangan arsitektur seperti yang terdapat pada gambar \ref{arch-pra}. Beberapa komponen seperti \textit{library} instrumentasi dan juga \textit{User Interface} tidak akan dibuat dari awal, melainkan akan melakukan \textit{fork} dan modifikasi solusi \textit{Open Source} \textit{distributed tracing} dari Zipkin. Komponen yang akan dibuat dari awal sepenuhnya adalah \textit{engine} dari sistem PRA yang akan melakukan komputasi utama sistem pendeteksian dan analisis regresi. Komponen \textit{engine} juga akan berfungsi sebagai API yang akan diakses oleh komponen \textit{User Interface}.
 
-%Sementara komponen inti dari Tugas Akhir ini adalah \textit{engine} 
-\begin{small}
-	\begin{longtable}{ | p{3cm} | p{10cm} |}
-		\caption{Kriteria pemilihan solusi \textit{tracing}}
-		\label{ch3-trace-crit}                                                           
-		\\ \hline
-		\centering\bfseries{ID Kriteria} & \centering\bfseries{Deskripsi} \tabularnewline \hline
-		\endfirsthead
-		TC-1 & Komponen instrumentasi dapat menyediakan informasi kausalitas antar \textit{service} yang terjadi selama \textit{request} pada \textit{span} \\ \hline
-		TC-2 & Komponen \textit{deployment} menyediakan dukungan untuk Kubernetes \\ \hline
-		TC-3 & Komponen \textit{deplyoment} menyediakan dukungan untuk \textit{storage} eksternal \\ \hline
-	\end{longtable}
-\end{small}
+
 
 \subsection{\textit{Performance Regression Analysis} \textit{engine}}
 Implementasi komponen \textit{engine} ini akan dibagi menjadi beberapa modul, seperti yang terlihat pada tabel \ref{engine-module}.
