@@ -21,7 +21,7 @@ Implementasi komponen \textit{engine} ini akan dibagi menjadi beberapa modul, se
 		EM-1 & Pengambilan Data & Modul ini bertanggung jawab untuk mengambil data dari API Zipkin yang memiliki data hasil \textit{trace} dari aplikasi. Selain mengambil data \textit{trace} dari Zipkin, modul ini juga bertanggung jawab untuk mengambil model-model \textit{baseline} yang terdapat pada \textit{storage}. \\ \hline
 		EM-2 & Transformasi Data & Modul ini bertanggung jawab untuk melakukan transformasi dari data \textit{trace} mentah yang diambil dari API Zipkin menjadi bentuk-bentuk model yang akan digunakan untuk komputasi di tahap selanjutnya seperti model \textit{Cumulative Distribution Function} (CDF), model data \textit{Critical Path}, dan sampel data \textit{trace}. \\ \hline
 		EM-3 & Penyimpanan Data & Modul ini bertanggung jawab untuk menyimpan model hasil transformasi \textit{baseline} dari modul EM-2 ke \textit{storage} untuk digunakan kembali pada fase \textit{Real-time Analysis}. \\ \hline
-		EM-4 & Perhitungan Statistik & Modul ini bertanggung jawab untuk melakukan komputasi perhitungan statistik yang mencakup pendeteksian regresi dengan menghitung koefisien Kolnogorov-Smirnov seperti yang telah dijelaskan pada subbab \ref{approach-cumulative}. \\ \hline
+		EM-4 & Perhitungan Statistik & Modul ini bertanggung jawab untuk melakukan komputasi perhitungan statistik yang mencakup pendeteksian regresi dengan menghitung koefisien Kolmogorov-Smirnov seperti yang telah dijelaskan pada subbab \ref{approach-cumulative}. \\ \hline
 		EM-5 & Analisis Korelasi & Komponen \\ \hline
 		EM-6 & Analisis \textit{Critical Path} & Komponen \\ \hline
 		EM-7 & API & Komponen \\ \hline
