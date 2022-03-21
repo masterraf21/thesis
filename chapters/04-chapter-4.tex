@@ -44,20 +44,30 @@ Dalam dokumentasinya, Zipkin menyediakan keterangan mengenai model data \textit{
 Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan untuk merepresentasikan beberapa model seperti yang ada pada gambar \ref{alur-pra}, pada subbab ini akan didefinisikan beberapa algoritma dalam bentuk \textit{pseudocode} yang akan digunakan untuk melakukan berbagai operasi komputasi pada sistem PRA.
 
 Algoritma pertama yang akan dijabarkan adalah algoritma proses umum yang terjadi pada sistem PRA. Algoritma ini akan dijalankan sebagai program utama di sistem PRA.
-\begin{algorithm}[H]
-	\KwData{this text}
-	\KwResult{how to write algorithm with \LaTeX2e }
-	initialization\;
-	\While{not at end of this document}{
-		read current\;
-		\eIf{understand}{
-			go to next section\;
-			current section becomes this one\;
-		}{
-			go back to the beginning of current section\;
-		}
-	}
-	\caption{How to write algorithms}
+\begin{algorithm} % enter the algorithm environment
+	\caption{Calculate $y = x^n$} % give the algorithm a caption
+	\label{alg1} % and a label for \ref{} commands later in the document
+	\begin{algorithmic} % enter the algorithmic environment
+		\REQUIRE $n \geq 0 \vee x \neq 0$
+		\ENSURE $y = x^n$
+		\STATE $y \Leftarrow 1$
+		\IF{$n < 0$}
+		\STATE $X \Leftarrow 1 / x$
+		\STATE $N \Leftarrow -n$
+		\ELSE
+		\STATE $X \Leftarrow x$
+		\STATE $N \Leftarrow n$
+		\ENDIF
+		\WHILE{$N \neq 0$}
+		\IF{$N$ is even}
+		\STATE $X \Leftarrow X \times X$
+		\STATE $N \Leftarrow N / 2$
+		\ELSE[$N$ is odd]
+		\STATE $y \Leftarrow y \times X$
+		\STATE $N \Leftarrow N - 1$
+		\ENDIF
+		\ENDWHILE
+	\end{algorithmic}
 \end{algorithm}
 
 
