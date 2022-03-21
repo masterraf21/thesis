@@ -119,13 +119,13 @@
 \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
 \setlength{\cftmyequationsnumwidth}{2.5em}
 
-%\newcommand{\listalgorithmname}{Daftar Algoritme}
-%\newlistof{algorithm}{alg}{\listalgorithmname}
-%\newcommand{\algoritme}[1]{%
-%\refstepcounter{algorithm}
-%\par\noindent\centering\normalsize\textbf{Algoritme {\thechapter.\thealgorithm\ }\normalfont #1}
-%\addcontentsline{alg}{algorithm}{\protect\numberline{\thechapter.\thealgorithm}#1}\par}
-%\setlength{\cftalgorithmnumwidth}{2.5em}
+\newcommand{\listalgorithmname}{Daftar Algoritme}
+\newlistof{algorithm}{alg}{\listalgorithmname}
+\newcommand{\algorithm}[1]{%
+\refstepcounter{algorithm}
+\par\noindent\centering\normalsize\textbf{Algoritme {\thechapter.\thealgorithm\ }\normalfont #1}
+\addcontentsline{alg}{algorithm}{\protect\numberline{\thechapter.\thealgorithm}#1}\par}
+\setlength{\cftalgorithmnumwidth}{2.5em}
 
 % Pengaturan untuk title Daftar Isi, Tabel, dan Gambar
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
