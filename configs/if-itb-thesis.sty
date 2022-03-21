@@ -120,13 +120,13 @@
 \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
 \setlength{\cftmyequationsnumwidth}{2.5em}
 
-\newcommand{\listalgorithmname}{Daftar Algoritme}
-\newlistof{algorithm}{alg}{\listalgorithmname}
-\newcommand{\algoritme}[1]{%
-\refstepcounter{algorithm}
-\par\noindent\centering\normalsize\textbf{Algoritme {\thechapter.\thealgorithm\ }\normalfont #1}
-\addcontentsline{alg}{algorithm}{\protect\numberline{\thechapter.\thealgorithm}#1}\par}
-\setlength{\cftalgorithmnumwidth}{2.5em}
+%\newcommand{\listalgorithmname}{Daftar Algoritme}
+%\newlistof{algorithm}{alg}{\listalgorithmname}
+%\newcommand{\algoritme}[1]{%
+%\refstepcounter{algorithm}
+%\par\noindent\centering\normalsize\textbf{Algoritme {\thechapter.\thealgorithm\ }\normalfont #1}
+%\addcontentsline{alg}{algorithm}{\protect\numberline{\thechapter.\thealgorithm}#1}\par}
+%\setlength{\cftalgorithmnumwidth}{2.5em}
 
 % Pengaturan untuk title Daftar Isi, Tabel, dan Gambar
 \renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
@@ -137,8 +137,8 @@
 \renewcommand{\cftafterloftitle}{\hspace*{\fill}} 
 \renewcommand{\cftequtitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
 \renewcommand{\cftafterequtitle}{\hspace*{\fill}} 
-\renewcommand{\cftalgtitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
-\renewcommand{\cftafteralgtitle}{\hspace*{\fill}} 
+%\renewcommand{\cftalgtitlefont}{\hspace*{\fill}\Large\bfseries\MakeUppercase}
+%\renewcommand{\cftafteralgtitle}{\hspace*{\fill}} 
 
 \renewcommand{\cftchappresnum}{Bab }
 \renewcommand{\cftchapaftersnum}{}
@@ -148,7 +148,7 @@
 \setlength{\cftbeforeloftitleskip}{-4em}
 \setlength{\cftbeforelottitleskip}{-4em}
 \setlength{\cftbeforeequtitleskip}{-4em}
-\setlength{\cftbeforealgtitleskip}{-4em}
+%\setlength{\cftbeforealgtitleskip}{-4em}
 
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
