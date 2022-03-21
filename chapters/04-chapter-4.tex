@@ -44,33 +44,26 @@ Dalam dokumentasinya, Zipkin menyediakan keterangan mengenai model data \textit{
 Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan untuk merepresentasikan beberapa model seperti yang ada pada gambar \ref{alur-pra}, pada subbab ini akan didefinisikan beberapa algoritma dalam bentuk \textit{pseudocode} yang akan digunakan untuk melakukan berbagai operasi komputasi pada sistem PRA.
 
 Algoritma pertama yang akan dijabarkan adalah algoritma proses umum yang terjadi pada sistem PRA. Algoritma ini akan dijalankan sebagai program utama di sistem PRA.
-\begin{algorithm} % enter the algorithm environment
-	\caption{Calculate $y = x^n$} % give the algorithm a caption
-	\label{alg1} % and a label for \ref{} commands later in the document
-	\begin{algorithmic} % enter the algorithmic environment
-		\REQUIRE $n \geq 0 \vee x \neq 0$
-		\ENSURE $y = x^n$
-		\STATE $y \Leftarrow 1$
-		\IF{$n < 0$}
-		\STATE $X \Leftarrow 1 / x$
-		\STATE $N \Leftarrow -n$
-		\ELSE
-		\STATE $X \Leftarrow x$
-		\STATE $N \Leftarrow n$
-		\ENDIF
-		\WHILE{$N \neq 0$}
-		\IF{$N$ is even}
-		\STATE $X \Leftarrow X \times X$
-		\STATE $N \Leftarrow N / 2$
-		\ELSE[$N$ is odd]
-		\STATE $y \Leftarrow y \times X$
-		\STATE $N \Leftarrow N - 1$
-		\ENDIF
-		\ENDWHILE
+
+\begin{algorithm}
+	\caption{An algorithm with caption}\label{alg:cap}
+	\begin{algorithmic}[1]
+		\Require $n \geq 0$
+		\Ensure $y = x^n$
+		\State $y \gets 1$
+		\State $X \gets x$
+		\State $N \gets n$
+		\While{$N \neq 0$}
+		\If{$N$ is even}
+		\State $X \gets X \times X$
+		\State $N \gets \frac{N}{2}$  \Comment{This is a comment}
+		\ElsIf{$N$ is odd}
+		\State $y \gets y \times X$
+		\State $N \gets N - 1$
+		\EndIf
+		\EndWhile
 	\end{algorithmic}
 \end{algorithm}
-
-
 
 
 
