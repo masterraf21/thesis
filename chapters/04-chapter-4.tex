@@ -32,7 +32,7 @@ Implementasi komponen \textit{engine} ini akan dibagi menjadi beberapa modul, se
 \subsubsection{Model dan Struktur Data}
 Sistem PRA yang dibuat bergantung pada data \textit{trace} yang diperoleh dari Zipkin. Data tersebut tidak bisa begitu saja digunakan untuk menjalankan fungsi-fungsi dari \textit{engine} PRA sesuai yang terdapat pada gambar \ref{alur-pra} dan perlu ditransformasikan menjadi model dan struktur data yang lebih bermakna seperti yang telah disebutkan pada EM-2 di tabel \ref{engine-module}.
 
-Dalam dokumentasinya, Zipkin menyediakan keterangan mengenai model data \textit{trace} yang digunakannya seperti yang terdapat pada \citep{zipkin-data}. Model data yang digunakan Zipkin terbagi menjadi dua yaitu \textit{span} dan \textit{trace}. \textit{Trace} sendiri merupakan serangkaian \textit{span} yang merepresentasikan alur jalannya sebuah \textit{request} dalam sebuah \textit{service} yang telah terinstrumentasi, sementara \textit{span} merepresentasikan salah satu operasi yang terjadi sepanjang sebuah \textit{request}. Beberapa informasi yang terdapat pada data \textit{span} antara lain adalah informasi mengenai \textit{trace} dimana \textit{span} itu berada, metadata mengenai operasi yang direpresentasikan \textit{span}, durasi atau \textit{latency} dari operasi.
+Dalam dokumentasinya, Zipkin menyediakan keterangan mengenai model data \textit{trace} yang digunakannya seperti yang terdapat pada \citep{zipkin-data}. Model data yang digunakan Zipkin terbagi menjadi dua yaitu \textit{span} dan \textit{trace}. \textit{Trace} sendiri merupakan serangkaian \textit{span} dengan id \textit{trace} sama yang merepresentasikan alur jalannya sebuah \textit{request} dalam sebuah \textit{service} yang telah terinstrumentasi, sementara \textit{span} merepresentasikan salah satu operasi yang terjadi sepanjang sebuah \textit{request}. Beberapa informasi yang terdapat pada data \textit{span} antara lain adalah informasi mengenai \textit{trace} dimana \textit{span} itu berada, metadata mengenai operasi yang direpresentasikan \textit{span}, durasi atau \textit{latency} dari operasi.
 
 
 
@@ -43,22 +43,14 @@ Dalam dokumentasinya, Zipkin menyediakan keterangan mengenai model data \textit{
 \subsubsection{Algoritme dan \textit{Pseudocode}}
 Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan untuk merepresentasikan beberapa model seperti yang ada pada gambar \ref{alur-pra}, pada subbab ini akan didefinisikan beberapa algoritma dalam bentuk \textit{pseudocode} yang akan digunakan untuk melakukan berbagai operasi komputasi pada sistem PRA.
 
-Algoritma pertama yang akan dijabarkan adalah algoritma proses umum yang terjadi pada sistem PRA. Algoritma ini akan dijalankan sebagai program utama di sistem PRA.
-\begin{algorithm}[hbt!]
-	\SetAlgorithmName{Algoritme}{Algoritme}
-	
-	\If{baseline model not exist}{retrieve baseline model}
-	
-	\caption{Algoritme program \textit{main}}\label{alg:main}
-\end{algorithm}
-
+Algoritma 
 \begin{algorithm}[hbt!]
 	\SetAlgorithmName{Algoritme}{Algoritme}
 	
 	\caption{Algoritme pengambilan data \textit{baseline}}\label{alg:baseline-ret}
 \end{algorithm}
 
-Algoritme selanjutnya akan menjelaskan 
+
 
 
 
