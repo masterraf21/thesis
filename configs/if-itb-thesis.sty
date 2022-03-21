@@ -57,8 +57,8 @@
 \usepackage{pifont}
 \usepackage{siunitx}
 \usepackage[section]{placeins}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
+\usepackage{algorithmicx}
+\usepackage[Algorithm,ruled]{algorithm}
 \usepackage{setspace}
  
 % \usepackage{ragged2e}
@@ -119,11 +119,6 @@
 \newcommand{\myequations}[1]{%
 \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}#1}\par}
 \setlength{\cftmyequationsnumwidth}{2.5em}
-
-\newenvironment{algoritme}[1][htb]
-{\renewcommand{\algorithmcfname}{Algoritme}% Update algorithm name
-	\begin{algorithm}[#1]%
-	}{\end{algorithm}}
 
 %\newcommand{\listalgorithmname}{Daftar Algoritme}
 %\newlistof{algorithm}{alg}{\listalgorithmname}
