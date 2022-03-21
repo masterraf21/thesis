@@ -47,7 +47,24 @@ Algoritma pertama yang akan dijabarkan adalah algoritma proses umum yang terjadi
 \begin{algorithm}[hbt!]
 	\SetAlgorithmName{Algoritme}{Algoritme}
 	
-	\eIf{$baseline-model-not-exist$}{$retrieve baseline data\;$}{$else-block$}
+\If(\tcc*[h]{a simple if but with a comment on the same line}){this is true}{
+	we do that, else nothing\;
+	\tcc{we will include other if so you can see this is possible}
+	\eIf{we agree that}{
+		we do that\;
+	}{
+		else we will do a more complicated if using else if\;
+		\uIf{this first condition is true}{
+			we do that\;
+		}
+		\uElseIf{this other condition is true}{
+			this is done\tcc*[r]{else if}
+		}
+		\Else{
+			in other case, we do this\tcc*[r]{else}
+		}
+	}
+}
 	
 	
 %	\KwData{Write here the required data}
