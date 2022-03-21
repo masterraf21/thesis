@@ -47,7 +47,9 @@ Algoritma pertama yang akan dijabarkan adalah algoritma proses umum yang terjadi
 \begin{algorithm}[hbt!]
 	\SetAlgorithmName{Algoritme}{Algoritme}
 	
-	\If{baseline model not exist}{retrieve baseline model}
+	\eif{baseline model not exist}{retrieve baseline model}{continue}
+	
+	
 	
 %	\KwData{Write here the required data}
 %	\KwResult{Write here the expected result}
