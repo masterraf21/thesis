@@ -46,7 +46,22 @@ Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan u
 Algoritma pertama yang akan dijabarkan adalah algoritma proses umum yang terjadi pada sistem PRA. Algoritma ini akan dijalankan sebagai program utama di sistem PRA.
 
 \begin{algorithm}
-	
+	\caption{An algorithm with caption}\label{alg:two}
+	\KwData{$n \geq 0$}
+	\KwResult{$y = x^n$}
+	$y \gets 1$\;
+	$X \gets x$\;
+	$N \gets n$\;
+	\While{$N \neq 0$}{
+		\eIf{$N$ is even}{
+			$X \gets X \times X$\;
+			$N \gets \frac{N}{2}$ \Comment*[r]{This is a comment}
+		}{\If{$N$ is odd}{
+				$y \gets y \times X$\;
+				$N \gets N - 1$\;
+			}
+		}
+	}
 \end{algorithm}
 
 Algoritme selanjutnya akan menjelaskan 
