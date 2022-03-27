@@ -103,6 +103,23 @@ Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan u
 \subsection{\textit{User Interface}}
 Komponen lainnya yang akan diimplementasi pada Tugas Akhir ini adalah komponen \textit{User Interface} (UI). Komponen ini akan menjadi antar muka yang dapat digunakan untuk mengetahui \textit{state} dari sistem PRA. Fungsionalitas yang akan dibuat pada komponen UI akan dijabarkan pada tabel kebutuhan  fungsional \ref{}.
 
-
+\begin{small}
+	\begin{longtable}{ | p{1cm} | p{3cm} | p{10cm} | }
+		\caption{Tabel pembagian modul komponen \textit{engine}}
+		\label{engine-module}                                                           
+		\\ \hline
+		\centering\bfseries{ID} & \centering\bfseries{Nama Modul} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+		\endfirsthead
+		EM-1 & zipkin (Pengambilan Data) & Modul ini bertanggung jawab untuk mengambil data dari API Zipkin yang memiliki data hasil \textit{trace} dari aplikasi. Selain mengambil data \textit{trace} dari Zipkin, modul ini juga bertanggung jawab untuk mengambil model-model \textit{baseline} yang terdapat pada \textit{storage}. \\ \hline
+		EM-2 & transform (Transformasi Data) & Modul ini bertanggung jawab untuk melakukan transformasi dari data \textit{trace} mentah yang diambil dari API Zipkin menjadi bentuk-bentuk model yang akan digunakan untuk komputasi di tahap selanjutnya seperti model \textit{Cumulative Distribution Function} (CDF), model data \textit{Critical Path}, dan sampel data \textit{trace}. \\ \hline
+		EM-3 & storage (Penyimpanan Data) & Modul ini bertanggung jawab untuk menyimpan model hasil transformasi \textit{baseline} dari modul EM-2 ke \textit{storage} untuk digunakan kembali pada fase \textit{Real-time Analysis}. \\ \hline
+		EM-4 & statistic (Perhitungan Statistik) & Modul ini bertanggung jawab untuk melakukan komputasi perhitungan statistik yang mencakup pendeteksian regresi dengan menghitung koefisien Kolmogorov-Smirnov seperti yang telah dijelaskan pada subbab \ref{approach-cumulative}. \\ \hline
+		EM-5 & correlation\textunderscore analysis (Analisis Korelasi) & Modul ini bertanggung jawab untuk melakukan analisis korelasi yang bertujuan untuk menghasilkan koefisien korelasi yang dapat menunjukkan \textit{service} mana yang berkemungkinan tinggi mengalami regresi, sehingga pencarian penyebab regresi dapat dikerucutkan menjadi lebih kecil. \\ \hline
+		EM-6 & critical\textunderscore path (Analisis \textit{Critical Path}) & Modul ini bertanggung jawab untuk melakukan analisis \textit{Critical Path} yang bertujuan untuk mencari penyebab regresi dengan mencari \textit{Critical Path} dari tiap \textit{service} yang dicurigai menjadi penyebab regresi dan melihat perbandingan \textit{latency} dari operasi tersebut dengan \textit{latency} yang telah direkam sebelumnya pada fase \textit{Baseline Loading}. Operasi yang selisih \textit{latency}-nya melebihi \textit{threshold} diduga kuat merupakan penyebab utama dari regresi yang terjadi. \\ \hline
+		EM-7 & api (Application Programming Interface (API)) & Modul ini bertanggung jawab untuk mengekspos hasil komputasi dari sistem PRA sebagai API yang akan diakses oleh komponen \textit{User Interface} sehingga \textit{state} dan kondisi dari sistem PRA dapat terlihat oleh pengguna. \\ \hline
+		EM-8 & scheduling (\textit{Scheduling}) & Modul ini bertanggung jawab untuk melakukan \textit{scheduling} dari \textit{task} yang harus dilakukan secara periodik oleh sistem PRA seperti pendeteksian regresi, dan pembaharuan model \textit{baseline}. \\ \hline
+	\end{longtable}
+\end{small}
 
 \section{Pengujian}
+Berikut adalah hasil pengujian yang telah dilakukan pada sistem PRA.
