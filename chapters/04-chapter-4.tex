@@ -36,8 +36,10 @@ Dalam dokumentasinya, Zipkin menyediakan keterangan mengenai model data \textit{
 
 Sementara itu, untuk memenuhi fungsi-fungsi pada sistem PRA, data yang bersumber dari Zipkin perlu ditransformasikan menjadi struktur data yang sesuai dengan kebutuhan masing-masing tahap analisis. Dari rancangan alur sistem PRA, terdapat tiga tahap analisis yang akan dilakukan, yaitu tahap pendeteksian regresi dengan analisis statistik Kolmogorov-Smirnov, tahap analisis korelasi, dan tahap analisis \textit{critical path}.
 
-Pada tahap pendeteksian regresi dengan analisis statistik Kolmogorov-Smirnov, data yang diperlukan adalah data \textit{latency} atau durasi operasi \textit{span} yang dimiliki oleh Zipkin. 
+Pada tahap pendeteksian regresi dengan tes statistik Kolmogorov-Smirnov (K-S), data yang diperlukan adalah data \textit{latency} atau durasi operasi \textit{span} yang dimiliki oleh Zipkin. Tes K-S akan membandingkan dua buah fungsi distribusi kumulatif (\textit{Cummulative Distribution Function}) atau CDF dan akan membandingkan apakah kedua fungsi tersebut berada pada distribusi yang sama. Data yang dibutuhkan untuk membuat fungsi distribusi dari data \textit{latency} adalah data \textit{latency} itu sendiri beserta dengan beban atau banyaknya data tersebut pada sebaran data, sehingga struktur data yang diperlukan untuk melakukan tes K-S adalah dua buah \textit{array} yang berisi nilai dari \textit{latency} dan beban bagi masing-masing nilai tersebut. 
 
+
+Pada tahap analisis \textit{critical path}, data yang dibutuhkan adalah pasangan \textit{key-value} dari nama operasi yang terrekam oleh Zipkin dan juga nilai \textit{latency} dari operasi tersebut. Data ini akan didapatkan dari data \textit{trace} bawaan Zipkin yang sudah memiliki informasi mengenai \textit{critical path} dan juga nilai \textit{latency} nya masing-masing.
 
 
 
