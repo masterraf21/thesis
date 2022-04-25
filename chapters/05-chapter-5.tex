@@ -7,7 +7,7 @@ Berdasarkan hasil pengembangan dan pengujian sistem \textit{Performance Regressi
 	\item Telah berhasil dilakukan pendeteksian regresi pada kinerja aplikasi berbasis microservice menggunakan \textit{engine} PRA.
 	\item Telah berhasil dilakukan analisis untuk menentukan akar penyebab regresi pada aplikasi berbasis microservice.
 	\item Pendeteksian regresi dapat dilakukan dengan menggunakan statistik Kolmogorov-Smirnov dengan membandingkan fungsi distribusi kumulatif antara dua sampel \textit{latency} service-service yang terdapat pada aplikasi berbasis microservice. Statistik Kolmogorov-Smirnov akan mengajukan hipotesis $h_{0}$ yaitu kedua fungsi distribusi berasal dari distribusi yang sama. Jika nilai statistik Kolmogorov-Smirnov lebih kecil dari nilai kritis yang diperoleh dari perhitungan banyaknya sampel dan nilai signifikan maka $h_{0}$ akan ditolak dan menghasilkan hipotesis baru yaitu kedua distribusi berasal dari distribusi yang berbeda sehingga dapat menjadi indikator kuat terlah terjadi regresi pada aplikasi.
-
+	\item Analisis penyebab regresi dilakukan dengan membandingkan \textit{latency} dari \textit{Critical Path} dari semua \textit{trace} yang diperoleh dari data Zipkin. 
 	
 	\item Telah berhasil dilakukan penambahan fitur pada aplikasi EtherCalc yang dapat melakukan pengumpulan data ke dalam bentuk basis data.
 	 \item Konflik pada kolaborasi dapat ditangani dengan baik oleh sistem pada EtherCalc sehingga penanganan konflik tidak perlu dibuat kembali.	
