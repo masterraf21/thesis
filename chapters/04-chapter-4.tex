@@ -140,9 +140,9 @@ Pengujian akan dilakukan pada Google Kubernetes Engine dengan spesifikasi yang d
 	\end{longtable}
 \end{small}
 \subsection{Aplikasi Pengujian}
-Aplikasi yang akan digunakan untuk melakukan pengujian sistem PRA adalah aplikasi Online Boutique yang merupakan aplikasi \textit{e-commerce} berbasis web yang dibuat untuk mendemostrasikan berbagai macam teknologi yang dimiliki oleh Google. Seperti pada gambar \ref{butiq-arch}, Online Boutique terdiri atas 10 microservice yang saling berkomunikasi melalui gRPC. Selain itu Online Boutique juga memiliki load generator yang secara terus menerus mengirimkan request untuk menyimulasikan alur belanja pengguna. Online Boutique sudah memiliki load generator yang dibuat menggunakan Locust
-untuk menyimulasikan pengunaan aplikasi oleh sejumlah user. Selain itu Online Boutique juga memiliki akan mengirimkan data trace dan penggunaan resource ke StackDriver (atau sekarang disebut Google Cloud Platform Monitoring) jika
-berjalan pada platform Google Cloud. Aplikasi Online Boutique akan dimodifikasi dengan diinstumentasikan menggunakan Zipkin untuk menyimulasikan lingkungan \textit{distributed tracing} yang menggunakan Zipkin.
+Aplikasi yang akan digunakan untuk melakukan pengujian sistem PRA adalah aplikasi Hipster Shop yang merupakan aplikasi \textit{e-commerce} berbasis web yang dibuat untuk mendemostrasikan berbagai macam teknologi yang dimiliki oleh Google. Seperti pada gambar \ref{butiq-arch}, Hipster Shop terdiri atas 10 microservice yang saling berkomunikasi melalui gRPC. Selain itu Hipster Shop juga memiliki load generator yang secara terus menerus mengirimkan request untuk menyimulasikan alur belanja pengguna. Hipster Shop sudah memiliki load generator yang dibuat menggunakan Locust
+untuk menyimulasikan pengunaan aplikasi oleh sejumlah user. Selain itu Hipster Shop juga memiliki akan mengirimkan data trace dan penggunaan resource ke StackDriver (atau sekarang disebut Google Cloud Platform Monitoring) jika
+berjalan pada platform Google Cloud. Aplikasi Hipster Shop akan dimodifikasi dengan diinstumentasikan menggunakan Zipkin untuk menyimulasikan lingkungan \textit{distributed tracing} yang menggunakan Zipkin.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{resources/ch4/hipster-arch.png}
