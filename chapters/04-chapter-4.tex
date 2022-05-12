@@ -153,11 +153,11 @@ untuk menyimulasikan pengunaan aplikasi oleh sejumlah user. Aplikasi Hipster Sho
 \end{figure}
 
 \subsection{Metode Pengujian}
-Untuk melakukan pengujian pada sistem PRA yang telah dibuat, \textit{service} yang ada pada Hipster Shop akan dimodifikasi untuk meniru perilaku dari \textit{service} yang mengalami regresi kinerjan. Ada dua metode utama yang dapat dilakukan untuk membuat perilaku regresi pada \textit{service} yaitu dengan menambahkan perintah \textit{sleep} dan juga menambahkan kalkulasi matematika terutama perhitungan fungsi trigonometri yang membutuhkan banyak usaha dari CPU untuk menyelesaikannya sehingga diharapkan fungsi-fungsi pada sebuah \textit{service} akan memiliki \textit{latency} yang lebih besar. Tabel \ref{hehe} menunjukkan fungsi-fungsi yang akan dimodifikasi pada \textit{service}-\textit{service} untuk meniru perilaku regresi.
+Untuk melakukan pengujian pada sistem PRA yang telah dibuat, \textit{service} yang ada pada Hipster Shop akan dimodifikasi untuk meniru perilaku dari \textit{service} yang mengalami regresi kinerjan. Ada dua metode utama yang dapat dilakukan untuk membuat perilaku regresi pada \textit{service} yaitu dengan menambahkan perintah \textit{sleep} dan juga menambahkan kalkulasi matematika terutama perhitungan fungsi trigonometri yang membutuhkan banyak usaha dari CPU untuk menyelesaikannya sehingga diharapkan fungsi-fungsi pada sebuah \textit{service} akan memiliki \textit{latency} yang lebih besar. Tabel \ref{modified-function} menunjukkan fungsi-fungsi yang akan dimodifikasi pada \textit{service}-\textit{service} untuk meniru perilaku regresi.
 \begin{small}
 	\begin{longtable}{ | p{5cm} | p{8cm} | }
-		\caption{Spesifikasi Lingkungan Pengujian}
-		\label{testing-env}                                                           
+		\caption{Daftar fungsi yang akan dimodifikasi}
+		\label{modified-function}                                                           
 		\\ \hline
 		\centering\bfseries{Layanan Kubernetes} & \centering\bfseries{Google Kubernetes Engine} \tabularnewline \hline
 		\endfirsthead
