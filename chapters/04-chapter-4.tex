@@ -12,7 +12,7 @@ Implementasi sistem \textit{Performance Regression Analysis} (PRA) akan dibuat b
 
 Sebelum melakukan implementasi solusi, penulis harus terlebih dahulu melakukan pemilihan kakas yang akan digunakan melakukan implementasinya. Secara umum, terdapat banyak bahasa pemrograman yang dapat melakukan implementasi solusi komponeasdn \textit{engine} sesuai dengan alur yang terdapat pada gambar \ref{alur-pra}. Namun, ada suatu kebutuhan penting untuk melakukan tes statistik Kolmogorov-Smirnov (K-S) yang tidak semua bahasa pemrograman memiliki dukungan \textit{library} untuk melakukannya. Terdapat dua bahasa pemrograman yang memiliki \textit{library} untuk melakukan tes K-S yaitu bahasa pemrograman \textbf{Go} dan \textbf{Python}. Bahasa \textbf{Go} memiliki library Gonum \citep{gonum} yang memiliki implementasi tes K-S dalam fungsi \texttt{KolmogorovSmirnov}, sementara bahasa \textbf{Python} memiliki library SciPy \citep{scipy} yang memiliki implementasi tes K-S dalam fungsi \texttt{scipy.stat.ks\textunderscore 2samp}.
 
-Dari kedua bahasa tersebut, penulis akhirnya memilih bahasa Python
+Dari kedua bahasa tersebut, penulis memilih bahasa \textbf{Python} untuk melakukan implementasi solusi setelah berhasil melakukan \textit{parsing} data \textit{trace} Zipkin dengan pendekatan pemrograman berorientasi objek yang didasarkan pada \textit{source code} yang dimiliki oleh aplikasi \textit{User Interface} milik Zipkin yang diimplemntasikan dengan bahasa \textit{Javascript}. 
 
 Implementasi akan terbagi menjadi beberapa modul, seperti yang terlihat pada tabel \ref{engine-module}.
 
