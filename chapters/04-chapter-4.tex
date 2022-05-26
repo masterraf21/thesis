@@ -39,7 +39,7 @@ Aplikasi \textit{engine} akan dibuat sebagai REST API dan akan diimplementasikan
 		\caption{Tabel \textit{endpoint} API \textit{engine}}
 		\label{endpoints}                                                           
 		\\ \hline
-		\centering\bfseries{ID} & \centering\bfseries{Nama Modul} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+		\centering\bfseries{ID} & \centering\bfseries{Operasi HTTP} & \centering\bfseries{\textit{endpoint}} & \centering\bfseries{Deskripsi} \tabularnewline \hline
 		\endfirsthead
 		EM-1 & zipkin (Pengambilan Data) & Modul ini bertanggung jawab untuk mengambil data dari API Zipkin yang memiliki data hasil \textit{trace} dari aplikasi. \\ \hline
 		EM-2 & transform (Transformasi Data) & Modul ini bertanggung jawab untuk melakukan transformasi dari data \textit{trace} mentah yang diambil dari API Zipkin menjadi bentuk-bentuk model yang akan digunakan untuk komputasi di tahap selanjutnya seperti sampel data \textit{latency}, dan model data \textit{Critical Path}. Semua model akan disimpan dalam data berbentuk JSON. \\ \hline
