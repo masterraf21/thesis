@@ -169,6 +169,12 @@
 
 \cftsetpnumwidth{2em}
 
+\newlength\mylen
+\newcommand\myinput[1]{%
+	\settowidth\mylen{\KwIn{}}%
+	\setlength\hangindent{\mylen}%
+	\hspace*{\mylen}#1\\}
+
 
 % \DefineBibliographyStrings{english}{%
 %     urlseen = {Waktu akses},
