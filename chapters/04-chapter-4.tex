@@ -163,6 +163,8 @@ Pengujian sistem PRA akan dilakukan dengan tujuan untuk:
 	\item Mengukur \textit{overhead} yang diakibatkan oleh sistem PRA dengan
 	indikator berupa penggunaan memori dan pemanfaatan CPU.
 \end{enumerate}
+
+Tujuan utama pengujian sistem \textit{Performance Regression Analysis} adalah untuk menguji apakah sistem dapat mendeteksi terjadinya regresi atau penurunan kinerja dengan indikasi peningkatan nilai \textit{latency} yang disebabkan oleh perubahan yang terjadi pada aplikasi. Perubahan tersebut
 \subsection{Lingkungan Pengujian}
 Pengujian akan dilakukan pada Google Kubernetes Engine dengan spesifikasi yang dipaparkan pada tabel \ref{testing-env}.
 \begin{small}
@@ -212,7 +214,9 @@ Untuk melakukan pengujian pada sistem PRA yang telah dibuat, \textit{service} ya
 %	\end{longtable}
 %\end{small}
 
-Ada dua tahap yang harus dilalui untuk melakukan pengujian ini, yaitu pertama tahap pengambilan data \textit{baseline}. Data \textit{baseline} akan diambil dengan menyimulasikan pengunaan aplikasi dengan menggunakan Load Generator yang akan dijalankan dengan variabel \textbf{25 User} dan \textbf{5 Spawn Rate} selama \textbf{1 jam}. Data \textit{baseline} ini kemudian akan disimpan oleh \textit{engine} untuk dipergunakan di kasus-kasus pengujian selanjutnya. 
+Ada dua tahap yang harus dilalui untuk melakukan pengujian ini, yaitu pertama tahap pengambilan data \textit{baseline}. Data \textit{baseline} akan diambil dengan menyimulasikan pengunaan aplikasi dengan menggunakan Load Generator yang akan dijalankan dengan variabel \textbf{25 User} dan \textbf{5 Spawn Rate} selama \textbf{1 jam}. Data \textit{baseline} ini kemudian akan disimpan oleh \textit{engine} untuk dipergunakan di kasus-kasus pengujian selanjutnya. Selanjutnya adalah melakukan pengujian dengan kasus-kasus yang akan dijelaskan lebih lanjut.
+
+
 
 Tabel \ref{testcase} akan menjelaskan kasus-kasus pengujian
 
