@@ -42,7 +42,8 @@ Aplikasi \textit{engine} akan dibuat sebagai REST API dan akan diimplementasikan
 		\centering\bfseries{ID} & \centering\bfseries{Operasi HTTP} & \centering\bfseries{\textit{endpoint}} & \centering\bfseries{Deskripsi} \tabularnewline \hline
 		\endfirsthead
 		EP-1 & \centering{GET} & \centering\texttt{/state} & Data \textit{state} dari \textit{engine} yang akan berisikan informasi mengenai status pendeteksian regresi, pengecekan terakhir regresi, dan hasil analysis \textit{critical path} yang diduga menjadi penyebab regresi \\ \hline
-		EP-2 & \centering{POST} & \centering\texttt{/baseline} & Dengan \textit{endpoint} ini, \textit{user} dapat membuat \textit{engine} mengambil data \textit{baseline} baru dengan menyuplai informasi mengenai waktu mulai dan waktu selesai \textit{trace} di Zipkin beserta dengan batas banyaknya \textit{trace} yang akan diambil\\ \hline		
+		EP-2 & \centering{POST} & \centering\texttt{/baseline} & Dengan \textit{endpoint} ini, \textit{user} dapat membuat \textit{engine} mengambil data \textit{baseline} baru dengan menyuplai informasi mengenai waktu mulai dan waktu selesai \textit{trace} di Zipkin beserta dengan batas banyaknya \textit{trace} yang akan diambil\\ \hline
+		EP-2 & \centering{DELETE} & \centering\texttt{/baseline} & \textit{Endpoint} ini akan menghapus informasi mengenai \textit{baseline} yang ada di \textit{state}\\ \hline			
 			
 	\end{longtable}
 \end{small}
