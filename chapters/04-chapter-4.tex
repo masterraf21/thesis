@@ -191,16 +191,16 @@ untuk menyimulasikan pengunaan aplikasi oleh sejumlah user. Aplikasi Hipster Sho
 \end{figure}
 
 \subsection{Metode Pengujian}
-Untuk melakukan pengujian pada sistem PRA yang telah dibuat, \textit{service} yang ada pada Hipster Shop akan dimodifikasi untuk meniru perilaku dari \textit{service} yang mengalami regresi kinerjan. Ada dua metode utama yang dapat dilakukan untuk membuat perilaku regresi pada \textit{service} yaitu dengan menambahkan perintah \textit{sleep} dan juga menambahkan kalkulasi matematika terutama perhitungan fungsi trigonometri yang membutuhkan banyak usaha dari CPU untuk menyelesaikannya sehingga diharapkan fungsi-fungsi tersebut akan memiliki \textit{latency} yang lebih besar. Tabel \ref{modified-function} menunjukkan fungsi-fungsi yang akan dimodifikasi pada \textit{service}-\textit{service} untuk meniru perilaku regresi.
+Untuk melakukan pengujian pada sistem PRA yang telah dibuat, \textit{service} yang ada pada Hipster Shop akan dimodifikasi untuk meniru perilaku dari \textit{service} yang mengalami regresi kinerjan. Ada dua metode utama yang dapat dilakukan untuk membuat perilaku regresi pada \textit{service} yaitu dengan menambahkan perintah \textit{sleep} dan menambahkan \textit{loop} dengan operasi \textit{dereference} sebuah variabel yang membutuhkan banyak usaha dari CPU untuk menyelesaikannya sehingga diharapkan fungsi-fungsi tersebut akan memiliki \textit{latency} yang lebih besar. Tabel \ref{modified-function} menunjukkan fungsi-fungsi yang akan dimodifikasi pada \textit{service}-\textit{service} untuk meniru perilaku regresi.
 \begin{small}
-	\begin{longtable}{ | p{1cm} | p{5cm} | p{5cm} | }
+	\begin{longtable}{ | p{1cm} | p{4cm} | p{4cm} | p{4cm}| }
 		\caption{Daftar \textit{service} dan fungsi yang akan dimodifikasi}
 		\label{modified-function}                                                           
 		\\ \hline
-		\centering\bfseries{No} & \centering\bfseries{Nama Service} & \centering\bfseries{Nama Fungsi} \tabularnewline \hline
+		\centering\bfseries{No} & \centering\bfseries{Nama Service} & \centering\bfseries{Nama Fungsi} & \centering\bfseries{Metode } \tabularnewline \hline
 		\endfirsthead
 %		1 & AdService &  cookware \\ \hline
-		1 & CheckoutService &  placeorder \\ \hline
+		1 & CheckoutService &  placeorder  \\ \hline
 		2 & CurrencyService &  convert \\ \hline
 		3 & EmailService &  sendorderconfirmation \\ \hline
 		4 & PaymentService &  charge \\ \hline
