@@ -164,7 +164,7 @@ Pengujian sistem PRA akan dilakukan dengan tujuan untuk:
 	indikator berupa penggunaan memori dan pemanfaatan CPU.
 \end{enumerate}
 
-Tujuan utama pengujian sistem \textit{Performance Regression Analysis} adalah untuk menguji apakah sistem dapat mendeteksi terjadinya regresi atau penurunan kinerja dengan indikasi peningkatan nilai \textit{latency} yang disebabkan oleh perubahan yang terjadi pada aplikasi. Perubahan tersebut dapat berupa penambahan atau \textit{update} fitur, hasil perbaikan \textit{bug}, dsb. Sehingga kasus-kasus yang akan diujikan utamanya merupakan simulasi terjadinya perubahan pada level aplikasi \textit{microservice}. 
+Tujuan utama pengujian sistem \textit{Performance Regression Analysis} adalah untuk menguji apakah sistem dapat mendeteksi terjadinya regresi atau penurunan kinerja dengan indikasi peningkatan nilai \textit{latency} yang disebabkan oleh perubahan yang terjadi pada aplikasi. Perubahan tersebut dapat berupa penambahan atau \textit{update} fitur, hasil perbaikan \textit{bug}, dsb. Sehingga kasus-kasus yang akan diujikan utamanya merupakan simulasi terjadinya perubahan pada level aplikasi \textit{microservice}. Namun sebagai perbandingan akan terdapat juga kasus-kasus yang menyimulasikan perubahan yang terjadi di luar level aplikasi seperti peningkatan jumlah pengguna dan peningkatan \textit{load} pada Load Generator pada \textit{service}-\textit{service} tertentu. Kasus pengujian akan dijelaskan lebih lanjut pada subbab \ref{
 
 \subsection{Lingkungan Pengujian}
 Pengujian akan dilakukan pada Google Kubernetes Engine dengan spesifikasi yang dipaparkan pada tabel \ref{testing-env}.
@@ -194,6 +194,7 @@ untuk menyimulasikan pengunaan aplikasi oleh sejumlah user. Aplikasi Hipster Sho
 \end{figure}
 
 \subsection{Metode Pengujian}
+\label{metode}
 Untuk melakukan pengujian pada sistem PRA yang telah dibuat, \textit{service} yang ada pada Hipster Shop akan dimodifikasi untuk meniru perilaku dari \textit{service} yang mengalami regresi kinerjan. Ada dua metode utama yang dapat dilakukan untuk membuat perilaku regresi pada \textit{service} yaitu dengan menambahkan perintah \textit{sleep} dan menambahkan \textit{loop} dengan operasi \textit{dereference} sebuah variabel yang membutuhkan banyak usaha dari CPU untuk menyelesaikannya sehingga diharapkan fungsi-fungsi tersebut akan memiliki \textit{latency} yang lebih besar. 
 
 %Tabel \ref{modified-function} menunjukkan fungsi-fungsi yang akan dimodifikasi pada \textit{service}-\textit{service} untuk meniru perilaku regresi.
