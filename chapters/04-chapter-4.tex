@@ -32,7 +32,23 @@ Implementasi \textit{engine} akan terbagi menjadi beberapa modul seperti yang te
 	\end{longtable}
 \end{small}
 
-Aplikasi \textit{engine} akan dibuat sebagai REST API dan akan diimplementasikan menggunakan \textit{framework} FastAPI. Fungsionalitas \textit{engine} akan diekspos melalui REST API sehingga dapat digunakan baik oleh komponen UI maupun langsung melalui pemanggilan HTTP untuk keperluan pengujian. Beberapa \textit{endpoint} yang akan diimplementasikan terlihat pada tabel 
+Aplikasi \textit{engine} akan dibuat sebagai REST API dan akan diimplementasikan menggunakan \textit{framework} FastAPI. Fungsionalitas \textit{engine} akan diekspos melalui REST API sehingga dapat digunakan baik oleh komponen UI maupun langsung melalui pemanggilan HTTP untuk keperluan pengujian. Beberapa \textit{endpoint} yang akan diimplementasikan terlihat pada tabel \ref{endpoints}.
+
+\begin{small}
+	\begin{longtable}{ | p{1cm} | p{3cm} | p{10cm} | }
+		\caption{Tabel pembagian modul komponen \textit{engine}}
+		\label{endpoints}                                                           
+		\\ \hline
+		\centering\bfseries{ID} & \centering\bfseries{Nama Modul} & \centering\bfseries{Deskripsi} \tabularnewline \hline
+		\endfirsthead
+		EM-1 & zipkin (Pengambilan Data) & Modul ini bertanggung jawab untuk mengambil data dari API Zipkin yang memiliki data hasil \textit{trace} dari aplikasi. \\ \hline
+		EM-2 & transform (Transformasi Data) & Modul ini bertanggung jawab untuk melakukan transformasi dari data \textit{trace} mentah yang diambil dari API Zipkin menjadi bentuk-bentuk model yang akan digunakan untuk komputasi di tahap selanjutnya seperti sampel data \textit{latency}, dan model data \textit{Critical Path}. Semua model akan disimpan dalam data berbentuk JSON. \\ \hline
+		EM-3 & storage (Penyimpanan Data) & Modul ini bertanggung jawab untuk menyimpan model hasil transformasi \textit{baseline} dari modul EM-2 ke \textit{storage} untuk digunakan kembali pada fase \textit{Real-time Analysis}. Komponen \textit{storage} yang akan digunakan adalah Redis. Alasan utama pemilihan Redis sebagai komponen \textit{storage} adalah Redis telah memiliki modul penyimpanan data dalam bentuk JSON dan memiliki kinerja yang tinggi sebab data disimpan secara \textit{in-memory}. \\ \hline
+		EM-4 & statistic (Perhitungan Statistik) & Modul ini bertanggung jawab untuk melakukan komputasi perhitungan statistik yang mencakup pendeteksian regresi dengan menghitung koefisien Kolmogorov-Smirnov seperti yang telah dijelaskan pada subbab \ref{approach-cumulative} menggunakan fungsi yang disediakan oleh library SciPy. \\ \hline
+		EM-5 & critical\textunderscore path (Analisis \textit{Critical Path}) & Modul ini bertanggung jawab untuk melakukan analisis \textit{Critical Path} yang bertujuan untuk mencari penyebab regresi dengan mencari \textit{Critical Path} dari tiap \textit{service} dan melihat perbandingan \textit{latency} dari operasi tersebut dengan \textit{latency} yang telah direkam sebelumnya pada fase \textit{Baseline Loading}. Operasi yang selisih \textit{latency}-nya melebihi \textit{threshold} diduga kuat merupakan penyebab utama dari regresi yang terjadi. \\ \hline
+		EM-6 & scheduling (\textit{Scheduling}) & Pada modul ini akan diimplentasikan \textit{job} atau pekerjaan utama yang akan digunakan untuk melakukan analisis regresi dengan menggunakan fungsi-fungsi yang telah diimplementasikan pada modul-modul sebelumnya dan juga bertanggung jawab melakukan penjadwalan \textit{job} tertentu selama interval yang ditentukan.  \\ \hline
+	\end{longtable}
+\end{small}
 
 \subsubsection{Model dan Struktur Data}
 Sistem PRA yang dibuat bergantung pada data \textit{trace} yang diperoleh dari Zipkin. Data tersebut tidak bisa begitu saja digunakan untuk menjalankan fungsi-fungsi dari \textit{engine} PRA sesuai yang terdapat pada gambar \ref{alur-pra} dan perlu ditransformasikan menjadi model dan struktur data yang lebih bermakna seperti yang telah disebutkan pada EM-2 di tabel \ref{engine-module}.
