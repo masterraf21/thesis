@@ -10,7 +10,9 @@ Implementasi sistem \textit{Performance Regression Analysis} (PRA) akan dibuat b
 
 \subsection{\textit{Performance Regression Analysis} \textit{engine}}
 
-Sebelum melakukan implementasi solusi, penulis harus terlebih dahulu melakukan pemilihan kakas yang akan digunakan melakukan implementasinya. Secara umum, terdapat banyak bahasa pemrograman yang dapat melakukan implementasi solusi komponeasdn \textit{engine} sesuai dengan alur yang terdapat pada gambar \ref{alur-pra}. Namun, ada suatu kebutuhan penting untuk melakukan tes statistik Kolmogorov-Smirnov (K-S) yang tidak semua bahasa pemrograman memiliki dukungan \textit{library} untuk melakukannya. Terdapat dua bahasa pemrograman yang memiliki \textit{library} untuk melakukan tes K-S yaitu bahasa pemrograman Go dan Python. Bahasa Go memiliki library Gonum \citep{gonum} yang memiliki implementasi tes K-S dalam fungsi \texttt{KolmogorovSmirnov}, sementara bahasa Python memiliki library SciPy \citep{scipy} yang memiliki implementasi test K-S dalam fungsi \texttt{scipy.stat.ks\textunderscore 2samp}.
+Sebelum melakukan implementasi solusi, penulis harus terlebih dahulu melakukan pemilihan kakas yang akan digunakan melakukan implementasinya. Secara umum, terdapat banyak bahasa pemrograman yang dapat melakukan implementasi solusi komponeasdn \textit{engine} sesuai dengan alur yang terdapat pada gambar \ref{alur-pra}. Namun, ada suatu kebutuhan penting untuk melakukan tes statistik Kolmogorov-Smirnov (K-S) yang tidak semua bahasa pemrograman memiliki dukungan \textit{library} untuk melakukannya. Terdapat dua bahasa pemrograman yang memiliki \textit{library} untuk melakukan tes K-S yaitu bahasa pemrograman Go dan Python. Bahasa Go memiliki library Gonum \citep{gonum} yang memiliki implementasi tes K-S dalam fungsi \texttt{KolmogorovSmirnov}, sementara bahasa Python memiliki library SciPy \citep{scipy} yang memiliki implementasi tes K-S dalam fungsi \texttt{scipy.stat.ks\textunderscore 2samp}.
+
+Dari kedua bahasa tersebut, penulis
 
 Implementasi akan terbagi menjadi beberapa modul, seperti yang terlihat pada tabel \ref{engine-module}.
 
