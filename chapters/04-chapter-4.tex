@@ -215,72 +215,74 @@ Terdapat dua jenis \textit{testcase} yang akan diujikan pada sistem. Jenis perta
 %				
 %		\end{longtable}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-% \usepackage{multirow}
-% \usepackage[table,xcdraw]{xcolor}
-% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
-\begin{table}[]
-	\begin{tabular}{@{}llccl@{}}
-		\toprule
-		\rowcolor[HTML]{009901} 
-		\multicolumn{1}{c}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{ID}}} &
-		\multicolumn{1}{c}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{Service (Fungsi)}}} &
-		\multicolumn{1}{l}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{Extra Latency}}} &
-		\multicolumn{1}{l}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{User}}} &
-		{\color[HTML]{FFFFFF} \textbf{Keterangan}} \\ \midrule
-		\multicolumn{1}{|l|}{I1} &
-		\multicolumn{1}{l|}{CheckoutService (placeorder)} &
-		\multicolumn{1}{c|}{100ms} &
-		\multicolumn{1}{c|}{25} &
-		\multicolumn{1}{l|}{Kasus extra latency \#1} \\ \midrule
-		\multicolumn{1}{|l|}{I2} &
-		\multicolumn{1}{l|}{CheckoutService (placeorder)} &
-		\multicolumn{1}{c|}{250ms} &
-		\multicolumn{1}{c|}{25} &
-		\multicolumn{1}{l|}{Kasus extra latency \#2} \\ \midrule
-		\multicolumn{1}{|l|}{I3} &
-		\multicolumn{1}{l|}{CheckoutService (placeorder)} &
-		\multicolumn{1}{c|}{350ms} &
-		\multicolumn{1}{c|}{25} &
-		\multicolumn{1}{l|}{Kasus extra latency \#3} \\ \midrule
-		\multicolumn{1}{|l|}{I4} &
-		\multicolumn{1}{l|}{CheckoutService (placeorder)} &
-		\multicolumn{1}{c|}{250ms} &
-		\multicolumn{1}{c|}{75} &
-		\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency \\ dengan peningkatan user \#1\end{tabular}} \\ \midrule
-		\multicolumn{1}{|l|}{I5} &
-		\multicolumn{1}{l|}{CheckoutService (placeorder)} &
-		\multicolumn{1}{c|}{250ms} &
-		\multicolumn{1}{c|}{150} &
-		\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency \\ dengan peningkatan user \#1\end{tabular}} \\ \midrule
-		\multicolumn{1}{|l|}{I6} &
-		\multicolumn{1}{l|}{CheckoutService (placeorder)} &
-		\multicolumn{1}{c|}{-} &
-		\multicolumn{1}{c|}{25} &
-		\multicolumn{1}{l|}{Kasus peningkatan kerja CPU} \\ \midrule
-		\multicolumn{1}{|l|}{} &
-		\multicolumn{1}{l|}{CheckoutService (placeorder)} &
-		\multicolumn{1}{c|}{} &
-		\multicolumn{1}{c|}{} &
-		\multicolumn{1}{l|}{} \\ \cmidrule(lr){2-2}
-		\multicolumn{1}{|l|}{} &
-		\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}ProductCatalog (getproduct\\ listproducts)\end{tabular}} &
-		\multicolumn{1}{c|}{} &
-		\multicolumn{1}{c|}{} &
-		\multicolumn{1}{l|}{} \\ \cmidrule(lr){2-2}
-		\multicolumn{1}{|l|}{} &
-		\multicolumn{1}{l|}{ShippingService (getquote)} &
-		\multicolumn{1}{c|}{} &
-		\multicolumn{1}{c|}{} &
-		\multicolumn{1}{l|}{} \\ \cmidrule(lr){2-2}
-		\multicolumn{1}{|l|}{\multirow{-4}{*}{I7}} &
-		\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}RecommendationService \\ (listrecommendations)\end{tabular}} &
-		\multicolumn{1}{c|}{\multirow{-4}{*}{250ms}} &
-		\multicolumn{1}{c|}{\multirow{-4}{*}{25}} &
-		\multicolumn{1}{l|}{\multirow{-4}{*}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency\\  dengan beberapa service\end{tabular}}} \\ \bottomrule
-	\end{tabular}
-\end{table}
+\begin{flushleft}
+	% Please add the following required packages to your document preamble:
+	% \usepackage{booktabs}
+	% \usepackage{multirow}
+	% \usepackage[table,xcdraw]{xcolor}
+	% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
+	\begin{table}[]
+		\begin{tabular}{@{}llccl@{}}
+			\toprule
+			\rowcolor[HTML]{009901} 
+			\multicolumn{1}{c}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{ID}}} &
+			\multicolumn{1}{c}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{Service (Fungsi)}}} &
+			\multicolumn{1}{l}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{Extra Latency}}} &
+			\multicolumn{1}{l}{\cellcolor[HTML]{009901}{\color[HTML]{FFFFFF} \textbf{User}}} &
+			{\color[HTML]{FFFFFF} \textbf{Keterangan}} \\ \midrule
+			\multicolumn{1}{|l|}{I1} &
+			\multicolumn{1}{l|}{CheckoutService (placeorder)} &
+			\multicolumn{1}{c|}{100ms} &
+			\multicolumn{1}{c|}{25} &
+			\multicolumn{1}{l|}{Kasus extra latency \#1} \\ \midrule
+			\multicolumn{1}{|l|}{I2} &
+			\multicolumn{1}{l|}{CheckoutService (placeorder)} &
+			\multicolumn{1}{c|}{250ms} &
+			\multicolumn{1}{c|}{25} &
+			\multicolumn{1}{l|}{Kasus extra latency \#2} \\ \midrule
+			\multicolumn{1}{|l|}{I3} &
+			\multicolumn{1}{l|}{CheckoutService (placeorder)} &
+			\multicolumn{1}{c|}{350ms} &
+			\multicolumn{1}{c|}{25} &
+			\multicolumn{1}{l|}{Kasus extra latency \#3} \\ \midrule
+			\multicolumn{1}{|l|}{I4} &
+			\multicolumn{1}{l|}{CheckoutService (placeorder)} &
+			\multicolumn{1}{c|}{250ms} &
+			\multicolumn{1}{c|}{75} &
+			\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency \\ dengan peningkatan user \#1\end{tabular}} \\ \midrule
+			\multicolumn{1}{|l|}{I5} &
+			\multicolumn{1}{l|}{CheckoutService (placeorder)} &
+			\multicolumn{1}{c|}{250ms} &
+			\multicolumn{1}{c|}{150} &
+			\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency \\ dengan peningkatan user \#1\end{tabular}} \\ \midrule
+			\multicolumn{1}{|l|}{I6} &
+			\multicolumn{1}{l|}{CheckoutService (placeorder)} &
+			\multicolumn{1}{c|}{-} &
+			\multicolumn{1}{c|}{25} &
+			\multicolumn{1}{l|}{Kasus peningkatan kerja CPU} \\ \midrule
+			\multicolumn{1}{|l|}{} &
+			\multicolumn{1}{l|}{CheckoutService (placeorder)} &
+			\multicolumn{1}{c|}{} &
+			\multicolumn{1}{c|}{} &
+			\multicolumn{1}{l|}{} \\ \cmidrule(lr){2-2}
+			\multicolumn{1}{|l|}{} &
+			\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}ProductCatalog (getproduct\\ listproducts)\end{tabular}} &
+			\multicolumn{1}{c|}{} &
+			\multicolumn{1}{c|}{} &
+			\multicolumn{1}{l|}{} \\ \cmidrule(lr){2-2}
+			\multicolumn{1}{|l|}{} &
+			\multicolumn{1}{l|}{ShippingService (getquote)} &
+			\multicolumn{1}{c|}{} &
+			\multicolumn{1}{c|}{} &
+			\multicolumn{1}{l|}{} \\ \cmidrule(lr){2-2}
+			\multicolumn{1}{|l|}{\multirow{-4}{*}{I7}} &
+			\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}RecommendationService \\ (listrecommendations)\end{tabular}} &
+			\multicolumn{1}{c|}{\multirow{-4}{*}{250ms}} &
+			\multicolumn{1}{c|}{\multirow{-4}{*}{25}} &
+			\multicolumn{1}{l|}{\multirow{-4}{*}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency\\  dengan beberapa service\end{tabular}}} \\ \bottomrule
+		\end{tabular}
+	\end{table}
+\end{flushleft}
 
 
 
