@@ -214,11 +214,30 @@ Terdapat dua jenis \textit{testcase} yang akan diujikan pada sistem. Jenis perta
 %			I1 & CheckoutService (placeorder) &  \centering{100ms} & \centering{25} & Kasus extra latency \#1 \\ \hline
 %				
 %		\end{longtable}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
 \begin{table}[]
-	\begin{tabular}{|l|l|l|l|l|}
+	\begin{tabular}{|l|l|c|c|l|}
 		\hline
-		\multicolumn{1}{|c|}{ID} & \multicolumn{1}{c|}{Service (Fungsi)} & Extra Latency & User & Keterangan              \\ \hline
-		I1                       & CheckoutService (placeorder)          & 100ms         & 25   & Kasus extra latency \#1 \\ \hline
+		\multicolumn{1}{|c|}{ID} &
+		\multicolumn{1}{c|}{Service (Fungsi)} &
+		\multicolumn{1}{l|}{Extra Latency} &
+		\multicolumn{1}{l|}{User} &
+		Keterangan \\ \hline
+		I1 & CheckoutService (placeorder)                                                           & 100ms & 25  & Kasus extra latency \#1                         \\ \hline
+		I2 & CheckoutService (placeorder)                                                           & 250ms & 25  & Kasus extra latency \#2                         \\ \hline
+		I3 & CheckoutService (placeorder)                                                           & 350ms & 25  & Kasus extra latency \#3                         \\ \hline
+		I4 & CheckoutService (placeorder)                                                           & 250ms & 75  & Kasus extra latency dengan peningkatan user \#1 \\ \hline
+		I5 & CheckoutService (placeorder)                                                           & 250ms & 150 & Kasus extra latency dengan peningkatan user \#1 \\ \hline
+		I6 & CheckoutService (placeorder)                                                           & -     & 25  & Kasus peningkatan kerja CPU                     \\ \hline
+		\multirow{4}{*}{I7} &
+		CheckoutService (placeorder) &
+		\multirow{4}{*}{250ms} &
+		\multirow{4}{*}{25} &
+		\multirow{4}{*}{Kasus extra latency dengan beberapa service} \\ \cline{2-2}
+		& \begin{tabular}[c]{@{}l@{}}ProductCatalog (getproduct\\ listproducts)\end{tabular}     &       &     &                                                 \\ \cline{2-2}
+		& ShippingService (getquote)                                                             &       &     &                                                 \\ \cline{2-2}
+		& \begin{tabular}[c]{@{}l@{}}RecommendationService \\ (listrecommendations)\end{tabular} &       &     &                                                 \\ \hline
 	\end{tabular}
 \end{table}
 
