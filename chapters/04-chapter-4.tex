@@ -204,22 +204,23 @@ Terdapat dua jenis \textit{testcase} yang akan diujikan pada sistem. Jenis perta
 
 % jenis satu, dan tabel \ref{testcase-e} akan menjelaskan kasus-kasus pengujian sistem jenis dua.
 
-%\begin{small}
-%	\begin{adjustwidth}{-3cm}{}
-		\begin{longtable}[l]{  @{}| p{0.7cm} | p{5cm} | p{2cm} | p{2cm} | p{4cm} | @{} }
-			\caption{Kasus-kasus pengujian}
-			\label{testcase-i}                                                           
-			\\ \hline
-			\centering\bfseries{ID} & \centering\bfseries{Service (Fungsi)} & \centering\bfseries{Extra Latency} & \centering\bfseries{User} & \centering\bfseries{Keterangan} \tabularnewline \hline
-			\endfirsthead
-			I1 & CheckoutService (placeorder) &  \centering{100ms} & \centering{25} & Kasus extra latency \#1 \\ \hline
-				
-		\end{longtable}
-%	\end{adjustwidth}
-%\end{small}
 
-
-
+%		\begin{longtable}[l]{  @{}| p{0.7cm} | p{5cm} | p{2cm} | p{2cm} | p{4cm} | @{} }
+%			\caption{Kasus-kasus pengujian}
+%			\label{testcase-i}                                                           
+%			\\ \hline
+%			\centering\bfseries{ID} & \centering\bfseries{Service (Fungsi)} & \centering\bfseries{Extra Latency} & \centering\bfseries{User} & \centering\bfseries{Keterangan} \tabularnewline \hline
+%			\endfirsthead
+%			I1 & CheckoutService (placeorder) &  \centering{100ms} & \centering{25} & Kasus extra latency \#1 \\ \hline
+%				
+%		\end{longtable}
+\begin{table}[]
+	\begin{tabular}{lllll}
+		\cline{1-4}
+		\multicolumn{1}{|c|}{ID} & \multicolumn{1}{c|}{Service (Fungsi)} & \multicolumn{1}{l|}{Extra Latency} & \multicolumn{1}{l|}{User} & Keterangan              \\ \cline{1-4}
+		I1                       & CheckoutService (placeorder)          & 100ms                              & 25                        & Kasus extra latency \#1
+	\end{tabular}
+\end{table}
 
 
 
