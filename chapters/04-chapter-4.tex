@@ -216,14 +216,17 @@ Terdapat dua jenis \textit{testcase} yang akan diujikan pada sistem. Jenis perta
 %		\end{longtable}
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
+% \usepackage[table,xcdraw]{xcolor}
+% If you use beamer only pass "xcolor=table" option, i.e. \documentclass[xcolor=table]{beamer}
 \begin{table}[]
 	\begin{tabular}{|l|l|c|c|l|}
 		\hline
-		\multicolumn{1}{|c|}{ID} &
-		\multicolumn{1}{c|}{Service (Fungsi)} &
-		\multicolumn{1}{l|}{Extra Latency} &
-		\multicolumn{1}{l|}{User} &
-		Keterangan \\ \hline
+		\rowcolor[HTML]{333333} 
+		\multicolumn{1}{|c|}{\cellcolor[HTML]{333333}{\color[HTML]{FFFFFF} \textbf{ID}}} &
+		\multicolumn{1}{c|}{\cellcolor[HTML]{333333}{\color[HTML]{FFFFFF} \textbf{Service (Fungsi)}}} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{333333}{\color[HTML]{FFFFFF} \textbf{Extra Latency}}} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{333333}{\color[HTML]{FFFFFF} \textbf{User}}} &
+		{\color[HTML]{FFFFFF} \textbf{Keterangan}} \\ \hline
 		I1 &
 		CheckoutService (placeorder) &
 		100ms &
@@ -254,11 +257,11 @@ Terdapat dua jenis \textit{testcase} yang akan diujikan pada sistem. Jenis perta
 		- &
 		25 &
 		Kasus peningkatan kerja CPU \\ \hline
-		\multirow{4}{*}{I7} &
+		&
 		CheckoutService (placeorder) &
-		\multirow{4}{*}{250ms} &
-		\multirow{4}{*}{25} &
-		\multirow{4}{*}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency\\  dengan beberapa service\end{tabular}} \\ \cline{2-2}
+		&
+		&
+		\\ \cline{2-2}
 		&
 		\begin{tabular}[c]{@{}l@{}}ProductCatalog (getproduct\\ listproducts)\end{tabular} &
 		&
@@ -269,11 +272,11 @@ Terdapat dua jenis \textit{testcase} yang akan diujikan pada sistem. Jenis perta
 		&
 		&
 		\\ \cline{2-2}
-		&
+		\multirow{-4}{*}{I7} &
 		\begin{tabular}[c]{@{}l@{}}RecommendationService \\ (listrecommendations)\end{tabular} &
-		&
-		&
-		\\ \hline
+		\multirow{-4}{*}{250ms} &
+		\multirow{-4}{*}{25} &
+		\multirow{-4}{*}{\begin{tabular}[c]{@{}l@{}}Kasus extra latency\\  dengan beberapa service\end{tabular}} \\ \hline
 	\end{tabular}
 \end{table}
 
