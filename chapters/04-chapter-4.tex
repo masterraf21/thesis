@@ -299,9 +299,7 @@ Pengujian pada tabel \ref{testcase} seluruhnya dilakukan dengan cara terlebih da
 Berikut adalah hasil pengujian yang telah dilakukan pada sistem PRA sesuai dengan kasus uji \ref{testcase}.
 
 \subsubsection{Kasus SI1}
-
 Seperti yang terlihat pada gambar \ref{result_json_1}, regresi tidak terdeteksi pada kasus ini sehingga analissi \textit{critical path} tidak dijalankan.
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.75\textwidth]{resources/ch4/json/1.png}
@@ -318,6 +316,7 @@ Seperti yang terlihat pada gambar \ref{result_json_1}, regresi tidak terdeteksi 
 
 \pagebreak
 \subsubsection{Kasus SI2}
+Seperti yang terlihat pada gambar \ref{result_json_2}, regresi terdeteksi dan analisis \textit{critical path} dapat menentukan sumber regresi yaitu operasi \texttt{placeorder} dari \textit{service} CheckoutService.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.75\textwidth]{resources/ch4/json/2.png}
@@ -325,12 +324,12 @@ Seperti yang terlihat pada gambar \ref{result_json_1}, regresi tidak terdeteksi 
 	\label{result_json_2}
 \end{figure}
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=1\textwidth]{resources/ch4/log/2-log.png}
-	\caption{\textit{Log} hasil pengujian kasus SI3}
-	\label{result_log_2}
-\end{figure}
+%\begin{figure}[!htb]
+%	\centering
+%	\includegraphics[width=1\textwidth]{resources/ch4/log/2-log.png}
+%	\caption{\textit{Log} hasil pengujian kasus SI3}
+%	\label{result_log_2}
+%\end{figure}
 \pagebreak
 \subsubsection{Kasus SI3}
 \begin{figure}[!htb]
