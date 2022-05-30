@@ -55,6 +55,45 @@ Alur kerja analisis regresi pertama dimulai dengan mengambil data \textit{trace}
 
 Jika terindikasi regresi telah terjadi, \textit{engine} selanjutnya akan melakukan analisis \textit{critical path}. Pertama-tama data \textit{trace} \textit{baseline} maupun \textit{realtime} akan ditransformasikan menjadi model \textit{critical path} oleh modul EM-2. Kemudian kedua model \textit{critical path} tersebut akan dibandingkan oleh modul EM-5 dan hasil akhirnya adalah data perbandingan operasi-operasi yang ada di data \textit{baseline} dan \textit{realtime}. Hasil akhir data pengecekan regresi dan analisis \textit{critical path} akan dikirim sebagai \textit{response} dalam bentuk JSON oleh API. Semua operasi dari alur kerja yang telah disebutkan di atas diimplementasikan dalam fungsi yang terdapat pada modul EM-6.
 
+\subsubsection{Struktur implementasi}
+Modul-modul pada tabel \ref{engine-module} masing-masing akan diimplementasikan sebagai \textit{package} pada bahasa \textit{Python} seperti yang terlihat pada gambar \ref{package}. Terdapat tujuh buah \textit{package}, enam buah \textit{package} dari modul dan satu buah \textit{package} \texttt{utils} yang berisi fungsi-fungsi untuk mendukung kerja fungsi di modul lainnya. Semua \textit{source code} hasil implementasi disimpan di Github \footnote{\url{https://github.com/masterraf21/pra\textunderscore engine}}.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.35\textwidth]{resources/ch4/packages.png}
+	\caption{Implementasi modul sebagai \textit{package}}
+	\label{package}
+\end{figure} 
+
+%Gambar \ref{api_docs} adalah hasil tangkapan layar dokumentasi API yang disediakan oleh FastAPI. 
+%\begin{figure}[!htb]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{resources/ch4/api_docs.png}
+%	\caption{Dokumentasi API}
+%	\label{api_docs}
+%\end{figure} 
+%
+%Berikut adalah tangkapan layar dari hasil pemanggilan beberapa \textit{endpoint} yang dilakukan dengan aplikasi Postman \footnote{\url{https://www.postman.com/}}.
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=0.75\textwidth]{resources/ch4/result_state.png}
+%	\caption{Hasil pemanggilan \textit{endpoint} \texttt{/state}}
+%	\label{api_state}
+%\end{figure} 
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=0.75\textwidth]{resources/ch4/result_analysis_range.png}
+%	\caption{Hasil pemanggilan \textit{endpoint} \texttt{/analysis/range}}
+%	\label{api_analysis_range}
+%\end{figure} 
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width=0.75\textwidth]{resources/ch4/result_analysis_realtime.png}
+%	\caption{Hasil pemanggilan \textit{endpoint} \texttt{/analysis/realtime}}
+%	\label{api_analysis_realtime}
+%\end{figure} 
+%\pagebreak
+
+
 \subsubsection{Model dan Struktur Data}
 Sistem PRA yang dibuat bergantung pada data \textit{trace} yang diperoleh dari Zipkin. Data tersebut tidak bisa begitu saja digunakan untuk menjalankan fungsi-fungsi dari \textit{engine} PRA sesuai yang terdapat pada gambar \ref{alur-pra} dan perlu ditransformasikan menjadi model dan struktur data yang lebih bermakna seperti yang telah disebutkan pada EM-2 di tabel \ref{engine-module}.
 
@@ -94,43 +133,6 @@ Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan u
 %\subsubsection{\textit{Deployment}}
 %Agar aplikasi \textit{engine} dapat dijalankan di lingkungan Kubernetes, aplikasi harus dikemas dalam bentuk \textit{container} dan di-\textit{deploy} di Kubernetes menggunakan file \textit{manifest} berbentuk yaml. 
 
-\subsubsection{Struktur implementasi}
-Modul-modul pada tabel \ref{engine-module} masing-masing akan diimplementasikan sebagai \textit{package} pada bahasa \textit{Python} seperti yang terlihat pada gambar \ref{package}. Terdapat tujuh buah \textit{package}, enam buah \textit{package} dari modul dan satu buah \textit{package} \texttt{utils} yang berisi fungsi-fungsi untuk mendukung kerja fungsi di modul lainnya. Semua \textit{source code} hasil implementasi disimpan di Github \footnote{\url{https://github.com/masterraf21/pra\textunderscore engine}}.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.35\textwidth]{resources/ch4/packages.png}
-	\caption{Implementasi modul sebagai \textit{package}}
-	\label{package}
-\end{figure} 
-
-%Gambar \ref{api_docs} adalah hasil tangkapan layar dokumentasi API yang disediakan oleh FastAPI. 
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=0.5\textwidth]{resources/ch4/api_docs.png}
-%	\caption{Dokumentasi API}
-%	\label{api_docs}
-%\end{figure} 
-%
-%Berikut adalah tangkapan layar dari hasil pemanggilan beberapa \textit{endpoint} yang dilakukan dengan aplikasi Postman \footnote{\url{https://www.postman.com/}}.
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=0.75\textwidth]{resources/ch4/result_state.png}
-%	\caption{Hasil pemanggilan \textit{endpoint} \texttt{/state}}
-%	\label{api_state}
-%\end{figure} 
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=0.75\textwidth]{resources/ch4/result_analysis_range.png}
-%	\caption{Hasil pemanggilan \textit{endpoint} \texttt{/analysis/range}}
-%	\label{api_analysis_range}
-%\end{figure} 
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width=0.75\textwidth]{resources/ch4/result_analysis_realtime.png}
-%	\caption{Hasil pemanggilan \textit{endpoint} \texttt{/analysis/realtime}}
-%	\label{api_analysis_realtime}
-%\end{figure} 
-%\pagebreak
 
 
 \subsection{\textit{User Interface}}
