@@ -1,0 +1,96 @@
+%--------------------------------------------------------------------%
+% REV01: Fri 23 Jul 2021 20:08:29 WIB (RMS)
+% Berkas utama templat LaTeX.
+% author Petra Barus, Peb Ruswono Aryan
+%--------------------------------------------------------------------%
+% Berkas ini berisi struktur utama dokumen LaTeX yang akan dibuat.
+%--------------------------------------------------------------------%
+\documentclass[12pt, a4paper, onecolumn, oneside, final]{report}
+
+\input{configs/if-itb-thesis.sty}
+
+\makeatletter
+
+\makeatother
+%\bibliography{references}
+\begin{document}
+
+%Basic configuration
+\title{Pengembangan kakas untuk melakukan \textit{Performance Regression Analysis} menggunakan \textit{Distributed Tracing} pada Aplikasi berbasis Microservice}
+\date{28 Maret}
+\newcommand{\yearsidang}{2022}
+\newcommand{\jenislaporan}{Draf Bab 4 Tugas Akhir}
+\author{Rafi Abbel Mohammad}
+\newcommand{\nim}{18218027}
+
+\pagenumbering{roman}
+\setcounter{page}{0}
+
+\input{frontpages/000-cover}
+\input{frontpages/001-approval}
+
+\pagestyle{plain}
+
+
+\titleformat*{\section}{\centering\bfseries\Large\MakeUpperCase}
+
+\clearpage
+\tableofcontents
+
+\clearpage
+{%
+    \let\oldnumberline\numberline%
+    \renewcommand{\numberline}{\figurename~\oldnumberline}%
+    \listoffigures%
+}
+
+\clearpage
+{%
+    \let\oldnumberline\numberline%
+    \renewcommand{\numberline}{\tablename~\oldnumberline}%
+    \listoftables%
+}
+
+\clearpage
+{%
+    \let\oldnumberline\numberline%
+    \renewcommand{\numberline}{\lstlistingname~\oldnumberline}%
+    \lstlistoflistings%
+}
+
+\newpage
+\setcounter{savepage}{\arabic{page}}
+
+\titleformat*{\section}{\bfseries\large}
+
+%----------------------------------------------------------------%
+% Konfigurasi Bab
+%----------------------------------------------------------------%
+\renewcommand{\chaptername}{BAB}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\pagenumbering{bychapter}
+\setlength{\parindent}{1cm}
+%----------------------------------------------------------------%
+
+%----------------------------------------------------------------%
+% Dafter Bab
+% Untuk menambahkan daftar bab, buat berkas bab misalnya `chapter-6` di direktori `chapters`, dan masukkan ke sini.
+%----------------------------------------------------------------%
+\input{chapters/01-chapter-1-empty}
+\input{chapters/02-chapter-2-empty}
+\input{chapters/03-chapter-3-empty}
+\input{chapters/04-chapter-4}
+%----------------------------------------------------------------%
+
+% Daftar pustaka
+% Bibliography to Daftar Pustaka
+\renewcommand{\bibname}{Daftar Pustaka}
+\clearpage
+\phantomsection
+\pagenumbering{roman}
+\setcounter{page}{\thesavepage}
+\bibliography{references}
+\bibliographystyle{apalike}
+
+
+\end{document}

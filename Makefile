@@ -14,8 +14,11 @@ thesis:	thesis.tex
 	pdflatex thesis
 
 rename:
-	cp milestone2.pdf output/'Draf Pendahuluan Tugas Akhir - 18218027.pdf'
-	cp milestone3.pdf output/'Draf Analisis Masalah Tugas Akhir - 18218027.pdf'
+	mv milestone2.pdf output/'Draf Pendahuluan Tugas Akhir - 18218027.pdf'
+	mv milestone3.pdf output/'Draf Analisis Masalah Tugas Akhir - 18218027.pdf'
+	mv bukuta1.pdf output/'Draf Buku Tugas Akhir 1 - 18218027.pdf'
+	mv milestone5.pdf output/'Draf Bab Implementasi Tugas Akhir 2 - 18218027.pdf'
+	mv milestone6.pdf output/'Draf Bab Kesimpulan Tugas Akhir 2 - 18218027.pdf'
 clean:
 	rm -f *.aux *.log *.idx *.toc *.bbl *.blg *.synctex.gz
 	rm -f *.lof *.lol *.lot *.out *.fls *.fdb_latexmk
