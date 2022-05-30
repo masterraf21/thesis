@@ -109,8 +109,10 @@ Pada tahap analisis \textit{critical path}, data yang dibutuhkan adalah pasangan
 \subsubsection{Algoritme}
 Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan untuk merepresentasikan beberapa model seperti yang ada pada gambar \ref{alur-pra}, pada subbab ini akan didefinisikan algoritme penting yang akan digunakan untuk melakukan pendeteksian regresi pada aplikasi Microservice. 
 
-Algoritme yang didasarkan pada tes statistik Kolmogorov-Smirnov ini akan membandingkan dua buah sampel data dan akan menentukan apakah kedua sampel tersebut berasal dari distribusi yang sama. Pertama-tama terdapat hipotesis $h_{0}$ yang menyatakan bahwa kedua sampel data berasal dari distribusi yang sama. Kemudian akan dijalankan tes statistik K-S yang dilakukan menggunakan fungsi dari \textit{library}
-SciPy yang akan menghasilkan dua buah nilai, yaitu \texttt{statistic} dan \texttt{p-value}.
+Algoritme yang didasarkan pada tes statistik Kolmogorov-Smirnov ini akan membandingkan dua buah sampel data dan akan menentukan apakah kedua sampel tersebut berasal dari distribusi yang sama. Pertama-tama kita definisikan dua hipotesis yaitu $h_{0}$ atau hipotesis \textit{null} yang menyatakan bahwa kedua sampel data berasal dari distribusi yang sama dan $h_{a}$ atau hipotesis alternatif yang menyatakan bahwa kedua sampel data berasal dari dua distribusi yang berbeda. Kemudian akan dijalankan tes statistik K-S yang dilakukan menggunakan fungsi dari \textit{library}
+SciPy yang akan menghasilkan dua buah nilai, yaitu \texttt{statistic} dan \texttt{p-value}. Jika nilai \texttt{p-value} lebih kecil dari nilai signifikan, atau \texttt{alpha} pada fungsi,  maka 
+
+
 Jika kedua sampel ternyata berasal dari distribusi yang berbeda, maka dapat dicurigai telah terjadi regresi pada aplikasi sebab distribusi dari data yang bersumber dari hasil \textit{trace} \textit{real-time} berbeda dengan distribusi dari data \textit{trace} \textit{baseline} yang dijadikan acuan kinerja normal aplikasi.
 
 
