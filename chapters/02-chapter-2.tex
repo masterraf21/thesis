@@ -112,7 +112,7 @@ Langkah pertama ketika menggunakan Protocol Buffers adalah dengan mendefinisikan
 Data dari Protocol Buffers distrukturkan sebagai messages yang masing-masing memiliki catatan mengenai data yang berbentuk pasangan name-value yang disebut dengan fields.
 Berikut adalah contoh sederhana dari file proto:
 \pagebreak
-\lstinputlisting[captionpos=b, caption={Contoh File Proto}]{codes/ch2/hello.proto}
+\lstinputlisting[captionpos=b, label={codes_proto},caption={Contoh File Proto}]{codes/ch2/hello.proto}
 
 Ketika struktur data sudah dibuat, kode Proto tersebut perlu di compile menggunakan kakas bernama protoc yang akan membuat akses data dalam bahsa pemrograman yang dipilih.
 gRPC menggunakan protoc untuk menghasilkan kode dari file Proto berupa: kode gRPC bagi client dan server, dan juga kode Protocol Buffer biasa yang digunakan untuk melakukan populasi, serialisasi, dan kode untuk mendapatkan tipe pesan.
