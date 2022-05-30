@@ -107,29 +107,29 @@ Pada tahap pendeteksian regresi dengan tes statistik Kolmogorov-Smirnov (K-S), d
 Pada tahap analisis \textit{critical path}, data yang dibutuhkan adalah pasangan \textit{key-value} dari nama operasi yang terrekam oleh Zipkin dan juga nilai \textit{latency} dari operasi tersebut. Data \textit{critical path} akan disimpan sebagai struktur data \textit{map} yang sesuai untuk menyimpan data berbentuk pasangan \textit{key-value}. Data ini akan didapatkan dari data \textit{trace} bawaan Zipkin yang sudah memiliki informasi mengenai \textit{critical path} dan juga nilai \textit{latency} nya masing-masing. 
 
 \subsubsection{Algoritme penting}
-Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan untuk merepresentasikan beberapa model seperti yang ada pada gambar \ref{alur-pra}, pada subbab ini akan didefinisikan beberapa algoritme penting dalam bentuk \textit{pseudocode} yang akan digunakan untuk melakukan berbagai operasi pada sistem PRA.
+Setelah pada subbab sebelumnya didefinisikan struktur data yang akan digunakan untuk merepresentasikan beberapa model seperti yang ada pada gambar \ref{alur-pra}, pada subbab ini akan didefinisikan algoritme penting yang akan digunakan untuk melakukan pendeteksian regresi pada aplikasi Microservice. 
 
-\begin{algorithm}[hbt!]
-	\SetAlgorithmName{Algoritme}{Algoritme}
-	
-	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
-	\SetKwFunction{Union}{Union}\SetKwFunction{IsRegression}{IsRegression}
-	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
-	\Input{Two array of float numbers representing latency: data1 and data2}
-	\Output{Boolean indicating if regression has occured}
-	\BlankLine
-	
-	
-	\caption{Algoritme pendeteksian regresi}\label{alg:regression-detection}
-\end{algorithm}
-\begin{algorithm}[hbt!]
-	\SetAlgorithmName{Algoritme}{Algoritme}
-	
-	
-	
-	
-	\caption{Algoritme analisis regresi}\label{alg:regression-analysis}
-\end{algorithm}
+%\begin{algorithm}[hbt!]
+%	\SetAlgorithmName{Algoritme}{Algoritme}
+%	
+%	\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+%	\SetKwFunction{Union}{Union}\SetKwFunction{IsRegression}{IsRegression}
+%	\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+%	\Input{Two array of float numbers representing latency: data1 and data2}
+%	\Output{Boolean indicating if regression has occured}
+%	\BlankLine
+%	
+%	
+%	\caption{Algoritme pendeteksian regresi}\label{alg:regression-detection}
+%\end{algorithm}
+%\begin{algorithm}[hbt!]
+%	\SetAlgorithmName{Algoritme}{Algoritme}
+%	
+%	
+%	
+%	
+%	\caption{Algoritme analisis regresi}\label{alg:regression-analysis}
+%\end{algorithm}
 
 %\subsubsection{\textit{Deployment}}
 %Agar aplikasi \textit{engine} dapat dijalankan di lingkungan Kubernetes, aplikasi harus dikemas dalam bentuk \textit{container} dan di-\textit{deploy} di Kubernetes menggunakan file \textit{manifest} berbentuk yaml. 
