@@ -157,7 +157,6 @@ Pengujian sistem PRA akan dilakukan dengan tujuan untuk:
 \end{enumerate}
 
 Tujuan utama pengujian sistem \textit{Performance Regression Analysis} adalah untuk menguji apakah sistem dapat mendeteksi terjadinya regresi atau penurunan kinerja dengan indikasi peningkatan nilai \textit{latency} yang disebabkan oleh perubahan yang terjadi pada aplikasi. Perubahan tersebut dapat berupa penambahan atau \textit{update} fitur, hasil perbaikan \textit{bug}, dsb. Sehingga kasus-kasus yang akan diujikan utamanya merupakan simulasi terjadinya perubahan pada level aplikasi \textit{microservice}. Namun sebagai perbandingan akan terdapat juga kasus-kasus yang menyimulasikan perubahan yang terjadi di luar level aplikasi seperti peningkatan jumlah pengguna dan peningkatan \textit{load} pada Load Generator pada \textit{service}-\textit{service} tertentu. Kasus pengujian akan dijelaskan lebih lanjut pada subbab \ref{metode-pengujian}.
-\pagebreak
 
 \subsection{Lingkungan Pengujian}
 Pengujian akan dilakukan pada Google Kubernetes Engine dengan spesifikasi yang dipaparkan pada tabel \ref{testing-env}.
