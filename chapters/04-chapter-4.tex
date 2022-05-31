@@ -692,11 +692,12 @@ Dari sebelas kasus pengujian, \textit{engine} rata-rata menggunakan \textit{reso
 
 \subsection{Analisis Hasil Pengujian}
 Dari tujuh kasus uji, kasus SI1 sampai SI7, yang menyimulasikan terjadinya regresi akibat perubahan di level kode, hanya satu kasus, yaitu kasus SI1, yang regresi tidak dapat terdeteteksi oleh \textit{engine}. Selebihnya, dari enam kasus lainnya, \textit{engine} dapat mendeteksi terjadinya regresi dan juga dapat menentukan kandidat operasi sumber terjadinya regresi dengan menghitung selisih \textit{latency} antara data \textit{trace} \textit{baseline} dan \textit{real-time}. 
+
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{resources/ch4/log/1-log.png}
 	\caption{\textit{Log} hasil pengujian kasus SI1}
 	\label{result_log_1}
 \end{figure}
-Gambar
-Kasus SI1 yang menyimulasikan terjadinya regresi dengan menambahkan \textit{latency} sebanyak 100ms 
+
+Gambar \ref{result_log_1} merupakan \textit{log} yang didapatkan dari kasus SI1 yang menampilkan hasil tes statistik K-S. Kasus SI1 yang menyimulasikan terjadinya regresi dengan menambahkan \textit{latency} sebanyak 100ms 
