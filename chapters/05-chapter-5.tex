@@ -5,10 +5,7 @@ Bab ini berisi hal-hal yang dapat disimpulkan dari pelaksanaan Tugas Akhir ini. 
 Berdasarkan hasil pengembangan dan pengujian sistem \textit{Performance Regression Analysis} (PRA) yang telah dilakukan. Berikut ini adalah kesimpulan yang diperoleh.
 \begin{enumerate}
 	\item Telah berhasil dilakukan pendeteksian regresi pada kinerja aplikasi berbasis microservice menggunakan \textit{engine} PRA.
-	\item Menurut pengujian, tracing dapat dilakukan dengan penambahan overhead
-	rata-rata penggunaan CPU sebesar 8,8% dengan Elastic stack dan 3,5%
-	tanpa Elastic stack serta penggunaan memori sebesar 959 MB dengan
-	Elastic stack dan 378 MB tanpa Elastic stack.
+	\item Menurut pengujian, komponen \textit{engine} dapat melakukan analisis regresi kinerja dengan penambahan overhead rata-rata penggunaan CPU sebesar 0.047 \textit{core} dan \textit{resource} Memory sebesar 154.412 MiB
 	\item Telah berhasil dilakukan analisis untuk menentukan akar penyebab regresi pada aplikasi berbasis microservice.
 	\item Hasil pengujian menunjukkan sistem PRA telah berhasil menguji 90\% kasus regresi.
 	\item Pendeteksian regresi dapat dilakukan menggunakan tes statistik Kolmogorov-Smirnov dengan membandingkan data \textit{latency} kasus regresi dengan data \textit{latency} \textit{baseline} yang merepresentasikan kinerja aplikasi Microservice di keadaan normal.
