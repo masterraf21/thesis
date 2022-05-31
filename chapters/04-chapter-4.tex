@@ -702,7 +702,7 @@ Dari tujuh kasus uji, kasus SI1 sampai SI7, yang menyimulasikan terjadinya regre
 
 Gambar \ref{result_log_1} merupakan \textit{log} yang didapatkan dari kasus SI1 yang menampilkan hasil tes statistik K-S. Nilai \texttt{p-value} yang didapatkan dari hasil tes lebih besar dari nilai signifikan yaitu 0.05 dan juga nilai \texttt{statistic} lebih kecil dari nilai \texttt{critical value} sehingga hipotesis $h_{0}$ tidak dapat ditolak dan \textit{engine} menginterpretasikan bahwa data \textit{latency} dari kasus SI1 berasal dari distribusi yang sama dengan data \textit{latency} \textit{baseline}. 
 
-Dari analisis hasil kasus SI1 dapat terlihat bahwa algoritme tidak dapat mendeteksi terjadinya regresi jika tidak terdapat perbedaan signifikan antara kedua data 
+Dari analisis hasil kasus SI1 dapat terlihat bahwa algoritme tidak dapat mendeteksi terjadinya regresi jika tidak terdapat perbedaan signifikan antara kedua sampel data seperti pada kasus SI1 yang hanya menyimulasikan penambahan \textit{latency} sebesar 100ms pada satu buah operasi. Sementara pada kasus selanjutnya, yaitu kasus SI2 dengan penambahan \textit{latency} sebesar 250ms, \textit{engine} dapat mendeteksi bahwa data \textit{latency} \textit{real-time} berasal dari distribusi yang berbeda dengan data \textit{latency} \textit{baseline} sehingga dapat mendeteksi terjadinya regresi.
 
 
 Kasus SI1 yang menyimulasikan terjadinya regresi dengan menambahkan \textit{latency} sebanyak 100ms 
