@@ -9,7 +9,7 @@ Berdasarkan hasil pengembangan dan pengujian sistem \textit{Performance Regressi
 	\item Hasil pengujian menunjukkan sistem PRA telah berhasil menguji 10 dari 11 kasus regresi atau sekitar 90\% kasus. Satu-satunya kasus regresi gagal terdeteksi adalah kasus dengan penambahan \textit{latency} 100ms. Pada kasus ini regresi tidak terdeteksi karena algoritme tidak menganggap penambahan \textit{latency} sebanyak 100ms menjadikan sampel data menjadi berbeda distribusi dengan sampel data \textit{baseline} sehingga sistem tidak dapat mendeteksi terjadinya regresi.
 	\item Pendeteksian regresi dapat dilakukan menggunakan tes statistik Kolmogorov-Smirnov dengan membandingkan data \textit{latency} kasus regresi dengan data \textit{latency} \textit{baseline} yang merepresentasikan kinerja aplikasi Microservice di keadaan normal.
 	\item Analisis penyebab regresi belum dapat ditentukan dari hasil pendeteksian regresi oleh algoritme tes Kolmogorov-Smirnov namun dapat ditentukan dari hasil analisis Critical Path yang membandingkan selisih data \textit{latency} operasi pada kasus regresi dan \textit{baseline}.
-	\item Menurut pengujian, komponen PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0.78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
+	\item Menurut pengujian, komponen PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
 \end{enumerate}
 
 \section{Saran}
