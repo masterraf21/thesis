@@ -6,7 +6,7 @@ Berdasarkan hasil pengembangan dan pengujian sistem \textit{Performance Regressi
 \begin{enumerate}
 	\item Telah berhasil dilakukan pendeteksian regresi pada kinerja aplikasi berbasis microservice menggunakan \textit{engine} PRA.
 	\item Telah berhasil dilakukan analisis untuk menentukan akar penyebab regresi pada aplikasi berbasis microservice.
-	\item Hasil pengujian menunjukkan sistem PRA telah berhasil menguji 10 dari 11 kasus regresi atau sekitar 90\% kasus.
+	\item Hasil pengujian menunjukkan sistem PRA telah berhasil menguji 10 dari 11 kasus regresi atau sekitar 90\% kasus. Satu-satunya kasus regresi gagal terdeteksi adalah kasus dengan penambahan \textit{latency} 100ms. 
 	\item Pendeteksian regresi dapat dilakukan menggunakan tes statistik Kolmogorov-Smirnov dengan membandingkan data \textit{latency} kasus regresi dengan data \textit{latency} \textit{baseline} yang merepresentasikan kinerja aplikasi Microservice di keadaan normal.
 	\item Analisis penyebab regresi belum dapat ditentukan dari hasil pendeteksian regresi oleh algoritme tes Kolmogorov-Smirnov namun dapat ditentukan dari hasil analisis Critical Path yang membandingkan selisih data \textit{latency} operasi pada kasus regresi dan \textit{baseline}.
 	\item Menurut pengujian, komponen \textit{engine} dapat melakukan analisis regresi kinerja dengan penambahan overhead rata-rata penggunaan CPU sebesar 0.047 \textit{core} dan Memory sebesar 154.412 MiB.
