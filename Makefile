@@ -26,5 +26,5 @@ clean:
 cleanpdf:	clean
 	rm -f *.pdf
 
-studio:
-	texstudio thesis.tex
+draf:
+	cp thesis.pdf output/'Draf Laporan Tugas Akhir - 18218027.pdf'
