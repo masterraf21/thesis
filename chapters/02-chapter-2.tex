@@ -328,9 +328,10 @@ Sampai saat ini sudah ada beberapa penelitian terkait yang membahas mengenai pen
 Penelitian ini \citep{regression-detection} mengusulkan untuk melakukan pendeteksian regresi kinerja pada tahap DevOps, yaitu pada level perubahan \textit{source code} yang tujuan utamanya adalah menghindari pendeteksian regresi kinerja setelah aplikasi di-\textit{deploy} dan berjalan pada lingkungan \textit{production}.
 Ada dua cara yang diusulkan oleh penelitian ini untuk melakukan pendeteksian regresi kinerja pada tahap DevOps yaitu:
 \begin{enumerate}
-	\item Melakukan deteksi regresi pada level \textit{source code} dengan melakukan ekstraksi setiap \textit{commit} pada Git dan mengindentifikasi kasus uji mana saja yang terkena dampak regresi pada setiap \textit{commit}.
+	\item Melakukan deteksi regresi pada level \textit{source code} dengan melakukan ekstraksi setiap \textit{commit} pada Git dan mengindentifikasi kasus uji mana saja yang terkena dampak regresi pada setiap \textit{commit}. Setelah itu, kinerja setiap \textit{commit} akan dievaluasi secara kronologis menggunakan kasus uji yang bersangkutan ataupun \textit{benchmark} dari kinerja. Akhirnya, akan dilakukan analisis statistik pada evaluasi kinerja untuk mengidentifikasi perubahan mana yang mengakibatkan regresi kinerja. Untuk mengetahui akar masalah pada level kode, akan dilakukan pendekatan iteratif untuk mengidentifikasi akar masalah yang menyebabkan regresi hingga tidakk dapat lagi menghasilkan alasan baru.
+	\item Memprediksi tes mana yang dapat memanifestasikan regresi pada level \textit{commit}. Pendekatan ini merupakan kelanjutan dari poin sebelumnya yang mana pendekatan dengan melakukan uji pada setiap \textit{commit} 
 \end{enumerate}
-
+ 
 \subsection{A Real-time Trace-level Root-cause Diagnosis System in Alibaba Datacenters}
 
 
