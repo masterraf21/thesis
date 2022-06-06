@@ -477,7 +477,7 @@ Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun 
 \pagebreak
 
 \subsubsection{Ringkasan hasil pengujian}
-Tabel \ref{test-summary} mendeskripsikan ringkasan hasil pengujian yang telah dilakukan. Ada dua jenis metrik yang diukur pada setiap kasus yaitu keberhasilan pendeteksian regresi dan keberhasilan analisis \textit{critical path} dalam menentukan kandidat sumber terjadinya regresi. Pada kasus SI1, karena regresi tidak terdeteksi, analisis \textit{critical path} tidak dijalankan sehingga walaupun ada sebuah operasi yang memiliki \textit{latency} ekstra, PRA Engine tidak dapat mendeteksinya. 
+Tabel \ref{test-summary} mendeskripsikan ringkasan hasil pengujian yang telah dilakukan. Ada dua jenis metrik yang diukur pada setiap kasus yaitu keberhasilan pendeteksian regresi dan keberhasilan analisis \textit{critical path} dalam menentukan kandidat sumber terjadinya regresi. Pada kasus SI1, karena regresi tidak terdeteksi, analisis \textit{critical path} tidak dijalankan sehingga walaupun ada sebuah operasi yang memiliki \textit{latency} ekstra, PRA Engine tidak dapat mendeteksinya. Sementara untuk kasus SE1-SE4, PRA Engine dapat mendeteksi terjadinya regresi, namun hasil analisis \textit{critical path} tidak menghasilkan kandidat penyebab regresi sebab dari selisih \textit{latency} antara kasus regresi dan \textit{baseline} tidak lebih dari threshold \textit{default} yaitu 250ms. 
 \begin{table}[htb]
 	\caption{Ringkasan hasil pengujian}
 	\centering
