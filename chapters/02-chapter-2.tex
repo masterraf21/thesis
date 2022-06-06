@@ -325,6 +325,8 @@ Kedua metode, \textit{critical path} durasi total, dapat berperan penting dalam 
 
 \subsection{Performance Regression Detection in DevOps}
 
+\subsection{A Real-time Trace-level Root-cause Diagnosis System in Alibaba Datacenters}
+
 \subsection{X-Trace}
 
 X-Trace \citep{xtrace} merupakan salah satu pionir awal \textit{distributed tracing}. Teknik instrumentasi yang digunakan oleh X-Trace adalah dengan cara mengharuskan program untuk memasukkan metadata milik X-Trace pada setiap \textit{request} yang dilakukan oleh program tersebut. Gambar \ref{ch2-xtrace-1} menunjukkan hasil pengolah \textit{trace} yang berbentuk \textit{tree}. Hal tersebut dapat dicapai dalam beberapa tahap. Pertama, setiap \textit{request} yang dilakukan harus mengirimkan metadata milik X-Trace yaitu \textit{trace id} (bersifat unik pada setiap \textit{request}), \textit{parent id} (menunjukka \textit{request} mana yang memanggil operasi ini dan unit untuk setiap \textit{trace id}), \textit{operation id} (sebuah \textit{identifier} untuk untuk setiap operasi), dan \textit{edge type} (menunjukkan hubungan operasi dengan operasi milik \textit{parent}).
