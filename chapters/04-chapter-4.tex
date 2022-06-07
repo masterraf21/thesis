@@ -718,7 +718,20 @@ Dari gambar \ref{result_cpu_11} dan \ref{result_mem_11} terlihat bahwa PRA Engin
 \pagebreak
 
 \subsubsection{Analisis Kinerja Kakas}
-Dari 11 
+Dari 11 kasus pengujian, penulis mengambil 2 sampel hasil \textit{response time} dari API. 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{resources/ch4/resource/11-cpu.png}
+	\caption{Penggunaan CPU pada kasus \textbf{SE4}}
+	\label{result_cpu_11}
+\end{figure}
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{resources/ch4/resource/11-mem.png}
+	\caption{Penggunaan Memory pada kasus \textbf{SE4}}
+	\label{result_mem_11}
+\end{figure}
 
 \subsubsection{Rata-rata hasil}
 Dari 11 kasus pengujian, PRA Engine rata-rata menggunakan \textit{resource} CPU sebesar 0,047 vCPU dan \textit{resource} Memory sebesar 154,412 MiB. Keseluruhan \textit{cluster} memiliki \textit{resource} sebanyak 6 vCPU dan 22,5 GiB, sehingga PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
