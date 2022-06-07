@@ -718,9 +718,10 @@ Dari gambar \ref{result_cpu_11} dan \ref{result_mem_11} terlihat bahwa PRA Engin
 \pagebreak
 
 \subsubsection{Analisis Kinerja Kakas}
+Dari 11 
 
 \subsubsection{Rata-rata hasil}
-Dari sebelas kasus pengujian, PRA Engine rata-rata menggunakan \textit{resource} CPU sebesar 0,047 vCPU dan \textit{resource} Memory sebesar 154,412 MiB. Keseluruhan \textit{cluster} memiliki \textit{resource} sebanyak 6 vCPU dan 22,5 GiB, sehingga PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
+Dari 11 kasus pengujian, PRA Engine rata-rata menggunakan \textit{resource} CPU sebesar 0,047 vCPU dan \textit{resource} Memory sebesar 154,412 MiB. Keseluruhan \textit{cluster} memiliki \textit{resource} sebanyak 6 vCPU dan 22,5 GiB, sehingga PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
 
 \subsection{Analisis Hasil Pengujian}
 Dari tujuh kasus uji, kasus SI1 sampai SI7, yang menyimulasikan terjadinya regresi akibat perubahan di level kode, hanya satu kasus, yaitu kasus SI1, yang regresi tidak dapat terdeteteksi oleh PRA Engine. Selebihnya, dari enam kasus lainnya, PRA Engine dapat mendeteksi terjadinya regresi dan juga dapat menentukan kandidat operasi sumber terjadinya regresi dengan menghitung selisih \textit{latency} antara data \textit{trace} \textit{baseline} dan \textit{real-time}. 
