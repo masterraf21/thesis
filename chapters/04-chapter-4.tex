@@ -309,105 +309,25 @@ Seperti yang terlihat pada gambar \ref{result_json_5}, regresi terdeteksi dan an
 
 \subsubsection{Kasus SI6}
 Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi dan analisis \textit{critical path} dapat menentukan sumber regresi yaitu operasi \texttt{placeorder} dari \textit{service} \texttt{CheckoutService}.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.75\textwidth]{resources/ch4/json/6.png}
-	\caption{\textit{Response} JSON hasil pengujian kasus \textbf{SI6}}
-	\label{result_json_6}
-\end{figure}
 
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=1\textwidth]{resources/ch4/log/6-log.png}
-%	\caption{\textit{Log} hasil pengujian kasus SI6}
-%	\label{result_log_6}
-%\end{figure}
-%\pagebreak
 
 \subsubsection{Kasus SI7}
 Seperti yang terlihat pada gambar \ref{result_json_7}, regresi terdeteksi dan analisis \textit{critical path} dapat menentukan sumber regresi yaitu operasi \texttt{placeorder} dari \textit{service} \texttt{Checkout Service}, operasi \texttt{listrecommendations} dari \textit{service} \texttt{Recommendation Service}, operasi \texttt{getproduct} dari \textit{service} \texttt{ProductCatalog Service}, \texttt{listproducts} dari \textit{service} \texttt{ProductCatalog Service}, dan operasi \texttt{getquote} dari \textit{service} \texttt{Shipping Service}.
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.75\textwidth]{resources/ch4/json/7.png}
-	\caption{\textit{Response} JSON hasil pengujian kasus \textbf{SI7}}
-	\label{result_json_7}
-\end{figure}
-%
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=1\textwidth]{resources/ch4/log/7-log.png}
-%	\caption{\textit{Log} hasil pengujian kasus SI7}
-%	\label{result_log_7}
-%\end{figure}
-\pagebreak
 
 \subsubsection{Kasus SE1}
 Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.75\textwidth]{resources/ch4/json/8.png}
-	\caption{\textit{Response} JSON hasil pengujian kasus \textbf{SE1}}
-	\label{result_json_8}
-\end{figure}
-
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=1\textwidth]{resources/ch4/log/8-log.png}
-%	\caption{\textit{Log} hasil pengujian kasus SE1}
-%	\label{result_log_8}
-%\end{figure}
-\pagebreak
 
 \subsubsection{Kasus SE2}
 Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.75\textwidth]{resources/ch4/json/9.png}
-	\caption{\textit{Response} JSON hasil pengujian kasus \textbf{SE2}}
-	\label{result_json_9}
-\end{figure}
-
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=1\textwidth]{resources/ch4/log/9-log.png}
-%	\caption{\textit{Log} hasil pengujian kasus SE2}
-%	\label{result_log_9}
-%\end{figure}
-\pagebreak
 
 \subsubsection{Kasus SE3}
 Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.75\textwidth]{resources/ch4/json/10.png}
-	\caption{\textit{Response} JSON hasil pengujian kasus \textbf{SE3}}
-	\label{result_json_10}
-\end{figure}
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=1\textwidth]{resources/ch4/log/10-log.png}
-%	\caption{\textit{Log} hasil pengujian kasus SE3}
-%	\label{result_log_10}
-%\end{figure}
-\pagebreak
+
+
 
 \subsubsection{Kasus SE4}
 Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}.
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.75\textwidth]{resources/ch4/json/11.png}
-	\caption{\textit{Response} JSON hasil pengujian kasus \textbf{SE4}}
-	\label{result_json_9}
-\end{figure}
-
-%\begin{figure}[!htb]
-%	\centering
-%	\includegraphics[width=1\textwidth]{resources/ch4/log/11-log.png}
-%	\caption{\textit{Log} hasil pengujian kasus SE4}
-%	\label{result_log_11}
-%\end{figure}
-\pagebreak
 
 \subsubsection{Ringkasan hasil pengujian}
 Tabel \ref{test-summary} mendeskripsikan ringkasan hasil pengujian yang telah dilakukan. Ada dua jenis metrik yang diukur pada setiap kasus yaitu keberhasilan pendeteksian regresi dan keberhasilan analisis \textit{critical path} dalam menentukan kandidat sumber terjadinya regresi. Pada kasus SI1, karena regresi tidak terdeteksi, analisis \textit{critical path} tidak dijalankan sehingga walaupun ada sebuah operasi yang memiliki \textit{latency} ekstra, PRA Engine tidak dapat mendeteksinya. Sementara untuk kasus SE1-SE4, PRA Engine dapat mendeteksi terjadinya regresi, namun hasil analisis \textit{critical path} tidak menghasilkan kandidat penyebab regresi sebab dari selisih \textit{latency} antara kasus regresi dan \textit{baseline} tidak lebih dari threshold \textit{default} yaitu 250ms.
