@@ -27,4 +27,4 @@ cleanpdf:	clean
 	rm -f *.pdf
 
 revisi:
-	cp thesis.pdf output/'Revisi Draf Laporan Tugas Akhir - 18218027.pdf'
+	cp thesis.pdf output/'Revisi Final Draf Laporan Tugas Akhir - 18218027.pdf'
