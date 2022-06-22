@@ -4,8 +4,8 @@ Bab ini berisi hal-hal yang dapat disimpulkan dari pelaksanaan Tugas Akhir ini. 
 \section{Kesimpulan}
 Berdasarkan hasil pengembangan dan pengujian sistem \textit{Performance Regression Analysis} (PRA) yang telah dilakukan. Berikut ini adalah kesimpulan yang diperoleh.
 \begin{enumerate}
-	\item Telah berhasil dilakukan pendeteksian regresi pada kinerja aplikasi berbasis microservice menggunakan \textit{engine} PRA.
-	\item Telah berhasil dilakukan analisis untuk menentukan akar penyebab regresi pada aplikasi berbasis microservice.
+	\item Telah berhasil dilakukan pendeteksian regresi pada kinerja aplikasi berbasis Microservice.
+	\item Telah berhasil dilakukan analisis untuk menentukan akar penyebab regresi pada aplikasi berbasis Microservice.
 	\item Hasil pengujian menunjukkan sistem PRA telah berhasil menguji 10 dari 11 kasus regresi atau sekitar 90\% kasus. Satu-satunya kasus regresi gagal terdeteksi adalah kasus dengan penambahan \textit{latency} sebesar 100ms. Pada kasus ini regresi tidak terdeteksi karena algoritma tidak menganggap penambahan \textit{latency} sebesar 100ms menjadikan sampel data menjadi berbeda distribusinya dengan sampel data \textit{baseline} sehingga sistem tidak dapat mendeteksi terjadinya regresi.
 	\item Pendeteksian regresi dapat dilakukan menggunakan tes statistik Kolmogorov-Smirnov dengan membandingkan data \textit{latency} kasus regresi dengan data \textit{latency} \textit{baseline} yang merepresentasikan kinerja aplikasi Microservice pada keadaan normal.
 	\item Analisis penyebab regresi belum dapat ditentukan dari hasil pendeteksian regresi oleh algoritma tes Kolmogorov-Smirnov namun dapat ditentukan dari hasil analisis Critical Path yang membandingkan selisih data \textit{latency} operasi pada kasus regresi dan \textit{baseline}.
