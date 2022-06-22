@@ -314,7 +314,7 @@ Pada kasus ini, regresi terdeteksi dan analisis \textit{critical path} dapat men
 
 
 \subsubsection{Kasus SE1}
-Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}.
+Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}, namun dari data normal terlihat bahwa operasi-operasi hanya memiliki selisih \textit{latency} dari 0ms sampai dengan 4ms sehingga penyebab regresi bukanlah salah satu operasi di sebuah \textit{service} melainkan karena faktor eksternal, oleh karena itu walaupun analisis \textit{critical path} tidak dapat menentukan sumber regresi, hasilnya sudah tepat sebab penyebab regresi merupakan faktor eksternal bukan faktor internal.
 
 \subsubsection{Kasus SE2}
 Seperti yang terlihat pada gambar \ref{result_json_6}, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}.
