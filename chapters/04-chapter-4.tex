@@ -195,7 +195,11 @@ Ada dua tahap yang akan dilakukan untuk melakukan pengujian ini, pertama tahap p
 
 Terdapat dua jenis kasus uji yang akan diujikan pada sistem. Jenis pertama adalah kasus-kasus yang menyimulasikan regresi dengan melakukan perubahan yang terjadi di level aplikasi dengan cara melakukan modifikasi secara sengaja di level kode. Kasus pertama akan memiliki ID dengan awalan \textbf{SI} menandakan \textit{skenario-internal}. Jenis kedua adalah kasus-kasus yang menyimulasikan regresi dengan meningkatkan jumlah pengguna dan \textit{load} pada Load Generator. Kasus kedua akan memliki ID dengan awalan \textbf{SE} menandakan \textit{skenario-eksternal}. Tabel \ref{testcase} akan menjelaskan kasus-kasus pengujian sistem.
 
-Pengujian pada tabel \ref{testcase} seluruhnya dilakukan dengan cara terlebih dahulu melakukan \textit{deployment} masing-masing kasus uji di lingkungan Kubernetes kemudian menjalankan aplikasi Load Generator sesuai dengan spesifikasi masing-masing kasus uji selama $\pm 5$ menit. Pengujian akan dilakukan dengan memanggil \textit{endpoint} \texttt{/analysis/range} dengan parameter StartTime dan EndTime yang sesuai dengan kasus uji. Untuk keperluan pengujian akan digunakan 3 level signifikan atau alpha yang berbeda yaitu 0.1, 0.05, dan 0,001. Ketiga level signifikan ini digunakan untuk mengetahui sensitivitas hasil pendeteksian regresi dengan arti semakin kecil nilai signifikan, maka akan semakin kuat bukti untuk menolak $h_{0}$. Hasil akhir dari setiap kasus uji akan berupa \textit{response} dalam bentuk JSON dari API dan juga \textit{log} dari aplikasi untuk mengetahui hasil tes  statistik K-S yang akan dipergunakan untuk keperluan analisis selanjutnya.
+Pengujian pada tabel \ref{testcase} seluruhnya dilakukan dengan cara terlebih dahulu melakukan \textit{deployment} masing-masing kasus uji di lingkungan Kubernetes kemudian menjalankan aplikasi Load Generator sesuai dengan spesifikasi masing-masing kasus uji selama $\pm 5$ menit. Pengujian akan dilakukan dengan memanggil \textit{endpoint} \texttt{/analysis/range} dengan parameter StartTime dan EndTime yang sesuai dengan kasus uji. 
+
+Untuk keperluan pengujian akan digunakan 3 level signifikan atau alpha yang berbeda yaitu 0,1, 0,05, dan 0,001. Ketiga level signifikan ini digunakan untuk mengetahui sensitivitas hasil pendeteksian regresi dengan arti semakin kecil nilai signifikan, maka akan semakin signifikan bukti untuk menolak $h_{0}$. Nilai signifikan 0,1 dipilih sebagai batas atas nilai signifikan untuk mengetahui tingkat sensitivitas dari kasus uji dengan nilai signifikan yang paling besar. Sementara nilai 0,05 dipilih sebab nilai tersebut merupakan nilai yang paling umum digunakan sebagai nilai signifikan pada tes statistik hipotesis. Sementara nilai 0,001 dipilih sebagai perbandingan nilai signifikan paling kecil untuk menguji batas bawah dari nilai signifikan.
+
+Hasil akhir dari setiap kasus uji akan berupa \textit{response} dalam bentuk JSON dari API dan juga \textit{log} dari aplikasi untuk mengetahui hasil tes  statistik K-S yang akan dipergunakan untuk keperluan analisis selanjutnya.
 \begin{table}[htb]
 	\caption{Tabel kasus uji}
 	
@@ -470,12 +474,14 @@ Dari 11 kasus pengujian, penulis mengambil 1 sampel hasil \textit{response time}
 
 
 \subsection{Analisis Hasil Pengujian}
+Dari hasil pengujian, pada level signifikan 0,01 semua kasus regresi dapat dideteksi 
+
 Dari tujuh kasus uji, kasus SI1 sampai SI7, yang menyimulasikan terjadinya regresi akibat perubahan di level kode, hanya satu kasus, yaitu kasus SI1, yang regresi tidak dapat terdeteteksi oleh PRA Engine. Selebihnya, dari enam kasus lainnya, PRA Engine dapat mendeteksi terjadinya regresi dan juga dapat menentukan kandidat operasi sumber terjadinya regresi dengan menghitung selisih \textit{latency} antara data \textit{trace} \textit{baseline} dan periodikal. 
 
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{resources/ch4/log/1-log.png}
-	\caption{\textit{Log} hasil pengujian kasus SI1}
+	\caption{\textit{Log} hasil pengujian kasus SI1 dengan alpha 0,05}
 	\label{result_log_1}
 \end{figure}
 
