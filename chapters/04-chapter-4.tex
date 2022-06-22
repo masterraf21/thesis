@@ -292,7 +292,7 @@ Pengujian pada tabel \ref{testcase} seluruhnya dilakukan dengan cara terlebih da
 Berikut adalah hasil pengujian yang telah dilakukan pada sistem PRA sesuai dengan kasus uji seperti yang telah dijabarkan pada tabel \ref{testcase}. Hasil tangkapan layar dari aplikasi Postman terdapat pada lampiran \ref{lampiran_a}.
 
 \subsubsection{Kasus SI1}
-Pada kasus ini, regresi tidak terdeteksi sehingga analisis \textit{critical path} tidak dijalankan.
+Pada kasus ini, regresi terdeteksi pada nilai alpha 0.1 namun tidak terdeteksi pada nilai alpha 0.05 dan 0.001. Analisis \textit{critical path} dapat menentukan sumber regresi pada nilai alpha 0.1 yaitu operasi \texttt{placeorder} dari \textit{service} \texttt{CheckoutService} dengan selisih perbedaan \textit{latency} sebesar 127ms.
 
 \subsubsection{Kasus SI2}
 Pada kasus ini, regresi terdeteksi dan analisis \textit{critical path} dapat menentukan sumber regresi yaitu operasi \texttt{placeorder} dari \textit{service} \texttt{CheckoutService} dengan selisih perbedaan \textit{latency} sebesar 268ms. Analisis \textit{critical path} sudah dapat dengan benar menentukan sumber regresi sesuai dengan kasus uji.
