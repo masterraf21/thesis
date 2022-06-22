@@ -328,9 +328,10 @@ Pada kasus ini, regresi terdeteksi namun analisis \textit{critical path} tidak d
 Pada kasus ini, regresi terdeteksi namun analisis \textit{critical path} tidak dapat menentukan sumber regresi sebab selisih \textit{latency} tidak cukup besar sehingga tidak terdeteksi di data \textit{suspected}, namun dari data normal terlihat bahwa operasi-operasi hanya memiliki selisih \textit{latency} dari 1ms sampai dengan 2ms sehingga penyebab regresi bukanlah salah satu operasi di sebuah \textit{service} melainkan karena faktor eksternal, oleh karena itu walaupun analisis \textit{critical path} tidak dapat menentukan sumber regresi, hasilnya sudah tepat sebab penyebab regresi merupakan faktor eksternal bukan faktor internal.
 
 \subsubsection{Ringkasan hasil pengujian}
-Tabel \ref{test-summary} mendeskripsikan ringkasan hasil pengujian yang telah dilakukan. Ada dua jenis metrik yang diukur pada setiap kasus yaitu keberhasilan pendeteksian regresi dan keberhasilan analisis \textit{critical path} dalam menentukan kandidat sumber terjadinya regresi. Pada kasus SI1, karena regresi tidak terdeteksi, analisis \textit{critical path} tidak dijalankan sehingga walaupun ada sebuah operasi yang memiliki \textit{latency} ekstra, PRA Engine tidak dapat mendeteksinya. Sementara untuk kasus SE1-SE4, PRA Engine dapat mendeteksi terjadinya regresi, namun hasil analisis \textit{critical path} tidak menghasilkan kandidat penyebab regresi sebab dari selisih \textit{latency} antara kasus regresi dan \textit{baseline} tidak lebih dari threshold \textit{default} yaitu 250ms.
+%Tabel \ref{test-summary} mendeskripsikan ringkasan hasil pengujian yang telah dilakukan. Ada dua jenis metrik yang diukur pada setiap kasus yaitu keberhasilan pendeteksian regresi dan keberhasilan analisis \textit{critical path} dalam menentukan kandidat sumber terjadinya regresi. Pada kasus SI1, karena regresi tidak terdeteksi, analisis \textit{critical path} tidak dijalankan sehingga walaupun ada sebuah operasi yang memiliki \textit{latency} ekstra, PRA Engine tidak dapat mendeteksinya. Sementara untuk kasus SE1-SE4, PRA Engine dapat mendeteksi terjadinya regresi, namun hasil analisis \textit{critical path} tidak menghasilkan kandidat penyebab regresi sebab dari selisih \textit{latency} antara kasus regresi dan \textit{baseline} tidak lebih dari threshold \textit{default} yaitu 250ms.
+
 \begin{table}[htb]
-	\caption{Ringkasan hasil pengujian}
+	\caption{Ringkasan hasil pengujian dengan alpha 0.1}
 	\centering
 	\begin{tabular}{|l|c|c|}
 		\hline
@@ -350,9 +351,56 @@ Tabel \ref{test-summary} mendeskripsikan ringkasan hasil pengujian yang telah di
 		\textbf{SE3} & Ya    & Ya \\ \hline
 		\textbf{SE4} & Ya    & Ya \\ \hline
 	\end{tabular}
-	\label{test-summary}
+	\label{test-summary-1}
 \end{table}
 
+\begin{table}[htb]
+	\caption{Ringkasan hasil pengujian dengan alpha 0.05}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{3166FF} 
+		{\color[HTML]{FFFFFF} ID} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{3166FF}{\color[HTML]{FFFFFF} Regresi terdeteksi}} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{3166FF}{\color[HTML]{FFFFFF} Hasil Critical Path sesuai}} \\ \hline
+		\textbf{SI1} & Tidak & Tidak \\ \hline
+		\textbf{SI2} & Ya    & Ya    \\ \hline
+		\textbf{SI3} & Ya    & Ya    \\ \hline
+		\textbf{SI4} & Ya    & Ya    \\ \hline
+		\textbf{SI5} & Ya    & Ya    \\ \hline
+		\textbf{SI6} & Ya    & Ya    \\ \hline
+		\textbf{SI7} & Ya    & Ya    \\ \hline
+		\textbf{SE1} & Ya    & Ya \\ \hline
+		\textbf{SE2} & Ya    & Ya \\ \hline
+		\textbf{SE3} & Ya    & Ya \\ \hline
+		\textbf{SE4} & Ya    & Ya \\ \hline
+	\end{tabular}
+	\label{test-summary-2}
+\end{table}
+
+\begin{table}[htb]
+	\caption{Ringkasan hasil pengujian dengan alpha 0.001}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{3166FF} 
+		{\color[HTML]{FFFFFF} ID} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{3166FF}{\color[HTML]{FFFFFF} Regresi terdeteksi}} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{3166FF}{\color[HTML]{FFFFFF} Hasil Critical Path sesuai}} \\ \hline
+		\textbf{SI1} & Tidak & Tidak \\ \hline
+		\textbf{SI2} & Ya    & Ya    \\ \hline
+		\textbf{SI3} & Ya    & Ya    \\ \hline
+		\textbf{SI4} & Ya    & Ya    \\ \hline
+		\textbf{SI5} & Ya    & Ya    \\ \hline
+		\textbf{SI6} & Ya    & Ya    \\ \hline
+		\textbf{SI7} & Ya    & Ya    \\ \hline
+		\textbf{SE1} & Ya    & Ya \\ \hline
+		\textbf{SE2} & Ya    & Ya \\ \hline
+		\textbf{SE3} & Ya    & Ya \\ \hline
+		\textbf{SE4} & Ya    & Ya \\ \hline
+	\end{tabular}
+	\label{test-summary-3}
+\end{table}
 
 \subsection{Hasil Pengujian Kinerja} 
 Dari 11 kasus pengujian, rata-rata kakas PRA Engine menggunakan 0,046 vCPU dengan standard deviasi 0,0038 dan 154,41 MiB Memory dengan standard deviasi 17,91 dalam sekali melakukan analisis. Keseluruhan \textit{cluster} memiliki \textit{resource} sebanyak 6 vCPU dan 22,5 GiB, sehingga dalam sekali melakukan analisis PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes. \textit{Overhead} yang diakibatkan oleh kakas termasuk rendah sehingga penggunaan kakas PRA Engine tidak akan berdampak pada kinerja \textit{cluster} Kubernetes secara keseluruhan. Detail hasil pengujian kinerja terdapat pada lampiran \ref{lampiran_b}.
