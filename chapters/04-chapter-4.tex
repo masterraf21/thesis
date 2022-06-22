@@ -353,52 +353,51 @@ Tabel \ref{test-summary} mendeskripsikan ringkasan hasil pengujian yang telah di
 
 \pagebreak
 
-\subsection{Hasil Pengujian Kinerja}
-%Pada subbab ini akan disajikan hasil penggunaan CPU dan Memory pada masing-masing kasus uji beserta dengan rata-rata dan persentase keseluruhan \textit{resource} yang terdapat di Kubernetes. 
-Dari 11 kasus pengujian, rata-rata kakas PRA Engine menggunakan 0,046 vCPU dengan standard deviasi 0,0038 dan 154,41 MiB Memory dengan standard deviasi 17,91 dalam sekali melakukan analisis.
+\subsection{Hasil Pengujian Kinerja} 
+Dari 11 kasus pengujian, rata-rata kakas PRA Engine menggunakan 0,046 vCPU dengan standard deviasi 0,0038 dan 154,41 MiB Memory dengan standard deviasi 17,91 dalam sekali melakukan analisis. Keseluruhan \textit{cluster} memiliki \textit{resource} sebanyak 6 vCPU dan 22,5 GiB, sehingga PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
                            
-\subsubsection{Kasus SI1}
-Dari gambar \ref{result_cpu_1} dan \ref{result_mem_1} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,042 vCPU dan Memory sebanyak 137,82 MiB. 
-
-\subsubsection{Kasus SI2}
-Dari gambar \ref{result_cpu_2} dan \ref{result_mem_2} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,057 vCPU dan Memory sebanyak 128,71 MiB. 
-
-\subsubsection{Kasus SI3}
-Dari gambar \ref{result_cpu_3} dan \ref{result_mem_3} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,071 vCPU dan Memory sebanyak 131,55 MiB. 
-
-\subsubsection{Kasus SI4}
-Dari gambar \ref{result_cpu_4} dan \ref{result_mem_4} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,059 vCPU dan Memory sebanyak 146,6 MiB. 
-
-
-\subsubsection{Kasus SI5}
-Dari gambar \ref{result_cpu_5} dan \ref{result_mem_5} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,064 vCPU dan Memory sebanyak 153,61 MiB. 
-
-
-\subsubsection{Kasus SI6}
-Dari gambar \ref{result_cpu_6} dan \ref{result_mem_6} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,068 vCPU dan Memory sebanyak 153,61 MiB. 
-
-
-\subsubsection{Kasus SI7}
-Dari gambar \ref{result_cpu_7} dan \ref{result_mem_7} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,046 vCPU dan Memory sebanyak 152,71 MiB. 
-
-
-\subsubsection{Kasus SE1}
-Dari gambar \ref{result_cpu_8} dan \ref{result_mem_8} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,075 vCPU dan Memory sebanyak 168,8 MiB. 
-
-\subsubsection{Kasus SE2}
-Dari gambar \ref{result_cpu_9} dan \ref{result_mem_9} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,061 vCPU dan Memory sebanyak 183,68 MiB. 
-
-
-\subsubsection{Kasus SE3}
-Dari gambar \ref{result_cpu_10} dan \ref{result_mem_10} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,073 vCPU dan Memory sebanyak 176,59 MiB. 
-
-
-\subsubsection{Kasus SE4}
-Dari gambar \ref{result_cpu_11} dan \ref{result_mem_11} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,048 vCPU dan Memory sebanyak 165,75 MiB. 
-
-
-\subsubsection{Rata-rata hasil}
-Dari 11 kasus pengujian, PRA Engine rata-rata menggunakan \textit{resource} CPU sebesar 0,047 vCPU dan \textit{resource} Memory sebesar 154,412 MiB. Keseluruhan \textit{cluster} memiliki \textit{resource} sebanyak 6 vCPU dan 22,5 GiB, sehingga PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
+%\subsubsection{Kasus SI1}
+%Dari gambar \ref{result_cpu_1} dan \ref{result_mem_1} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,042 vCPU dan Memory sebanyak 137,82 MiB. 
+%
+%\subsubsection{Kasus SI2}
+%Dari gambar \ref{result_cpu_2} dan \ref{result_mem_2} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,057 vCPU dan Memory sebanyak 128,71 MiB. 
+%
+%\subsubsection{Kasus SI3}
+%Dari gambar \ref{result_cpu_3} dan \ref{result_mem_3} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,071 vCPU dan Memory sebanyak 131,55 MiB. 
+%
+%\subsubsection{Kasus SI4}
+%Dari gambar \ref{result_cpu_4} dan \ref{result_mem_4} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,059 vCPU dan Memory sebanyak 146,6 MiB. 
+%
+%
+%\subsubsection{Kasus SI5}
+%Dari gambar \ref{result_cpu_5} dan \ref{result_mem_5} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,064 vCPU dan Memory sebanyak 153,61 MiB. 
+%
+%
+%\subsubsection{Kasus SI6}
+%Dari gambar \ref{result_cpu_6} dan \ref{result_mem_6} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,068 vCPU dan Memory sebanyak 153,61 MiB. 
+%
+%
+%\subsubsection{Kasus SI7}
+%Dari gambar \ref{result_cpu_7} dan \ref{result_mem_7} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,046 vCPU dan Memory sebanyak 152,71 MiB. 
+%
+%
+%\subsubsection{Kasus SE1}
+%Dari gambar \ref{result_cpu_8} dan \ref{result_mem_8} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,075 vCPU dan Memory sebanyak 168,8 MiB. 
+%
+%\subsubsection{Kasus SE2}
+%Dari gambar \ref{result_cpu_9} dan \ref{result_mem_9} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,061 vCPU dan Memory sebanyak 183,68 MiB. 
+%
+%
+%\subsubsection{Kasus SE3}
+%Dari gambar \ref{result_cpu_10} dan \ref{result_mem_10} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,073 vCPU dan Memory sebanyak 176,59 MiB. 
+%
+%
+%\subsubsection{Kasus SE4}
+%Dari gambar \ref{result_cpu_11} dan \ref{result_mem_11} terlihat bahwa PRA Engine menggunakan \textit{resource} CPU sebanyak 0,048 vCPU dan Memory sebanyak 165,75 MiB. 
+%
+%
+%\subsubsection{Rata-rata hasil}
+%Dari 11 kasus pengujian, PRA Engine rata-rata menggunakan \textit{resource} CPU sebesar 0,047 vCPU dan \textit{resource} Memory sebesar 154,412 MiB. Keseluruhan \textit{cluster} memiliki \textit{resource} sebanyak 6 vCPU dan 22,5 GiB, sehingga PRA Engine mengakibatkan \textit{overhead} CPU sebanyak 0,78 \% dan Memory sebanyak 0,67 \% kepada \textit{cluster} Kubernetes.
 
 \subsubsection{Analisis Kinerja Kakas}
 Dari 11 kasus pengujian, penulis mengambil 1 sampel hasil \textit{response time} dari pemanggilian API. Gambar \ref{time_p_1} menunjukkan total waktu yang dibutuhkan untuk pemanggilan API adalah 25,36 detik, sementara gambar \ref{time_l_1} menunjukkann operasi \textit{query} dari API Zipkin membutuhkan waktu 13,29 detik dan operasi untuk melakukan \textit{parsing} data \textit{trace} Zipkin membutuhkan waktu 10,98 detik. Sisa waktunya, 1,09 detik dilakukan untuk melakukan ekstrak data \textit{latency}, \textit{critical path}, dan  melakukan analisis. Pemanggilan API Zipkin terlihat lambat karena mengambil ribuan data \textit{trace} dari \textit{storage} ElasticSearch dan melakukan agregasi sebelum dikirimkan ke PRA Engine melalui REST API. Setelah itu, masing-masing data \textit{trace} yang bentuknya terpisah diproses masing-masing oleh PRA Engine. Proses ini juga terlihat lambat, mengingat pemrosesan data \textit{trace} diimplementasikan di bahasa Python. 
