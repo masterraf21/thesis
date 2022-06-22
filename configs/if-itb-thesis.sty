@@ -155,6 +155,10 @@
 
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
 % Listing Code thingy
 \lstset{frame=single,
   columns=fullflexible,
@@ -162,7 +166,10 @@
   breaklines=true,
   breakatwhitespace=false,
   postbreak=\mbox{$\hookrightarrow$\space},
-  tabsize=2
+  tabsize=2,
+  commentstyle=\color{mygreen},
+  keywordstyle=\color{blue},
+  stringstyle=\color{mymauve}, 
 }
 \renewcommand{\lstlistingname}{Kode}
 \renewcommand{\lstlistlistingname}{Daftar \lstlistingname}
