@@ -485,7 +485,7 @@ Gambar \ref{result_log_1} menunjukkan \textit{log} yang didapatkan dari kasus SI
 	\label{result_log_1}
 \end{figure}
 
-Dapat diartikan, penggunaan nilai signifikan pada PRA Engine akan berpengaruh pada hasil terutama jika kasus regresi yang ingin dideteksi tidak memiliki perubahan yang sangat berarti pada nilai \textit{latency}-nya seperti yang terdapat pada kasus SI1. Dapat disimpulkan bahwa semakin besar nilai signifikan, akan semakin sensitif juga algoritma dalam mendeteksi regresi yang terjadi sebab tidak diperlukan bukti yang sangat kuat untuk menolak $h_{0}$, namun  semakin kecil nilai signifikan yang digunakan akan semakin kuat juga bukti yang diperlukan untuk menolak $h_{0}$.
+Dapat diartikan dari analsiis di atas, penggunaan nilai signifikan pada PRA Engine akan berpengaruh pada hasil terutama jika kasus regresi yang ingin dideteksi tidak memiliki perubahan yang sangat berarti pada nilai \textit{latency}-nya seperti yang terdapat pada kasus SI1. Dapat disimpulkan bahwa semakin besar nilai signifikan, akan semakin sensitif juga algoritma dalam mendeteksi regresi yang terjadi sebab tidak diperlukan bukti yang sangat kuat untuk menolak $h_{0}$ namun artinya $h_{0}$ tidak dapat ditolak dengan terlalu yakin. Sebalknya jika semakin kecil nilai signifikan yang digunakan akan semakin kuat juga bukti yang diperlukan untuk menolak $h_{0}$ dengan arti $h_{0}$ dapat ditolak dengan semakin yakin.
 
 
 Sementara pada kasus-kasus yang menyimulasikan perubahan dari eksternal, yaitu kasus SE1 sampai SE4, PRA Engine juga dapat mendeteksi terjadinya regresi karena algoritma dapat menentukan bahwa data \textit{latency} pada kasus-kasus tersebut berasal dari distribusi yang berbeda dari data \textit{latency} \textit{baseline}.
