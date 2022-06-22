@@ -478,11 +478,6 @@ Dari semua kasus pengujian, hasil yang didapatkan dari pengujian akan bergantung
 
 Gambar \ref{result_log_1} menunjukkan \textit{log} yang didapatkan dari kasus SI1 dengan nilai signifikan 0,05. Terlihat \texttt{pvalue} yang dihasilkan dari tes bernilai 0,067. Pada tes tersebut, nilai signifikan yang digunakan adalah 0,05 sehingga berdasarkan algoritma, pada kasus tersebut tidak bisa langsung menolak $h_{0}$ dan harus dilanjutkan membandingkan nilai \texttt{statistic} dengan nilai \texttt{critical value}, dan hasilnya menyatakan bahwa CDF \textit{latency} pada kasus tersebut memiliki distribusi yang sama dengan \textit{baseline}, sehingga regresi tidak terdeteksi. Hal yang sama akan berlaku untuk seluruh nilai signifikan $<0,05$, namun pada pengujian dengan nilai signifikan 0,1, kasus SI1 akan terdeteksi sebagai regresi.
 
-
-%Dari hasil pengujian, pada level signifikan 0,01 semua kasus regresi dapat dideteksi 
-%
-%Dari tujuh kasus uji, kasus SI1 sampai SI7, yang menyimulasikan terjadinya regresi akibat perubahan di level kode, hanya satu kasus, yaitu kasus SI1, yang regresi tidak dapat terdeteteksi oleh PRA Engine. Selebihnya, dari enam kasus lainnya, PRA Engine dapat mendeteksi terjadinya regresi dan juga dapat menentukan kandidat operasi sumber terjadinya regresi dengan menghitung selisih \textit{latency} antara data \textit{trace} \textit{baseline} dan periodikal. 
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=1\textwidth]{resources/ch4/log/1-log-new.png}
