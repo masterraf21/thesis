@@ -8,7 +8,7 @@ Implementasi sistem \textit{Performance Regression Analysis} (PRA) akan dibuat b
 
 
 
-\subsection{Implementasi PRA  Engine}
+\subsection{Implementasi PRA Engine}
 
 Sebelum melakukan implementasi solusi, penulis harus terlebih dahulu melakukan pemilihan kakas yang akan digunakan melakukan implementasinya. Secara umum, terdapat banyak bahasa pemrograman yang dapat melakukan implementasi solusi komponeasdn \textit{engine} sesuai dengan alur yang terdapat pada gambar \ref{alur-pra}. Namun, ada suatu kebutuhan penting untuk melakukan tes statistik Kolmogorov-Smirnov (K-S) yang tidak semua bahasa pemrograman memiliki dukungan \textit{library} untuk melakukannya. Terdapat dua bahasa pemrograman yang memiliki \textit{library} untuk melakukan tes K-S yaitu bahasa pemrograman \textbf{Go} dan \textbf{Python}. Bahasa \textbf{Go} memiliki library Gonum \footnote{\url{gonum.org}} yang memiliki implementasi tes K-S dalam fungsi \texttt{KolmogorovSmirnov}, sementara bahasa \textbf{Python} memiliki library SciPy \footnote{\url{scipy.org}} yang memiliki implementasi tes K-S dalam fungsi \texttt{scipy.stat.ks\textunderscore 2samp}.
 
@@ -120,7 +120,7 @@ Jika kedua sampel ternyata berasal dari distribusi yang berbeda, maka dapat dicu
 \lstinputlisting[captionpos=b, language=Python,caption={Algoritma tes statistik Kolmogorov-Smirnov}]{codes/ch4/ks.py}
 
 
-\subsection{\textit{User Interface}}
+\subsection{Implementasi PRA UI}
 Komponen lainnya yang akan diimplementasikan pada Tugas Akhir ini adalah komponen \textit{User Interface} (UI). Komponen ini akan menjadi antarmuka yang dapat digunakan untuk mengetahui \textit{state} dari sistem PRA. Fungsionalitas yang akan dibuat pada komponen UI akan dijabarkan pada tabel kebutuhan  fungsional \ref{ui-functional}.
 \begin{small}
 	\begin{longtable}{ | p{3cm} | p{9cm} | }
