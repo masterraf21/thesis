@@ -71,11 +71,10 @@ This section explains analysis of the problem introduced in section \ref{1}, the
 As the complexity of Microservice applications increases, such as with the increasing number of servce and the connectivity between existing servces therein, there will also be an increase in the complexity of monitoring the performance on the entire Microservice application. One of the important issues related to performance is a regression or decrease in performance. The need for urgently determining the main cause of the regression in the system becomes important if the regression occurs in a production environment that directly serves requests from customers, so that if it is not addressed immediately it will have a direct impact on the
 user experience in using the application.
 
-There are two approaches that can be taken to solve the problem
-performance regression \cite{regression-detection}, namely:
+There are two approaches that can be taken to solve the problem of performance regression \cite{regression-detection}, namely:
 \begin{enumerate}
-	\item Deteksi regresi dilakukan setelah aplikasi selesai dikembangkan dan di-\textit{deploy} pada lingkungan terdedikasi
-	\item Deteksi regresi dilakukan sebelum aplikasi selesai dikembangkan dan di-\textit{deploy} dan melakukan studi terhadap perubahan yang dihasilkan pada \textit{source code}
+	\item Regression detection is carried out after the application has been developed and deployed in a dedicated environment:
+	\item Regression detection is carried out before the application is developed and deployed, and then conducting a study of the resulting changes to the source code
 \end{enumerate} 
 
 \begin{figure}[!htb]
