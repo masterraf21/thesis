@@ -63,8 +63,7 @@ Distribution Function (CDF) of the two samples and see if both
 CDF comes from a different distribution. If it is found that both CDFs originate from different distributions, it then can be suspected that there has been a performance regression because the distribution of the periodic data has deviated from the distribution of the baseline data.
 If a regression is detected, the system will then perform a critical path analysis to see which operations of each services are most likely contributed to the regression. The analysis will be carried out by finding the difference
 latency of periodic and baseline operation data and it will be seen which operation's latency difference exceeds a predetermined limit.
-The performance regression analysis system has been tested on a Microservice application that runs on Kubernetes. The result is that out of 10 out of 11 test cases, the regression is successfully detected and in 6 out of 10 cases,l.
-Implementing the system adds an average overhead of 0.78\% CPU usage and 0.67\% Memory usage.
+The performance regression analysis system has been tested on a Microservice application that runs on Kubernetes. The result is that out of 10 out of 11 test cases, and for every successful case, the suspected operation that causes regression is found. Implementing the system adds an average overhead of 0.78\% CPU usage and 0.67\% Memory usage.
 \end{abstract}
 
 \begin{IEEEkeywords}
