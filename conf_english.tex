@@ -69,6 +69,12 @@ This section explains analysis of the problem introduced in section \ref{1}, the
 
 \subsection{Problem Analysis}
 
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth,scale=5]{resources/ch3/alur_v2.png}
+	\caption{PRA system flow}
+	\label{alur-pra}
+\end{figure}
 
 \subsection{Architecture}
 Fig. \ref{arch-pra} shows the architecture of the PRA system. There will be only two components that will be implemented from scratch, which are the PRA Engine and the PRA UI. The rest of the components are already present and ready to use from Zipkin. The PRA Engine will implement the logic from Fig ... and will be exposed as an Application Programming Interface (API). The PRA UI will fetch data from the PRA Engine API and will present the state of regression in the application, and the critical path analysis result.
@@ -80,6 +86,7 @@ Fig. \ref{arch-pra} shows the architecture of the PRA system. There will be only
 \end{figure}
 
 \subsection{Implementation}
+
 
 \section{Experiment}
 
