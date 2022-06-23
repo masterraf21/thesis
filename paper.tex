@@ -137,8 +137,6 @@ to be carried out in this phase. The first analysis stage will compare the resul
 
 If a regression is detected, the next step is to perform a critical path analysis by calculating the contribution of the critical path data trace from the regression period and will be compared with the critical path data derived from the baseline calculation. From this comparison, it will be sorted and the result of which operation has the largest latency difference becomes strong candidate as the root cause of the regression.
 
-
-
 \subsection{Architecture}
 Fig. \ref{arch-pra} shows the architecture of the PRA system. There will be only two components that will be implemented from scratch, which are the PRA Engine and the PRA UI. The rest of the components are already present and ready to use from Zipkin. The PRA Engine will fetch data from Zipkin API to retrieve the traces generated and will implement the logic from Fig \ref{flow-pra}. The PRA Engine will be exposed as an Application Programming Interface (API). The PRA UI will fetch data from the PRA Engine API and will present the state of regression in the application, and the critical path analysis result.
 \begin{figure}[!htb]
