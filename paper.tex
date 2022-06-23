@@ -129,8 +129,8 @@ The next phase is the periodical analysis phase. This phase will run continuousl
 immediately determine the source of the regression if it occurs. There are several stages of analysis
 to be carried out in this phase. The first analysis stage will compare the results transformation of data latency of all ongoing traces periodically with the baseline latency artifact from the loading phase. The comparison will be made within a certain period. The comparison of the two latency data will produce Kolmogorov-Smirnov statistic. If the Kolmogorov-Smirnov statistic that is generated indicates that the two samples of latency data come from two different distributions, then it can be an indication that there has been a regression in the data capture in the periodical phase.
 
-If a regression is detected, the next step is to perform a critical path analysis by calculating the contribution of the critical path data trace from the regression period and will be compared with the critical path data derived from the baseline calculation. From this comparison, it will be sorted and the result of which operation has the largest latency change and becomes
-strong candidate as the root cause of the regression.
+If a regression is detected, the next step is to perform a critical path analysis by calculating the contribution of the critical path data trace from the regression period and will be compared with the critical path data derived from the baseline calculation. From this comparison, it will be sorted and the result of which operation has the largest latency difference becomes strong candidate as the root cause of the regression.
+
 
 \begin{figure}[!htb]
 	\centering
