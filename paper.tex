@@ -387,13 +387,21 @@ a significant value of 0.1 successfully detects and analyzes the cause of the re
 
 Fig. \ref{result_log_1} shows the log obtained from the IS1 case with a significant value 0.05. It can be seen that the \texttt{pvalue} generated from the test is 0.067. On the test, the significant value used is 0.05 so that based on algorithm, in that case it cannot immediately reject h0 and must continue compare the statistical value with the critical value, and the result states that the CDF latency in these cases has the same distribution with the baseline, so that regression is not detected. The same will apply to all significant values $<0.05$, but in the test with a significant value of 0.1,
 the IS1 case will be detected as regression.
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{resources/ch4/log/1-log-new.png}
 	\caption{\textit{Log} hasil pengujian kasus SI1 dengan alpha 0,05}
 	\label{result_log_1}
 \end{figure}
+
+From the analyis above, therefore it can be interpreted that the use of significant values on the PRA Engine
+will have an effect on the results, especially if the regression case to be detected does not
+has a very significant change in its latency value as shown in
+in the case of SI1. It can be concluded that the greater the significant value, the more
+Also sensitive is the algorithm in detecting regressions that occur because they are not needed
+very strong evidence to reject h0 but it means that h0 cannot be rejected by
+too sure. Conversely, if the smaller the significant value used, the smaller the value will be
+the stronger the evidence needed to reject h0 which means that h0 can be rejected
 
 
 \section{Conclusion \& Future Works}
