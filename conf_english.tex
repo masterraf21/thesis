@@ -75,7 +75,9 @@ With the widespread adoption use of Microservice architecture based on distribut
 
 However, with the many advantages offered by the Microservice architecture, it will also increase the complexity to perform analysis when there is a decline in performance or regression in the application. This is due to the distributed nature of Microservice by dividing the application into smaller services, so to find which operation of the services causing the regression will be difficult and will be inefficient to perform analysis on each and every available services, especially if the number of the services has reached hundreds or thousands.
 
-Sudah terdapat kakas yang dapat membantu \textit{developer} untuk  melakukan \textit{monitoring} pada sistem terdistribusi seperti Microservice, yaitu \textit{distributed tracing}. Dengan bantuan dari \textit{trace}, \textit{developer} bisa mendapatkan suatu gambaran dari masing-masing \textit{request} yang terjadi pada sebuah \textit{resource} atau komponen yang berinteraksi dengan komponen lainnya dalam sebuah sistem terdistribusi seperti \textit{node}, \textit{service}, \textit{network}, ataupun \textit{mutex}. Gambaran \textit{trace} tersebut dapat diproses untuk berbagai tujuan, seperti membuat gambaran \textit{dependency} antar service, membuat analisis kinerja dari service, dan juga melakukan analisis penyebab regresi menggunakan data \textit{latency} dari hasil \textit{trace}.
+There is already a tool that can help developers to perform monitoring on distributed systems such as Microservice, which is distributed tracing. With the help of trace, developers can get an overview of each request that occurs in a resource or component that interacts with other components in a distributed system such as node, service, network, or mutex. The traces then can be processed for various purposes, such as creating a dependency map between services, perform a performance analysis of the service, and also perform a regression analysis using the latency data from the trace result.
+
+
 
 \section{Related Works}
 
