@@ -87,7 +87,18 @@ Therefore, the workflow that must be carried out by the performance regression a
 
 Seeing the needs of the PRA system above, the approach the will be carried out to do performance regression analysis will be Cummulative Analysis and Aggregation Analysis. 
 
-Cummulative Analysis is an approach to analyze certain metrics of application such as latency by cummulating all the collected data as a single representation such as Histogram. With this approach, the distributed nature of many services in Microservice-based application can be observed as a single figure or representation so that the whole Microservice application can be monitored in a single space. One of the available tool to analyze and compare large sets of data is called Kolmogorov-Smirnov statistic test. Kolmogorov-Smirnov statistic test will count the difference between two Cummulative Distribution Functions (CDF) as a scalar number \cite{kolmogorov_1951}.
+Cummulative Analysis is an approach to analyze certain metrics of application such as latency by cummulating all the collected data as a single representation such as Histogram. With this approach, the distributed nature of many services in Microservice-based application can be observed as a single figure or representation so that the whole Microservice application can be monitored in a single space. One of the available tool to analyze and compare large sets of data is called Kolmogorov-Smirnov (K-S) statistic test. The K-S statistic test will count the difference between two Cummulative Distribution Functions (CDF) as a scalar number \cite{kolmogorov_1951}.
+
+K-S statistic are obtained by
+finding the furthest vertical distance between the two CDFs as indicated by the arrows. The greater the distance, the more likely it is that two CDFs are two different distributions so that it can be an indication that there is a change
+on performance.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{resources/ch2/ks.png}
+	\caption{CDF dari dua buah sampel, panah menunjukkan nilai statistik Kolmogorov-Smirnov \citep{wiki:ks-test}}
+	\label{ks-example}
+\end{figure}
+
 
 
 
