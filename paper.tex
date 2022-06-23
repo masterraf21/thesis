@@ -228,6 +228,69 @@ was chosen as the upper limit of the significant value to determine the sensitiv
 The following tables \ref{test-1} \ref{test-2} \ref{test-3} describe the summaries of the experiment results that have been performed with three different alpha values. The result is on all test cases, IS2 cases to IS4 cases were successfully detected by regression and critical path analysis is appropriate. It's just that for the SI1 case, only the alpha value is 0.1
 which can successfully detect the regression and determine the source of the cause of the regression with critical path analysis. Other alpha values cannot detect regression and do not perform critical path analysis.
 
+\begin{table}[!htb]
+	\caption{Experiment Result for Alpha of 0.1}
+	\label{test-1}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
+		IS1 & Yes & Yes \\ \hline
+		IS2 & Yes & Yes \\ \hline
+		IS3 & Yes & Yes \\ \hline
+		IS4 & Yes & Yes \\ \hline
+		IS5 & Yes & Yes \\ \hline
+		IS6 & Yes & Yes \\ \hline
+		IS7 & Yes & Yes \\ \hline
+		ES1 & Yes & Yes \\ \hline
+		ES2 & Yes & Yes \\ \hline
+		ES3 & Yes & Yes \\ \hline
+		ES4 & Yes & Yes \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{table}[!htb]
+	\caption{Experiment Result for Alpha of 0.05}
+	\label{test-2}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
+		IS1 & No & No \\ \hline
+		IS2 & Yes & Yes \\ \hline
+		IS3 & Yes & Yes \\ \hline
+		IS4 & Yes & Yes \\ \hline
+		IS5 & Yes & Yes \\ \hline
+		IS6 & Yes & Yes \\ \hline
+		IS7 & Yes & Yes \\ \hline
+		ES1 & Yes & Yes \\ \hline
+		ES2 & Yes & Yes \\ \hline
+		ES3 & Yes & Yes \\ \hline
+		ES4 & Yes & Yes \\ \hline
+	\end{tabular}
+\end{table}
+\begin{table}[!htb]
+	\caption{Experiment Result for Alpha of 0.001}
+	\label{test-3}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
+		IS1 & No & No \\ \hline
+		IS2 & Yes & Yes \\ \hline
+		IS3 & Yes & Yes \\ \hline
+		IS4 & Yes & Yes \\ \hline
+		IS5 & Yes & Yes \\ \hline
+		IS6 & Yes & Yes \\ \hline
+		IS7 & Yes & Yes \\ \hline
+		ES1 & Yes & Yes \\ \hline
+		ES2 & Yes & Yes \\ \hline
+		ES3 & Yes & Yes \\ \hline
+		ES4 & Yes & Yes \\ \hline
+	\end{tabular}
+\end{table}
+
+
 \pagebreak
 \begin{table}[htb]
 	\caption{Test Cases}
@@ -322,67 +385,6 @@ which can successfully detect the regression and determine the source of the cau
 
 
 
-\begin{table}[!htb]
-	\caption{Experiment Result for Alpha of 0.1}
-	\label{test-1}
-	\centering
-	\begin{tabular}{|l|c|c|}
-		\hline
-		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
-		IS1 & Yes & Yes \\ \hline
-		IS2 & Yes & Yes \\ \hline
-		IS3 & Yes & Yes \\ \hline
-		IS4 & Yes & Yes \\ \hline
-		IS5 & Yes & Yes \\ \hline
-		IS6 & Yes & Yes \\ \hline
-		IS7 & Yes & Yes \\ \hline
-		ES1 & Yes & Yes \\ \hline
-		ES2 & Yes & Yes \\ \hline
-		ES3 & Yes & Yes \\ \hline
-		ES4 & Yes & Yes \\ \hline
-	\end{tabular}
-\end{table}
-
-\begin{table}[!htb]
-	\caption{Experiment Result for Alpha of 0.05}
-	\label{test-2}
-	\centering
-	\begin{tabular}{|l|c|c|}
-		\hline
-		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
-		IS1 & No & No \\ \hline
-		IS2 & Yes & Yes \\ \hline
-		IS3 & Yes & Yes \\ \hline
-		IS4 & Yes & Yes \\ \hline
-		IS5 & Yes & Yes \\ \hline
-		IS6 & Yes & Yes \\ \hline
-		IS7 & Yes & Yes \\ \hline
-		ES1 & Yes & Yes \\ \hline
-		ES2 & Yes & Yes \\ \hline
-		ES3 & Yes & Yes \\ \hline
-		ES4 & Yes & Yes \\ \hline
-	\end{tabular}
-\end{table}
-\begin{table}[!htb]
-	\caption{Experiment Result for Alpha of 0.001}
-	\label{test-3}
-	\centering
-	\begin{tabular}{|l|c|c|}
-		\hline
-		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
-		IS1 & No & No \\ \hline
-		IS2 & Yes & Yes \\ \hline
-		IS3 & Yes & Yes \\ \hline
-		IS4 & Yes & Yes \\ \hline
-		IS5 & Yes & Yes \\ \hline
-		IS6 & Yes & Yes \\ \hline
-		IS7 & Yes & Yes \\ \hline
-		ES1 & Yes & Yes \\ \hline
-		ES2 & Yes & Yes \\ \hline
-		ES3 & Yes & Yes \\ \hline
-		ES4 & Yes & Yes \\ \hline
-	\end{tabular}
-\end{table}
 
 \pagebreak
 
