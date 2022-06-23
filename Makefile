@@ -28,3 +28,5 @@ cleanpdf:	clean
 
 revisi:
 	cp thesis.pdf output/'Revisi Final Draf Laporan Tugas Akhir - 18218027.pdf'
+lap:
+	cp thesis.pdf output/'Laporan Tugas Akhir - 18218027.pdf'
