@@ -385,6 +385,23 @@ depending on the significant value used to test each case.
 There are 3 significant values that the author uses to perform the test, namely 0.1, 0.005, and 0.001 with the aim of testing the sensitivity of the detection algorithm regressions are given different significant values. The result is a test with
 a significant value of 0.1 successfully detects and analyzes the cause of the regression with true in all test cases, but in tests with a significant value of 0.05 and 0.001 SI1 cases were not detected as regression.
 
+Fig. \ref{result_log_1} shows the log obtained from the SI1 case with a value of
+significant 0.05. It can be seen that the p-value generated from the test is 0.067. On
+the test, the significant value used is 0.05 so that based on
+algorithm, in that case it cannot immediately reject h0 and must continue
+compare the statistical value with the critical value, and the result
+states that the CDF latency in these cases has the same distribution
+with the baseline, so that regression is not detected. The same will apply to
+all significant values $<0.05$, but in the test with a significant value of 0.1,
+SI1 cases will be detected as regression.
+
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{resources/ch4/log/1-log-new.png}
+	\caption{\textit{Log} hasil pengujian kasus SI1 dengan alpha 0,05}
+	\label{result_log_1}
+\end{figure}
+
 
 \section{Conclusion \& Future Works}
 
