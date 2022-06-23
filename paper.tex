@@ -83,18 +83,18 @@ to detect performance regressions at the DevOps stage:
 	performance. To find out the root of the problem at the code level, it will be done
 	an iterative approach to identify the root causes of
 	regression until it can no longer generate new reasons.
-	\item Memprediksi tes mana yang dapat memanifestasikan regresi pada level commit.
-	Pendekatan ini merupakan kelanjutan dari poin sebelumnya yang mana
-	pendekatan dengan melakukan uji pada setiap commit membutuhkan banyak
-	sumber daya dan usaha sehingga pendekatan ini akan melakukan prediksi
-	secara otomatis apakah sebuah tes akan memanifestasikan regresi kinerja jika
-	diberikan sebuah commit kode. Detailnya, pendekatan ini akan mendeteksi apakah
-	terdapat regresi pada tes tertentu dari sebuah commit. Untuk membuat model
-	prediksi, pertama-tama harus diitenfikasi mana saja tes yang rawan menghasilkan
-	regresi dengan mengevaluasi semua tes yang terdampak pada perubahan kode di
-	commit sebelumnya dengan menghitung kinerja setiap tes, seperti waktu respon,
-	penggunaan CPU dan Memory, pembacaan dan penulisan I/O, dengan melakukan
-	setiap tes secara beruntun.
+	\item Predict which tests may manifest regression at the commit level.
+	This approach is a continuation of the previous point where
+	the approach of doing a test on every commit takes a lot
+	resources and effort so that this approach will make predictions
+	automatically whether a test will manifest a performance regression if
+	given a commit code. In detail, this approach will detect whether
+	there is a regression on certain tests of a commit. To make a model
+	prediction, it must first be identified which tests are prone to yielding
+	regression by evaluating all the tests affected by the code change in
+	previous commits by calculating the performance of each test, such as response time,
+	CPU and Memory usage, I/O reads and writes, by doing
+	each test successively.
 \end{enumerate}
 
 \subsection{A Real-time Trace-level Root-cause Diagnosis System in Alibaba Datacenters}
