@@ -184,32 +184,93 @@ For testing purposes, 3 significant levels or alpha will be used, those are 0.1,
 significant levels, the more significant the evidence to reject $h_{0}$. Significant value 0.1
 was chosen as the upper limit of the significant value to determine the sensitivity level of test case with the greatest significant value. While the value of 0.05 was chosen because this value is the most commonly used value as a significant value on the statistical test of the hypothesis. While the value of 0.001 was chosen as a comparison of the value of least significant to test the lower limit of the significant value.
 
-\begin{table}[]
-	\begin{tabular}{lllll}
+\begin{table}[!htb]
+	\label{testcases}
+	\caption{Test Cases}
+	\begin{tabular}{|l|l|c|c|l|}
 		\hline
-		\multicolumn{1}{|l|}{ID} &
-		\multicolumn{1}{l|}{Service/Function} &
-		\multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Extra \\ Latency\end{tabular}} &
-		\multicolumn{1}{l|}{User} &
-		\multicolumn{1}{l|}{Desc.} \\ \hline
-		\multicolumn{1}{|l|}{\textbf{IS1}} &
-		\multicolumn{1}{l|}{CheckoutService/PlaceOrder} &
-		\multicolumn{1}{c|}{100ms} &
-		\multicolumn{1}{c|}{25} &
-		\multicolumn{1}{l|}{Extra latency case \#1} \\ \hline
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  &  \\
-		&  &  &  & 
+		\textbf{ID} &
+		\textbf{Service/Function} &
+		\multicolumn{1}{l|}{\textbf{\begin{tabular}[c]{@{}l@{}}Extra \\ Latency\end{tabular}}} &
+		\multicolumn{1}{l|}{\textbf{User}} &
+		\textbf{Description} \\ \hline
+		IS1 &
+		CheckoutService/PlaceOrder &
+		100ms &
+		25 &
+		Extra latency case \#1 \\ \hline
+		IS2 &
+		CheckoutService/PlaceOrder &
+		250ms &
+		25 &
+		Extra latency case \#2 \\ \hline
+		IS3 &
+		CheckoutService/PlaceOrder &
+		350ms &
+		25 &
+		Extra latency case \#3 \\ \hline
+		IS4 &
+		CheckoutService/PlaceOrder &
+		250ms &
+		75 &
+		\begin{tabular}[c]{@{}l@{}}Extra latency with\\ increased user\end{tabular} \\ \hline
+		IS5 &
+		CheckoutService/PlaceOrder &
+		250ms &
+		150 &
+		\begin{tabular}[c]{@{}l@{}}Extra latency with\\ increased user\end{tabular} \\ \hline
+		IS6 &
+		CheckoutService/PlaceOrder &
+		- &
+		25 &
+		Extra CPU case \\ \hline
+		\multirow{5}{*}{IS7} &
+		CheckoutService/PlaceOrder &
+		\multirow{5}{*}{250ms} &
+		\multirow{5}{*}{25} &
+		\multirow{5}{*}{\begin{tabular}[c]{@{}l@{}}Extra latency case\\ with multiple \\ services\end{tabular}} \\ \cline{2-2}
+		&
+		ProductCatalog/GetProduct &
+		&
+		&
+		\\ \cline{2-2}
+		&
+		ProductCatalog/ListProducts &
+		&
+		&
+		\\ \cline{2-2}
+		&
+		ShippingService/GetQuote &
+		&
+		&
+		\\ \cline{2-2}
+		&
+		\begin{tabular}[c]{@{}l@{}}RecommendationService/\\ ListRecommendations\end{tabular} &
+		&
+		&
+		\\ \hline
+		ES1 &
+		All Normal &
+		- &
+		75 &
+		\begin{tabular}[c]{@{}l@{}}No extra latency\\ with increased user \#1\end{tabular} \\ \hline
+		ES2 &
+		All Normal &
+		- &
+		150 &
+		\begin{tabular}[c]{@{}l@{}}No extra latency\\ with increased user \#2\end{tabular} \\ \hline
+		ES3 &
+		\begin{tabular}[c]{@{}l@{}}Checkout load\\ increased to 100 in Loadgen\end{tabular} &
+		- &
+		25 &
+		\begin{tabular}[c]{@{}l@{}}Increased external\\ load case \#1\end{tabular} \\ \hline
+		ES4 &
+		\begin{tabular}[c]{@{}l@{}}Curency load \\ increased to 100 in Loadgen\end{tabular} &
+		- &
+		25 &
+		\begin{tabular}[c]{@{}l@{}}Increased external\\ load case \#2\end{tabular} \\ \hline
 	\end{tabular}
 \end{table}
-
 
 \section{Analysis}
 
