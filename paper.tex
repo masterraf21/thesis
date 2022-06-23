@@ -84,9 +84,7 @@ to detect performance regressions at the DevOps stage:
 	\item Predict which tests may manifest regression at the commit level. This approach is a continuation of the previous point where
 	the approach of doing a test on every commit takes a lot
 	resources and effort so that this approach will make predictions
-	automatically whether a test will manifest a performance regression given a commit code. In detail, this approach will detect whether there is a regression on certain tests of a commit. To make a prediction model, it must first be identified which tests are prone to yielding
-	regression by evaluating all the tests affected by the code change in
-	previous commits by calculating the performance of each test, such as response time,
+	automatically whether a test will manifest a performance regression given a commit code. In detail, this approach will detect whether there is a regression on certain tests of a commit. To make a prediction model, it must first identified which tests are prone to yielding regression by evaluating all the tests affected by the code changes in previous commits by calculating the performance of each test, such as response time,
 	CPU and Memory usage, I/O reads and writes, by doing
 	each test sequentially.
 \end{enumerate}
