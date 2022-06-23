@@ -94,10 +94,26 @@ to detect performance regressions at the DevOps stage:
 	regression by evaluating all the tests affected by the code change in
 	previous commits by calculating the performance of each test, such as response time,
 	CPU and Memory usage, I/O reads and writes, by doing
-	each test successively.
+	each test sequentially.
 \end{enumerate}
 
 \subsection{A Real-time Trace-level Root-cause Diagnosis System in Alibaba Datacenters}
+This study \cite{rca-alibaba} used distributed tracing to perform
+Diagnostics of performance degradation on a system by performing graph analysis on
+level trace in real-time to determine the root cause of performance degradation or
+root cause. This approach was developed based on performance profiling, tracking,
+and logging system in Alibaba data center to speed up root cause diagnosis
+in real-time. The developed system allows the discovery of normative patterns
+and corresponding key graph properties, which are saved and updated offline
+as a knowledge base for further use in risk estimation at the level of
+trace and identify transitions that are unexpected deviations from the state
+normal as shown in Figure II.8.
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=1\textwidth]{resources/ch2/rca-framework.png}
+	\caption{Kerangka kerja \textit{Root-cause Analysis} pada \cite{rca-alibaba}}
+	\label{ch2-rca-framwork}
+\end{figure}
 
 \section{Proposed Solution}
 This section explains analysis of the problem introduced in section \ref{1}, the general solution to solve the problem, the architecture, and the implementation of the system.
