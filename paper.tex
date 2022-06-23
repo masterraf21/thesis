@@ -160,6 +160,14 @@ Python has the SciPy\footnote{\url{scipy.org}} library which has a K-S test impl
 \section{Experiment}
 We test the PRA system in the context of \textbf{Hipster Shop} application hosted by Google Kubernetes Engine, Container Optimized OS (COS), in 3 nodes of n1-standard-2 machine with 2 vCPU and 7.5 GiB RAM.
 
+\subsection{Hipster Shop}
+Hipster Shop\footnote{\url{https://github.com/masterraf21/microservices-demo}} is a cloud native microservices demo application
+where users can browse items, add them to the
+cart, and purchase them. The application contains a 10-tier
+microservices application that communicates using gRPC.
+Hipster Shop also provides a load generator to simulate user
+behaviour. For this experiment purposes, the version of the Hipster Shop which will be used is already instrumented to work with the Zipkin distributed tracing.
+
 \section{Analysis}
 
 \section{Conclusion \& Future Works}
