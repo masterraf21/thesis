@@ -282,6 +282,8 @@ was chosen as the upper limit of the significant value to determine the sensitiv
 \end{table}
 
 \subsection{Experiment Result}
+The following tables describe a summary of the experiment results that have been performed with three different alpha values. The result is on all test cases, IS2 cases to IS4 cases were successfully detected by regression and critical path analysis is appropriate. It's just that for the SI1 case, only the alpha value is 0.1
+which can successfully detect the regression and determine the source of the cause of the regression with critical path analysis. Other alpha values cannot detect regression and do not perform critical path analysis.
 
 \begin{table}[!htb]
 	\caption{Experiment Result for Alpha of 0.1}
@@ -311,7 +313,7 @@ was chosen as the upper limit of the significant value to determine the sensitiv
 	\begin{tabular}{|l|c|c|}
 		\hline
 		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
-		IS1 & Yes & Yes \\ \hline
+		IS1 & No & No \\ \hline
 		IS2 & Yes & Yes \\ \hline
 		IS3 & Yes & Yes \\ \hline
 		IS4 & Yes & Yes \\ \hline
@@ -331,7 +333,7 @@ was chosen as the upper limit of the significant value to determine the sensitiv
 	\begin{tabular}{|l|c|c|}
 		\hline
 		\textbf{ID} & \multicolumn{1}{l|}{\textbf{Regression Detected}} & \multicolumn{1}{l|}{\textbf{Critical Path Analysis Correct}} \\ \hline
-		IS1 & Yes & Yes \\ \hline
+		IS1 & No & No \\ \hline
 		IS2 & Yes & Yes \\ \hline
 		IS3 & Yes & Yes \\ \hline
 		IS4 & Yes & Yes \\ \hline
