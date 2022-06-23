@@ -102,6 +102,20 @@ K-S statistic are obtained by finding the furthest vertical distance between the
 	\label{ks-example}
 \end{figure}
 
+We first define two hypotheses namely $h_{0}$ or the null hypothesis which states that the two data samples come from the same distribution and $h_{a}$ or an alternative hypothesis which states that both sample data comes from two different distributions.
+
+The K-S test will produce two values, namely \texttt{statistic} and \texttt{pvalue}. If the \texttt{pvalue} is less than the significant value, or alpha which can be selected from a certain constants,
+then we can reject $h_{0}$ and accept $h_{a}$. If the p-value is not less than
+significant value, then the next step is to compare the statistical value
+and critical values. Critical value itself is a point on the test
+the hypothesis that will be compared to the results of the statistical values to be used
+to reject or accept the null hypothesis. If the statistical value is greater than
+critical value, then we can reject h0 and accept ha or its meaning
+IV-7
+the two data samples come from different distributions. However, if the statistical value
+smaller than the critical value, we cannot reject h0 or it means both
+sample data come from the same distribution.
+
 The Cummulative Analysis approach will be used to fullfil the first needs of the PRA system by using Kolmogorov-Smirnov statistic test.
 
 On the other hand, Aggregation Analysis can help to identify changes that are not too visible on the performance of a service. When comparing two sets of traces, we can also see the latency contribution associated with the tag,
@@ -277,6 +291,7 @@ was chosen as the upper limit of the significant value to determine the sensitiv
 \end{table}
 
 \subsection{Experiment Result}
+
 
 \subsection{Overhead Testing}
 
