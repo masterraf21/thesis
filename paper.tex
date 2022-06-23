@@ -75,22 +75,16 @@ This study \cite{regression-detection} proposes to perform regression detection 
 to detect performance regressions at the DevOps stage:
 \begin{enumerate}
 	\item Perform regression detection at the source code level by extracting
-	every commit to Git and identify which test cases are affected
-	regression impact on each commit. After that, the performance of each commit will be
+	every Git commit and identify which test cases are affected by
+	regression on each commit. After that, the performance of each commit will be
 	evaluated chronologically using the relevant test cases or
-	benchmarks of performance. Finally, a statistical analysis will be carried out on the evaluation
-	performance to identify which changes resulted in the regression
-	performance. To find out the root of the problem at the code level, it will be done
-	an iterative approach to identify the root causes of
+	benchmarks of performance. Finally, a statistical analysis will be carried out on the performance evaluation
+	to identify which changes resulted in the performance regression. To find out the root of the problem at the code level, an iterative approach will be done  to identify the root causes of
 	regression until it can no longer generate new reasons.
-	\item Predict which tests may manifest regression at the commit level.
-	This approach is a continuation of the previous point where
+	\item Predict which tests may manifest regression at the commit level. This approach is a continuation of the previous point where
 	the approach of doing a test on every commit takes a lot
 	resources and effort so that this approach will make predictions
-	automatically whether a test will manifest a performance regression if
-	given a commit code. In detail, this approach will detect whether
-	there is a regression on certain tests of a commit. To make a model
-	prediction, it must first be identified which tests are prone to yielding
+	automatically whether a test will manifest a performance regression given a commit code. In detail, this approach will detect whether there is a regression on certain tests of a commit. To make a prediction model, it must first be identified which tests are prone to yielding
 	regression by evaluating all the tests affected by the code change in
 	previous commits by calculating the performance of each test, such as response time,
 	CPU and Memory usage, I/O reads and writes, by doing
@@ -107,7 +101,7 @@ in real-time. The developed system allows the discovery of normative patterns
 and corresponding key graph properties, which are saved and updated offline
 as a knowledge base for further use in risk estimation at the level of
 trace and identify transitions that are unexpected deviations from the state
-normal as shown in Fig. \ref{rca-framwork}.
+normal as shown in Fig. \ref{rc}.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.5\textwidth]{resources/ch2/rca-framework.png}
