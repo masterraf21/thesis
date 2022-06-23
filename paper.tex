@@ -171,9 +171,18 @@ behaviour. For this experiment purpose, the version of the Hipster Shop which wi
 \subsection{Experiment Method}
 To perform experiment on the PRA system that has been created, the existing services in the Hipster Shop will be modified to imitate the behavior service that experiences performance regression. There are two main methods that can be used to create such behavior which are adding a sleep command and adding a loop with dereference operation of a variable which requires a lot of CPU power to solve it so that it is expected that the functions will have more latency.
 
-There are two stages that will be carried out to do this experiment, the first is baseline data collection stage. Baseline data will be taken by simulating
+There are two stages that will be carried out to do this experiment test, the first is baseline data collection stage. Baseline data will be taken by simulating
 the usage of the application by using the Load Generator which will run with variable of \textbf{25 Users} and \textbf{5 Spawn Rates} for \textbf{1 hour}. This baseline data will then be stored by the engine for use in future test cases. The next step is to carry out experiment testing with cases which will be explained in more detail further.
 
+There are two types of test cases to be tested on the system. first type
+are cases that simulate regression by making changes that
+occurs at the application level by making modifications intentionally at the code level.
+The first case will have an ID with an SI prefix signifying the internal-scenario.
+The second type are cases that simulate regression by increasing
+IV-11
+number of users and load on Load Generator. The second case will have an ID with
+the SE prefix denotes an external-scenario. Table IV.5 will explain the cases
+system testing.
 
 \section{Analysis}
 
