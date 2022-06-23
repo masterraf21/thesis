@@ -106,16 +106,16 @@ such as the latency of each service and its operation will be determined from ea
 will be calculated and sorted so that it can be seen which operation or service is actually the root cause of the regression.
 
 \begin{table}[]
-	\begin{tabular}{llll}
-		\textbf{Service/Operation} & \textbf{Baseline} & \textbf{Regression} & \textbf{Difference} \\
-		inventory/write-cache & 63.1 ms & 368 ms  & +305 ms  \\
-		inventory-db/update   & 1.75 ms & 2.26 ms & +0.51 ms \\
-		memcached/set         & 4.94 ms & 4.71 ms & -0.23 ms \\
-		inventory/update      & 15.2 ms & 14.8 ms & -0.47 ms \\
-		inventory/db-update   & 32 ms   & 30.6 ms & -1.4 ms 
+	\begin{tabular}{|l|l|l|l|}
+		\hline
+		\textbf{Service/Operation} & \textbf{Baseline} & \textbf{Regression} & \textbf{Difference} \\ \hline
+		inventory/write-cache & 63.1 ms & 368 ms  & +305 ms  \\ \hline
+		inventory-db/update   & 1.75 ms & 2.26 ms & +0.51 ms \\ \hline
+		memcached/set         & 4.94 ms & 4.71 ms & -0.23 ms \\ \hline
+		inventory/update      & 15.2 ms & 14.8 ms & -0.47 ms \\ \hline
+		inventory/db-update   & 32 ms   & 30.6 ms & -1.4 ms  \\ \hline
 	\end{tabular}
 \end{table}
-
 
 \begin{figure}[!htb]
 	\centering
