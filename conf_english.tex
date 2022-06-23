@@ -57,15 +57,10 @@ masterraf21@gmail.com}
 
 \begin{abstract}
 In applications with Microservice architecture, when a significant change occurs and result in decreased performance or regression, it is difficult to perform analysis to check which part of the whole Microservice is the main cause of the regression due to the distributed nature of Microservice. Distributed tracing can be used to analyze and determine whether there is a regression and the cause of the regression by utilizing latency data from existing operations on Microservice application.
-This system will perform performance regression analysis using distributed tracing tools
-zipkin. Regression detection is carried out using statistical analysis
-Kolmogorov-Smirnov who will compare the latency data samples that occur
-periodically and sample latency baseline data that represents performance
-application under normal circumstances. The analysis will compare Cummulative
+This system will perform performance regression analysis using the distributed tracing tool Zipkin. Regression is then can be detected using Kolmogorov-Smirnov statistical analysis which will compare the latency data samples that occur
+periodically and the sample latency baseline data that represents application performance  under normal circumstances. The analysis will compare the Cummulative
 Distribution Function (CDF) of the two samples and see if both
-CDF comes from a different distribution. If it is found that both CDFs originate
-from different distributions, it can be suspected that there has been a performance regression because
-the distribution of the periodic data has deviated from the distribution of the baseline data.
+CDF comes from a different distribution. If it is found that both CDFs originate from different distributions, it then can be suspected that there has been a performance regression because the distribution of the periodic data has deviated from the distribution of the baseline data.
 If a regression is detected, then the system will then perform a critical analysis
 path is to see which operations of each service are most likely
 contributed to the regression. The analysis will be carried out by finding the difference
