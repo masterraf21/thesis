@@ -71,11 +71,31 @@ VI concludes the work.
 This section will discuss two related works in the field of performance regression.
 
 \subsection{Performance Regression Detection in DevOps}
-This study \cite{regression-detection} proposes to perform regression detection
-performance at the DevOps stage, i.e. at the level of the intended source code change
-the main thing is to avoid detecting performance regressions after the app is deployed
-and running in a production environment. There are two ways proposed by the research
-This is to detect performance regressions at the DevOps stage, namely:
+This study \cite{regression-detection} proposes to perform regression detection performance at the DevOps stage, i.e. at the level of the source code change. The main thing considered is to avoid detecting performance regressions after the app is deployed and running in a production environment. There are two ways proposed by the research
+to detect performance regressions at the DevOps stage:
+\begin{enumerate}
+	\item Perform regression detection at the source code level by extracting
+	every commit to Git and identify which test cases are affected
+	regression impact on each commit. After that, the performance of each commit will be
+	evaluated chronologically using the relevant test cases or
+	benchmarks of performance. Finally, a statistical analysis will be carried out on the evaluation
+	performance to identify which changes resulted in the regression
+	performance. To find out the root of the problem at the code level, it will be done
+	an iterative approach to identify the root causes of
+	regression until it can no longer generate new reasons.
+	\item Memprediksi tes mana yang dapat memanifestasikan regresi pada level commit.
+	Pendekatan ini merupakan kelanjutan dari poin sebelumnya yang mana
+	pendekatan dengan melakukan uji pada setiap commit membutuhkan banyak
+	sumber daya dan usaha sehingga pendekatan ini akan melakukan prediksi
+	secara otomatis apakah sebuah tes akan memanifestasikan regresi kinerja jika
+	diberikan sebuah commit kode. Detailnya, pendekatan ini akan mendeteksi apakah
+	terdapat regresi pada tes tertentu dari sebuah commit. Untuk membuat model
+	prediksi, pertama-tama harus diitenfikasi mana saja tes yang rawan menghasilkan
+	regresi dengan mengevaluasi semua tes yang terdampak pada perubahan kode di
+	commit sebelumnya dengan menghitung kinerja setiap tes, seperti waktu respon,
+	penggunaan CPU dan Memory, pembacaan dan penulisan I/O, dengan melakukan
+	setiap tes secara beruntun.
+\end{enumerate}
 
 \subsection{A Real-time Trace-level Root-cause Diagnosis System in Alibaba Datacenters}
 
