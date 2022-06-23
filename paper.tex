@@ -121,14 +121,20 @@ Tab. \ref{aggregate} shows the result of the Aggregation Analysis approach which
 	\end{tabular}
 \end{table}
 
-Fig. \ref{flow-pra} illustrates the phases to be carried out by the PRA system. by
-In general, there will be two phases to be carried out, namely the baseline loading phase
-and the periodic analysis phase. The first phase, namely the loading phase, will look for
-stable application activity data that can be used as a baseline
-or a reference for the analysis to be carried out in the next stages. This phase
-will produce two artifacts, namely the latency data of all recorded traces
-by the tracing system, and operating data that occurs on the critical path of all traces along with
-its latency value which will be stored as a key-value pair as well.
+Fig. \ref{flow-pra} illustrates the phases to be carried out by the PRA system. In general, there will be two phases to be carried out, namely the baseline loading phase
+and the periodic analysis phase. The first phase, namely the loading phase, will look for stable application activity data that can be used as a baseline or a reference for the analysis to be carried out in the next stages. This phase
+will produce two artifacts, the latency data of all recorded traces by the tracing system, and operating data that occurs on the critical path of all traces along with its latency value which will be stored as a key-value pair as well.
+
+The next phase is the periodic analysis phase. This phase will run continously and the analysis will be run periodically at intervals of 5 minutes
+very. This is done to continuously detect whether there is a regression and
+immediately determine the source of the regression if it occurs. There are several stages of analysis
+to be carried out in this phase. The first analysis stage will compare the results
+transformation of data latency of all ongoing traces periodically
+with the baseline latency artifact from the loading phase. The comparison will be made within a certain period. The comparison of the two latency data will produce
+Kolmogorov-Smirnov statistics. If Kolmogorov-Smirnov statistics are generated
+indicates that the two samples of latency data come from two different distributions
+different, then it can be an indication that there has been a regression in the data capture period
+the traces.
 
 \begin{figure}[!htb]
 	\centering
