@@ -397,8 +397,28 @@ the IS1 case will be detected as regression.
 From the analyis above, therefore it can be interpreted that the use of significant values on the PRA Engine will have an effect on the results, especially if the regression case to be detected does not
 has a very significant change in its latency value as shown in
 in the case of SI1. It can be concluded that the greater the significant value, the more sensitive is the algorithm in detecting regressions that occur because they are not needed
-very strong evidence to reject h0 but it means that h0 cannot be rejected by too sure. Conversely, if the smaller the significant value used, the smaller the value will be
-the stronger the evidence needed to reject h0 which means that h0 can be rejected.
+very strong evidence to reject h0 but it means that h0 cannot be rejected by too sure. Conversely, if the smaller the significant value used, the smaller the value will be the stronger the evidence needed to reject h0 which means that h0 can be rejected.
+
+In the case of other internal change factors other than IS1, all test results
+with three significant values can be successfully detected and determined the source
+the cause because the algorithm can determine that the CDF data latency case regression
+has a different distribution with the CDF baseline latency data. While on
+cases that simulate changes from external, i.e. cases ES1 to
+ES4, PRA Engine can also detect the occurrence of regression but the results of critical analysis
+path cannot determine the source of the regression because it does not
+caused by changes in service level.
+
+It can be concluded that the algorithm has not been able to determine whether the regression
+occurs due to changes that occur at the application level or changes
+that occur outside the application such as an increase in the number of users or an increase in
+load on some operations. However, if the critical path analysis can be seen the difference
+latency of operations that exceed a certain threshold can be an indication that
+regression that occurs is caused by changes at the application level. On the other hand, if
+critical path analysis cannot determine which operation is a candidate cause
+regression because the difference is not greater than the threshold, it can be
+indication that the detected regression is due to changes caused by
+by external factors.
+
 
 
 \section{Conclusion \& Future Works}
