@@ -121,6 +121,15 @@ Tab. \ref{aggregate} shows the result of the Aggregation Analysis approach which
 	\end{tabular}
 \end{table}
 
+Fig. \ref{flow-pra} illustrates the phases to be carried out by the PRA system. by
+In general, there will be two phases to be carried out, namely the baseline loading phase
+and the periodic analysis phase. The first phase, namely the loading phase, will look for
+stable application activity data that can be used as a baseline
+or a reference for the analysis to be carried out in the next stages. This phase
+will produce two artifacts, namely the latency data of all recorded traces
+by the tracing system, and operating data that occurs on the critical path of all traces along with
+its latency value which will be stored as a key-value pair as well.
+
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\textwidth,scale=5]{resources/ch3/alur_v2.png}
