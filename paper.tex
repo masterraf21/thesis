@@ -124,6 +124,12 @@ Tab. \ref{aggregate} shows the result of the Aggregation Analysis approach which
 Fig. \ref{flow-pra} illustrates the phases to be carried out by the PRA system. In general, there will be two phases to be carried out, namely the baseline loading phase
 and the periodic analysis phase. The first phase, namely the loading phase, will look for stable application activity data that can be used as a baseline or a reference for the analysis to be carried out in the next stages. This phase
 will produce two artifacts, the latency data of all recorded traces by the tracing system, and operating data that occurs on the critical path of all traces along with its latency value which will be stored as a key-value pair as well.
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=0.5\textwidth,scale=5]{resources/ch3/alur_v2.png}
+	\caption{PRA system flow}
+	\label{flow-pra}
+\end{figure}
 
 The next phase is the periodical analysis phase. This phase will run continuously and the analysis will be run periodically at intervals of every 5 minutes. This is carried out to continuously detect whether there is a regression and
 immediately determine the source of the regression if it occurs. There are several stages of analysis
@@ -131,12 +137,7 @@ to be carried out in this phase. The first analysis stage will compare the resul
 
 If a regression is detected, the next step is to perform a critical path analysis by calculating the contribution of the critical path data trace from the regression period and will be compared with the critical path data derived from the baseline calculation. From this comparison, it will be sorted and the result of which operation has the largest latency difference becomes strong candidate as the root cause of the regression.
 
-\begin{figure}[!htb]
-	\centering
-	\includegraphics[width=0.5\textwidth,scale=5]{resources/ch3/alur_v2.png}
-	\caption{PRA system flow}
-	\label{flow-pra}
-\end{figure}
+
 
 \subsection{Architecture}
 Fig. \ref{arch-pra} shows the architecture of the PRA system. There will be only two components that will be implemented from scratch, which are the PRA Engine and the PRA UI. The rest of the components are already present and ready to use from Zipkin. The PRA Engine will implement the logic from Fig \ref{flow-pra} and will be exposed as an Application Programming Interface (API). The PRA UI will fetch data from the PRA Engine API and will present the state of regression in the application, and the critical path analysis result.
