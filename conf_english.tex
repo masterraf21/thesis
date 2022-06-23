@@ -61,16 +61,10 @@ This system will perform performance regression analysis using the distributed t
 periodically and the sample latency baseline data that represents application performance  under normal circumstances. The analysis will compare the Cummulative
 Distribution Function (CDF) of the two samples and see if both
 CDF comes from a different distribution. If it is found that both CDFs originate from different distributions, it then can be suspected that there has been a performance regression because the distribution of the periodic data has deviated from the distribution of the baseline data.
-If a regression is detected, then the system will then perform a critical analysis
-path is to see which operations of each service are most likely
-contributed to the regression. The analysis will be carried out by finding the difference
-latency of periodic and baseline operation data and it will be seen which operation is
-the difference in latency exceeds a predetermined limit.
-The Performance Regression Analysis system has been tested on a Microservice application that
-running on Kubernetes. The result is that out of 10 out of 11 test cases, the regression is successful
-detected and in 6 out of 10 cases, surgery to determine the cause of the regression was successful.
-Implementing the system adds an average CPU usage overhead of
-0.78\% and 0.67\% Memory usage.
+If a regression is detected, the system will then perform a critical path analysis to see which operations of each services are most likely contributed to the regression. The analysis will be carried out by finding the difference
+latency of periodic and baseline operation data and it will be seen which operation's latency difference exceeds a predetermined limit.
+The performance regression analysis system has been tested on a Microservice application that runs on Kubernetes. The result is that out of 10 out of 11 test cases, the regression is successfully detected and in 6 out of 10 cases,l.
+Implementing the system adds an average overhead of 0.78\% CPU usage and 0.67\% Memory usage.
 \end{abstract}
 
 \begin{IEEEkeywords}
