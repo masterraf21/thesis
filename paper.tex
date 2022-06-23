@@ -8,7 +8,7 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage{longtable}
+\usepackage{supertabular,booktabs}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -106,7 +106,7 @@ such as the latency of each service and its operation will be determined from ea
 will be calculated and sorted so that it can be seen which operation or service is actually the root cause of the regression.
 
 \begin{small}
-	\begin{longtable}{ | p{5cm} | p{2cm} | p{2cm} | p{2cm} | }
+	\begin{supertabular}{ | p{5cm} | p{2cm} | p{2cm} | p{2cm} | }
 		\caption{Kontribusi \textit{critical path} dalam \textit{trace} \textit{baseline} dan regresi}
 		\label{corr-tab-2}                                                           
 		\\ \hline
@@ -117,7 +117,7 @@ will be calculated and sorted so that it can be seen which operation or service 
 		memcached/set & 4.94 ms & 4.71 ms & $\num{-0.23}$ ms \\ \hline
 		inventory/update-inventory & 15.2 ms & 14.8 ms & $\num{-0.47}$ ms \\ \hline
 		inventory/database-update & 32 ms & 30.6 ms & $\num{-1.4}$ ms \\ \hline
-	\end{longtable}
+	\end{supertabular}
 \end{small}
 
 
