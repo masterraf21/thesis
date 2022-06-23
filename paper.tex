@@ -93,7 +93,7 @@ Cummulative Analysis is an approach to analyze certain metrics of application su
 K-S statistic are obtained by finding the furthest vertical distance between the two CDFs as indicated by the arrows. The greater the distance, the more likely it is that two CDFs are from two different distributions so that it can be an indication that there has been a change on performance.
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=0.4\textwidth]{resources/ch2/ks.png}
+	\includegraphics[width=0.3\textwidth]{resources/ch2/ks.png}
 	\caption{CDF of two samples, arrows indicate the Kolmogorov-Smirnov statistical value \cite{wiki:ks-test}}
 	\label{ks-example}
 \end{figure}
@@ -130,7 +130,6 @@ immediately determine the source of the regression if it occurs. There are sever
 to be carried out in this phase. The first analysis stage will compare the results transformation of data latency of all ongoing traces periodically with the baseline latency artifact from the loading phase. The comparison will be made within a certain period. The comparison of the two latency data will produce Kolmogorov-Smirnov statistic. If the Kolmogorov-Smirnov statistic that is generated indicates that the two samples of latency data come from two different distributions, then it can be an indication that there has been a regression in the data capture in the periodical phase.
 
 If a regression is detected, the next step is to perform a critical path analysis by calculating the contribution of the critical path data trace from the regression period and will be compared with the critical path data derived from the baseline calculation. From this comparison, it will be sorted and the result of which operation has the largest latency difference becomes strong candidate as the root cause of the regression.
-
 
 \begin{figure}[!htb]
 	\centering
