@@ -127,7 +127,7 @@ will produce two artifacts, the latency data of all recorded traces by the traci
 
 The next phase is the periodic analysis phase. This phase will run continuously and the analysis will be run periodically at intervals of every 5 minutes. This is carried out to continuously detect whether there is a regression and
 immediately determine the source of the regression if it occurs. There are several stages of analysis
-to be carried out in this phase. The first analysis stage will compare the results transformation of data latency of all ongoing traces periodically with the baseline latency artifact from the loading phase. The comparison will be made within a certain period. The comparison of the two latency data will produce Kolmogorov-Smirnov statistic. If the Kolmogorov-Smirnov statistic that is generated indicates that the two samples of latency data come from two different distributions, then it can be an indication that there has been a regression in the data capture in the periodic phases the traces.
+to be carried out in this phase. The first analysis stage will compare the results transformation of data latency of all ongoing traces periodically with the baseline latency artifact from the loading phase. The comparison will be made within a certain period. The comparison of the two latency data will produce Kolmogorov-Smirnov statistic. If the Kolmogorov-Smirnov statistic that is generated indicates that the two samples of latency data come from two different distributions, then it can be an indication that there has been a regression in the data capture in the periodical phase.
 
 \begin{figure}[!htb]
 	\centering
