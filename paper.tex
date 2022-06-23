@@ -77,6 +77,11 @@ There are two approaches that can be taken to solve the problem of performance r
 	\item Regression detection is carried out before the application is developed and deployed, and then conducting a study of the resulting changes to the source code
 \end{enumerate} 
 
+Given the distributed nature of Microservices, it will be difficult for developers if regression detection is carried out with an individual approach on each existing servce especially when the number of existing servce is very large.
+many and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regressions in Microservice-based applications, an approach that does not require developers to source search is needed
+problem on each service individually. So that in the case of detection and regression analysis of Microservice-based application performance, the first approach is more suitable
+to use.
+
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[width=0.5\textwidth,scale=5]{resources/ch3/alur_v2.png}
