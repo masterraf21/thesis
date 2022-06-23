@@ -166,8 +166,10 @@ where users can browse items, add them to the
 cart, and purchase them. The application contains a 10-tier
 microservices application that communicates using gRPC.
 Hipster Shop also provides a load generator to simulate user
-behaviour. For this experiment purposes, the version of the Hipster Shop which will be used is already instrumented to work with the Zipkin distributed tracing.
+behaviour. For this experiment purpose, the version of the Hipster Shop which will be used is already instrumented to work with the Zipkin distributed tracing.
 
+\subsection{Experiment Method}
+To perform experiment on the PRA system that has been created, the existing services in the Hipster Shop will be modified to imitate the behavior service that experiences performance regression. There are two main methods that can be used to create such behavior which are adding a sleep command and adding a loop with dereference operation of a variable which requires a lot of CPU power to solve it so that it is expected that the functions will have greater latency.
 \section{Analysis}
 
 \section{Conclusion \& Future Works}
