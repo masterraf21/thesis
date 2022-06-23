@@ -354,7 +354,33 @@ Of the 11 test cases, the average PRA Engine tool uses 0.046
 vCPU with standard deviation of 0.0038 and 154.41 MiB Memory with standard
 deviation of 17.91 in one analysis. The entire cluster has resources
 as much as 6 vCPUs and 22.5 GiB, so that in one time doing PRA Engine analysis
-resulting in CPU overhead as much as 0.78\% and Memory as much as 0.67\% to the Kubernetes cluster. Overhead caused by the tool is low so that the use of PRA Engine tools will have no impact on the overall performance of the Kubernetes cluster
+resulting in CPU overhead as much as 0.78\% and Memory as much as 0.67\% to the Kubernetes cluster. Overhead caused by the tool is low so that the use of PRA Engine tools will have no impact on the overall performance of the Kubernetes cluster.
+
+\begin{table}[!htb]
+	\caption{Overhead testing result}
+	\label{overhead-tbl}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline
+		\rowcolor[HTML]{6434FC} 
+		{\color[HTML]{FFFFFF} ID} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{6434FC}{\color[HTML]{FFFFFF} CPU (vCPU)}} &
+		\multicolumn{1}{l|}{\cellcolor[HTML]{6434FC}{\color[HTML]{FFFFFF} Memory (MiB)}} \\ \hline
+		\textbf{SI1}     & 0,042 & 137,82  \\ \hline
+		\textbf{SI2}     & 0,043 & 128,71  \\ \hline
+		\textbf{SI3}     & 0,04  & 131,55  \\ \hline
+		\textbf{SI4}     & 0,045 & 146,6   \\ \hline
+		\textbf{SI5}     & 0,046 & 153,61  \\ \hline
+		\textbf{SI6}     & 0,047 & 152,71  \\ \hline
+		\textbf{SI7}     & 0,048 & 152,71  \\ \hline
+		\textbf{SE1}     & 0,049 & 168,8   \\ \hline
+		\textbf{SE2}     & 0,05  & 183,68  \\ \hline
+		\textbf{SE3}     & 0,051 & 176,59  \\ \hline
+		\textbf{SE4}     & 0,052 & 165,75  \\ \hline
+		\textbf{Average} & 0,046 & 154,411 \\ \hline
+		\textbf{STD}     & 0,038 & 17,916  \\ \hline
+	\end{tabular}
+\end{table}
 
 \section{Analysis}
 
