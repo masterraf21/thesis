@@ -48,7 +48,8 @@ performance regression, Distributed Tracing, Microservice, Kubernetes
 \end{IEEEkeywords}
 
 \section{Introduction}
-With the widespread adoption use of Microservice architecture based on distributed systems today, more and more challenges arise related to the adoption of this architectural style. Microservice architecture offers several advantages, including technological heterogeneity, resilience, ease of \textit{scaling}, ease of \textit{deployment}, ease of alignment with a technology team, flexibility in determining application composition, and an optimized system to replace components with each other \cite{building-microservices}. These advantages make the adoption of the Microservice architecture quite widespread, especially in applications that require \textit{scalability} to serve the growing needs of customers.
+\label{1}
+With the widespread adoption use of Microservice architecture based on distributed systems today, more and more challenges arise related to the adoption of this architectural style. Microservice architecture offers several advantages, including technological heterogeneity, resilience, ease of \textit{scaling}, ease of \textit{deployment}, ease of alignment with a technology team, flexibility in determining application composition, and an optimized system to replace components with each otherproblem and p \cite{building-microservices}. These advantages make the adoption of the Microservice architecture quite widespread, especially in applications that require \textit{scalability} to serve the growing needs of customers.
 
 However, with the many advantages offered by the Microservice architecture, it will also increase the complexity to perform analysis when there is a decline in performance or regression in the application. This is due to the distributed nature of Microservice by dividing the application into smaller services, so to find which operation of the services causing the regression will be difficult and will be inefficient to perform analysis on each and every available services, especially if the number of the services has reached hundreds or thousands.
 
@@ -57,13 +58,14 @@ There is already a tool that can help developers to perform monitoring on distri
 We provide the implementation of the performance regression analysis (PRA) system using the distributed tracing tool Zipkin which is available on Github\footnote{\url{https://github.com/masterraf21/pra\textunderscore engine}}. The PRA system will perform detection on the Microservice application when a regression occurs and perform analysis to determine the main cause of the regression. Performance regression analysis will be done by using the help of the trace results from Zipkin which will be able to help developers restore performance of Microservice application after reggresion occurs.
 
 The paper is organized as follows. Section II presents related
-work in the area of performance regression and distributed tracing. Section III discusses the design and the underlying architecture of the PRA system. Section IV shows the experiments done with the PRA system. Section V discusses a few analysis from the experiments done in Section V. Section
+work in the area of performance regression and distributed tracing. Section III discusses problem analysis, the design and the underlying architecture, and the implementation of the PRA system. Section IV shows the experiments done with the PRA system. Section V discusses a few analysis from the experiments done in Section V. Section
 VI concludes the work.
 
 
 \section{Related Works}
 
 \section{Proposed Solution}
+This section explains the analysis of the problem introduced in section \ref{1}
 
 \subsection{Problem Analysis}
 
