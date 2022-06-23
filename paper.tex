@@ -99,10 +99,25 @@ K-S statistic are obtained by finding the furthest vertical distance between the
 
 The Cummulative Analysis approach will be used to fullfil the first needs of the PRA system by using Kolmogorov-Smirnov statistic test.
 
-On the other hand, aggregation analysis can help to identify changes that not too visible on the performance of a service. When comparing two fruits
-trace set, we can also see the latency contribution associated with the tag,
-operations, and services and also see how these contributions change over time
-time.
+On the other hand, Aggregation Analysis can help to identify changes that are not too visible on the performance of a service. When comparing two sets of traces, we can also see the latency contribution associated with the tag,
+operations, and services and also see how these contributions change over time time. Average contribution metric
+such as the latency of each service and its operation will be determined from each set. Then the mean difference of the contribution metrics from the baseline and regression sets
+will be calculated and sorted so that it can be seen which operation or service is actually the root cause of the regression.
+
+\begin{small}
+	\begin{longtable}{ | p{5cm} | p{2cm} | p{2cm} | p{2cm} | }
+		\caption{Kontribusi \textit{critical path} dalam \textit{trace} \textit{baseline} dan regresi}
+		\label{corr-tab-2}                                                           
+		\\ \hline
+		\centering\bfseries{\textit{Service} / Operasi} & \centering\bfseries{\textit{Baseline}} & \centering\bfseries{Regresi} & \centering\bfseries{Perubahan} \tabularnewline \hline
+		\endfirsthead
+		inventory/write-cache & 63.1 ms & 368 ms & +305 ms \\ \hline
+		inventory-db/update & 1.75 ms & 2.26 ms & +0.51 ms \\ \hline
+		memcached/set & 4.94 ms & 4.71 ms & $\num{-0.23}$ ms \\ \hline
+		inventory/update-inventory & 15.2 ms & 14.8 ms & $\num{-0.47}$ ms \\ \hline
+		inventory/database-update & 32 ms & 30.6 ms & $\num{-1.4}$ ms \\ \hline
+	\end{longtable}
+\end{small}
 
 
 
