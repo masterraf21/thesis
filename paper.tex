@@ -17,7 +17,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Development of Performance Regression Analysis Tool using Distributed Tracing on Microservice-based Application\\
+\title{Development of Performance Regression Analysis Tool using Distributed Tracing on microservice-based Application\\
 %{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and should not be used}
 %\thanks{Identify applicable funding agency here. If none, delete this.}
 }
@@ -117,18 +117,18 @@ There are two approaches that can be taken to solve the problem of performance r
 	\item Regression detection is carried out before the application is developed and deployed, and then conducting a study of the resulting changes to the source code
 \end{enumerate} 
 
-%Given the distributed nature of Microservices, it will be difficult for developers if regression detection is carried out with an individual approach on each existing servce especially when the number of existing servce is very large, and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regression in Microservice-based application, an approach that does not require developers to source search is needed. So that in the case of detection and regression analysis of Microservice-based application performance, the first approach is more suitable to use.
+%Given the distributed nature of Microservices, it will be difficult for developers if regression detection is carried out with an individual approach on each existing servce especially when the number of existing servce is very large, and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regression in microservice-based application, an approach that does not require developers to source search is needed. So that in the case of detection and regression analysis of microservice-based application performance, the first approach is more suitable to use.
 Given the distributed nature of microservices, it will be difficult for developers if regression detection is carried out with an individual approach on each existing service espe- cially when the number of existing service is very large, and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regression in microservice-based application, an approach that does not require developers to source search is needed. So that in the case of detection and regression analysis of microservice-based application performance, the first approach is more suitable to use.
 
 Therefore, the workflow that must be carried out by the performance regression analysis (PRA) system is as follows:
 \begin{enumerate}
-	\item The system must be able to detect when there is a regression in Microservice-based application
+	\item The system must be able to detect when there is a regression in microservice-based application
 	\item The system must be able to determine the source or root cause of the regression after it is detected
 \end{enumerate}
 
 Seeing the needs of the PRA system above, the approach the will be carried out to do performance regression analysis will be Cummulative Analysis and Aggregation Analysis. 
 
-Cummulative Analysis is an approach to analyze certain metrics of application such as latency by cummulating all the collected data as a single representation such as Histogram. With this approach, the distributed nature of many services in Microservice-based application can be observed as a single figure or representation so that the whole Microservice application can be monitored in a single space. One of the available tool to analyze and compare large sets of data is called Kolmogorov-Smirnov (K-S) statistic test. The K-S statistic test will count the difference between two Cummulative Distribution Functions (CDF) as a scalar number \cite{kolmogorov_1951}.
+Cummulative Analysis is an approach to analyze certain metrics of application such as latency by cummulating all the collected data as a single representation such as Histogram. With this approach, the distributed nature of many services in microservice-based application can be observed as a single figure or representation so that the whole Microservice application can be monitored in a single space. One of the available tool to analyze and compare large sets of data is called Kolmogorov-Smirnov (K-S) statistic test. The K-S statistic test will count the difference between two Cummulative Distribution Functions (CDF) as a scalar number \cite{kolmogorov_1951}.
 
 K-S statistic are obtained by finding the furthest vertical distance between the two CDFs as indicated by the arrows. The greater the distance, the more likely it is that two CDFs are from two different distributions so that it can be an indication that there has been a change on performance.
 \begin{figure}[htb]
@@ -453,7 +453,7 @@ indication that the detected regression is due to changes caused by
 by external factors.
 
 \section{Conclusion \& Future Works}
-The implemented performance regression analysis system can detect and analyze the cause of regression on Microservice-based application using Kolmogorov-Smirnov test and Critical Path analysis. However, the Kolmogorov-Smirnov test alone cannot determine exactly whether the detected regression is caused by internal or external factors, therefore the Critical Path analysis is required to help determine the exact cause of the regression.
+The implemented performance regression analysis system can detect and analyze the cause of regression on microservice-based application using Kolmogorov-Smirnov test and Critical Path analysis. However, the Kolmogorov-Smirnov test alone cannot determine exactly whether the detected regression is caused by internal or external factors, therefore the Critical Path analysis is required to help determine the exact cause of the regression.
 
 In the future, a similar system can be implemented to analyze performance regression outside of Kubernetes environment.
 
