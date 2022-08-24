@@ -126,7 +126,7 @@ Therefore, the workflow that must be carried out by the performance regression a
 	\item The system must be able to determine the source or root cause of the regression after it is detected
 \end{enumerate}
 
-Seeing the needs of the PRA system above, the approach the will be carried out to do performance regression analysis will be Cummulative Analysis and Aggregation Analysis. 
+Seeing the needs of the PRA system above, the approach the will be carried out to do performance regression analysis will be Cummulative Analysis and Aggregation Analysis \cite{parker2020distributed}. 
 
 Cummulative Analysis is an approach to analyze certain metrics of application such as latency by cummulating all the collected data as a single representation such as Histogram. With this approach, the distributed nature of many services in microservice-based application can be observed as a single figure or representation so that the whole Microservice application can be monitored in a single space. One of the available tool to analyze and compare large sets of data is called Kolmogorov-Smirnov (K-S) statistic test. The K-S statistic test will count the difference between two Cummulative Distribution Functions (CDF) as a scalar number \cite{kolmogorov_1951}.
 
