@@ -9,6 +9,19 @@
 \usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{multirow}
+\usepackage{listings}
+\lstset{
+	frame=single,
+	basicstyle=\footnotesize,
+}
+
+\makeatletter
+\def\lst@makecaption{%
+	\def\@captype{table}%
+	\@makecaption
+}
+\makeatother
+
 %\def\tablename{Table}
 %\def \figurename{Figure}
 
@@ -42,10 +55,10 @@ imam@stei.itb.ac.id}
 \begin{abstract}
 In applications with Microservice architecture, when a significant change occurs and result in decreased performance or regression, it is difficult to perform analysis to check which part of the whole Microservice is the main cause of the regression due to the distributed nature of Microservice. Distributed tracing can be used to analyze and determine whether there is a regression and the cause of the regression by utilizing latency data from existing operations on Microservice application.
 This system will perform performance regression analysis using the distributed tracing tool Zipkin. Regression is then can be detected using Kolmogorov-Smirnov statistical analysis which will compare the latency data samples that occur
-periodically and the sample latency baseline data that represents application performance  under normal circumstances. The analysis will compare the Cummulative
+periodically and the sample latency baseline data that represents application performance  under normal circumstances. The analysis will compare the Cumulative
 Distribution Function (CDF) of the two samples and see if both
 CDF comes from a different distribution. If it is found that both CDFs originate from different distributions, it then can be suspected that there has been a performance regression because the distribution of the periodic data has deviated from the distribution of the baseline data.
-If a regression is detected, the system will then perform a critical path analysis to see which operations of each services are most likely contributed to the regression. The analysis will be carried out by finding the difference
+If a regression is detected, the system will then perform a critical path analysis to see which operations of each services are most likely contributed to the regression. The analysis will be executed by finding the difference
 latency of periodic and baseline operation data and it will be seen which operation's latency difference exceeds a predetermined limit.
 The performance regression analysis system has been tested on a Microservice application that runs on Kubernetes. The result is that out of 10 out of 11 test cases, and for every successful case, the main suspected operation that causes regression is found. Implementing the system adds an average overhead of 0.78\% CPU usage and 0.67\% Memory usage.
 \end{abstract}
@@ -61,6 +74,8 @@ With the widespread adoption use of Microservice architecture based on distribut
 However, with the many advantages offered by the Microservice architecture, it will also increase the complexity to perform analysis when there is a decline in performance or regression in the application. This is due to the distributed nature of Microservice by dividing the application into smaller services, so to find which operation of the services causing the regression will be difficult and will be inefficient to perform analysis on each and every available services, especially if the number of the services has reached hundreds or thousands.
 
 There is already a tool that can help developers to perform monitoring on distributed systems such as Microservice, which is distributed tracing. With the help of trace, developers can get an overview of each request that occurs in a resource or component that interacts with other components in a distributed system such as node, service, network, or mutex. The traces then can be processed for various purposes, such as creating a dependency map between services, perform a performance analysis of the service, and also perform a performance regression analysis using the latency data from the trace result.
+
+For this paper, the performance metric that will be analyzed from the microservice-based application is limited to latency performance only. The latency data is one of the default data provided by several distributed tracing tools, so the performance regression that will be analyzed in this paper is only related to latency of the API calls performed by the services inside the microservice application.
 
 We provide the implementation of the performance regression analysis (PRA) system using the distributed tracing tool Zipkin which is available on Github\footnote{\url{https://github.com/masterraf21/pra\textunderscore engine}}. The PRA system will perform detection on the Microservice application when a regression occurs and perform analysis to determine the main cause of the regression. Performance regression analysis will be done by using the help of the trace results from Zipkin which will be able to help developers restore performance of Microservice application after reggresion occurs.
 
@@ -80,7 +95,7 @@ to detect performance regressions at the DevOps stage:
 	every Git commit and identify which test cases are affected by
 	regression on each commit. After that, the performance of each commit will be
 	evaluated chronologically using the relevant test cases or
-	benchmarks of performance. Finally, a statistical analysis will be carried out on the performance evaluation
+	benchmarks of performance. Finally, a statistical analysis will be executed on the performance evaluation
 	to identify which changes resulted in the performance regression. To find out the root of the problem at the code level, an iterative approach will be done  to identify the root causes of
 	regression until it can no longer generate new reasons.
 	\item Predict which tests may manifest regression at the commit level. This approach is a continuation of the previous point where
@@ -113,24 +128,24 @@ This section explains analysis of the problem introduced in section \ref{1}, the
 
 There are two approaches that can be taken to solve the problem of performance regression \cite{regression-detection}, namely:
 \begin{enumerate}
-	\item Regression detection is carried out after the application has been developed and deployed in a dedicated environment:
-	\item Regression detection is carried out before the application is developed and deployed, and then conducting a study of the resulting changes to the source code
+	\item Regression detection is executed after the application has been developed and deployed in a dedicated environment:
+	\item Regression detection is executed before the application is developed and deployed, and then conducting a study of the resulting changes to the source code
 \end{enumerate} 
 
-%Given the distributed nature of Microservices, it will be difficult for developers if regression detection is carried out with an individual approach on each existing servce especially when the number of existing servce is very large, and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regression in microservice-based application, an approach that does not require developers to source search is needed. So that in the case of detection and regression analysis of microservice-based application performance, the first approach is more suitable to use.
-Given the distributed nature of microservices, it will be difficult for developers if regression detection is carried out with an individual approach on each existing service espe- cially when the number of existing service is very large, and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regression in microservice-based application, an approach that does not require developers to source search is needed. So that in the case of detection and regression analysis of microservice-based application performance, the first approach is more suitable to use.
+%Given the distributed nature of Microservices, it will be difficult for developers if regression detection is executed with an individual approach on each existing servce especially when the number of existing servce is very large, and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regression in microservice-based application, an approach that does not require developers to source search is needed. So that in the case of detection and regression analysis of microservice-based application performance, the first approach is more suitable to use.
+Given the distributed nature of microservices, it will be difficult for developers if regression detection is executed with an individual approach on each existing service especially when the number of existing service is very large, and the interdependence relationship between services becomes complicated. Therefore, to overcome performance regression in microservice-based application, an approach that does not require developers to source search is needed. With the help of distributed tracing tool, performance related data from multiple services in a distributed microservice-based application can be collected and analyzed in a single collective source, so that the developer should not be worried about analyzing each and every service available to perform regression related problem, rather they can rely on the data provided from the distributed tracing tool to analyze the whole microservice-based application. In the case of detection and regression analysis of microservice-based application performance, the first approach is more suitable to use.
 
-Therefore, the workflow that must be carried out by the performance regression analysis (PRA) system is as follows:
+Therefore, the workflow that must be executed by the performance regression analysis (PRA) system is as follows:
 \begin{enumerate}
 	\item The system must be able to detect when there is a regression in microservice-based application
 	\item The system must be able to determine the source or root cause of the regression after it is detected
 \end{enumerate}
 
-Seeing the needs of the PRA system above, the approach the will be carried out to do performance regression analysis will be Cummulative Analysis and Aggregation Analysis \cite{parker2020distributed}. 
+Seeing the needs of the PRA system above, the approach the will be executed to do performance regression analysis will be Cumulative Analysis and Aggregation Analysis \cite{parker2020distributed}. 
 
-Cummulative Analysis is an approach to analyze certain metrics of application such as latency by cummulating all the collected data as a single representation such as Histogram. With this approach, the distributed nature of many services in microservice-based application can be observed as a single figure or representation so that the whole Microservice application can be monitored in a single space. One of the available tool to analyze and compare large sets of data is called Kolmogorov-Smirnov (K-S) statistic test. The K-S statistic test will count the difference between two Cummulative Distribution Functions (CDF) as a scalar number \cite{kolmogorov_1951}.
+Cumulative Analysis is an approach to analyze certain metrics of application such as latency by cummulating all the collected data as a single representation such as Histogram. With this approach, the distributed nature of many services in microservice-based application can be observed as a single figure or representation so that the whole Microservice application can be monitored in a single space. To use this approach, all the latency data acquired from the distributed tracing will be collected and converted into a Cumulative Distribution Function (CDF). Cumulative Distribution Function is a function whose value is the probability that a corresponding continuous random variable has a value less than or equal to the argument of the function. This statistical function is useful to represent a set of corresponding data into a single quantifiable function which can be useful as a comparison tool. 
 
-K-S statistic are obtained by finding the furthest vertical distance between the two CDFs as indicated by the arrows. The greater the distance, the more likely it is that two CDFs are from two different distributions so that it can be an indication that there has been a change on performance.
+One of the available tool to analyze and compare large sets of data is called Kolmogorov-Smirnov (K-S) statistic test. The K-S statistic test will count the difference between two CDFs as a scalar number \cite{kolmogorov_1951}. K-S statistic are obtained by finding the furthest vertical distance between the two CDFs as indicated by the arrows. The greater the distance, the more likely it is that two CDFs are from two different distributions so that it can be an indication that there has been a change on pattern of the data represented, for example the latency performance of a microservice-based application.
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=0.35\textwidth]{resources/ch2/ks.png}
@@ -143,14 +158,19 @@ We first define two hypotheses, $h_{0}$ or the null hypothesis which states that
 The K-S test will produce two values, \texttt{statistic} and \texttt{pvalue}. If the \texttt{pvalue} is less than the significant value, or alpha which can be selected from a certain constants,
 then we can reject $h_{0}$ and accept $h_{a}$. If the \texttt{pvalue} is not less than significant value, then the next step is to compare the statistical value and critical value. Critical value itself is a point on the hypothesis that will be compared to the results of the statistical values to be used to reject or accept the null hypothesis. If the statistical value is greater than critical value, then we can reject $h_{0}$ and accept $h_{a}$ or meaning that the two data samples come from different distributions. However, if the statistical value is smaller than the critical value, we cannot reject $h_{0}$ or it means both sample data come from the same distribution.
 
-The Cummulative Analysis approach will be used to fullfil the first needs of the PRA system by using Kolmogorov-Smirnov statistic test.
+
+Listing \ref{ks-code} is a sample implementation of the Cumulative Analysis using Kolmogorov-Smirnov test in Python language.
+\lstinputlisting[language=Python,caption={Kolmogorov-Smirnov statistic test Algorithm}, label={ks-code}]{codes/ch4/ks.py}
+
+
+The Cumulative Analysis approach will be used to fullfil the first needs of the PRA system by using Kolmogorov-Smirnov statistic test.
 
 On the other hand, Aggregation Analysis can help to identify changes that are not too visible on the performance of a service. When comparing two sets of traces, we can also see the latency contribution associated with the tag,
 operations, and services and also see how these contributions change over time time. Average contribution metric
 such as the latency of each service and its operation will be determined from each set. Then the mean difference of the contribution metrics from the baseline and regression sets
 will be calculated and sorted so that it can be seen which operation or service is actually the root cause of the regression.
 
-Tab. \ref{aggregate} shows the result of the Aggregation Analysis approach which will be useful in determining the possible root cause of the regression. This approach will be used to fullfil the second needs of the PRA system.
+Tab. \ref{aggregate} shows the result of the Aggregation Analysis approach which will be useful in determining the possible root cause of the regression by comparing the latency performance of multiple operations in several services. This approach will be used to fullfil the second needs of the PRA system.
 \begin{table}[!htb]
 	\caption{Aggregation Analysis result}
 	\label{aggregate}
@@ -165,20 +185,19 @@ Tab. \ref{aggregate} shows the result of the Aggregation Analysis approach which
 		inventory/db-update   & 32 ms   & 30.6 ms & -1.4 ms  \\ \hline
 	\end{tabular}
 \end{table}
+\pagebreak
 
-Fig. \ref{flow-pra} illustrates the phases to be carried out by the PRA system. In general, there will be two phases to be carried out, namely the baseline loading phase
-and the periodic analysis phase. The first phase, namely the loading phase, will look for stable application activity data that can be used as a baseline or a reference for the analysis to be carried out in the next stages. This phase
-will produce two artifacts, the latency data of all recorded traces by the tracing system, and operating data that occurs on the critical path of all traces along with its latency value which will be stored as a key-value pair as well.
+Fig. \ref{flow-pra} illustrates the phases to be executed by the PRA system. In general, there will be two phases to be executed, namely the baseline loading phase
+and the periodic analysis phase. The first phase, namely the loading phase, will look for stable application activity data that can be used as a baseline or a reference for the analysis to be executed in the next stages. This application activity data can be acquired by observing a period of the microservice application that can be considered as a normal or stable activity. For example we can extract latency data from the distributed tracing tool for a period of one day that can represent the entirety of the stable latency performance that can be used in the next phases as our baseline performance data. This phase will produce two artifacts, the latency data of all recorded traces by the tracing system, and operating data that occurs on the critical path of all traces along with its latency value which will be stored as a key-value pair as well.
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.5\textwidth,scale=5]{resources/ch3/alur_v2.png}
+	\includegraphics[width=0.45\textwidth,scale=5]{resources/ch3/alur_v2.png}
 	\caption{PRA system workflow}
 	\label{flow-pra}
 \end{figure}
 
-The next phase is the periodical analysis phase. This phase will run continuously and the analysis will be run periodically at intervals of every 5 minutes. This is carried out to continuously detect whether there is a regression and
-immediately determine the source of the regression if it occurs. There are several stages of analysis
-to be carried out in this phase. The first analysis stage will compare the results transformation of data latency of all ongoing traces periodically with the baseline latency artifact from the loading phase. The comparison will be made within a certain period. The comparison of the two latency data will produce Kolmogorov-Smirnov statistic. If the Kolmogorov-Smirnov statistic that is generated indicates that the two samples of latency data come from two different distributions, then it can be an indication that there has been a regression in the data capture in the periodical phase.
+The next phase is the periodical analysis phase. This phase will run continuously and the analysis will be run periodically at intervals of every 5 minutes or however long the developer wants the interval to be. This is executed to continuously detect whether there is a regression and
+immediately determine the source of the regression if it occurs. There are several stages of analysis to be executed in this phase. The first analysis stage will compare the results transformation of data latency of all ongoing traces periodically with the baseline latency artifact from the loading phase. The comparison will be made within a certain period. The comparison of the two latency data will produce Kolmogorov-Smirnov statistic. If the Kolmogorov-Smirnov statistic that is generated indicates that the two samples of latency data come from two different distributions, then it can be an indication that there has been a regression in the data capture in the periodical phase.
 
 If a regression is detected, the next step is to perform a critical path analysis by calculating the contribution of the critical path data trace from the regression period and will be compared with the critical path data derived from the baseline calculation. From this comparison, it will be sorted and the result of which operation has the largest latency difference becomes strong candidate as the root cause of the regression.
 
@@ -216,23 +235,22 @@ behaviour. For this experiment purpose, the version of the Hipster Shop which wi
 \subsection{Experiment Method}
 To perform experiment on the PRA system that has been created, the existing services in the Hipster Shop will be modified to imitate the behavior service that experiences performance regression. There are two main methods that can be used to create such behavior which are adding a sleep command and adding a loop with dereference operation of a variable which requires a lot of CPU power to solve it so that it is expected that the functions will have more latency.
 
-There are two stages that will be carried out to do this experiment test, the first is baseline data collection stage. Baseline data will be taken by simulating
+There are two stages that will be executed to do this experiment test, the first is baseline data collection stage. Baseline data will be taken by simulating
 the usage of the application by using the Load Generator which will run with variable of \textbf{25 Users} and \textbf{5 Spawn Rates} for \textbf{1 hour}. This baseline data will then be stored by the engine for use in future test cases. The next step is to carry out experiment testing with cases which will be explained in more detail further.
 
 There are two types of test cases to be tested on the system. Tirst type are cases that simulate regression by making changes that occurs at the application level by making modifications intentionally at the code level.
-The first case will have an ID with an \textbf{SI} prefix signifying the \textit{Scenario-Internal}.
-The second type are cases that simulate regression by increasing the number of users and load on the Load Generator. The second case will have an ID with the \textbf{SE} prefix denotes an \textit{Scenario-External}. Tab. \ref{testcases} will explain the cases
-system testing.
+The first case will have an ID with an \textbf{IS} prefix signifying the \textit{Internal-Scenario}.
+The second type are cases that simulate regression by increasing the number of users and load on the Load Generator. The second case will have an ID with the \textbf{ES} prefix denotes an \textit{External-Scenario}. Tab. \ref{testcases} will explain the test cases in detail.
 
 For testing purposes, 3 significant levels or alpha will be used, those are 0.1, 0.05, and 0.001. These three significant levels are used for knowing the sensitivity of the regression detection results with interpretation that the smaller the value of
 significant levels, the more significant the evidence to reject $h_{0}$. Significant value 0.1
 was chosen as the upper limit of the significant value to determine the sensitivity level of test case with the greatest significant value. While the value of 0.05 was chosen because this value is the most commonly used value as a significant value on the statistical test of the hypothesis. While the value of 0.001 was chosen as a comparison of the value of least significant to test the lower limit of the significant value.
 
 \subsection{Experiment Result}
-The following tables \ref{test-1} \ref{test-2} \ref{test-3} describe the summaries of the experiment results that have been performed with three different alpha values. The result is on all test cases, IS2 cases to IS4 cases were successfully detected by regression and critical path analysis is appropriate. It's just that for the SI1 case, only the alpha value is 0.1
+The following tables \ref{test-1}, \ref{test-2}, and \ref{test-3} describe the summaries of the experiment results that have been performed with three different alpha values. The result is on all test cases, IS2 cases to IS4 cases were successfully detected by regression and critical path analysis is appropriate. It's just that for the SI1 case, only the alpha value is 0.1
 which can successfully detect the regression and determine the source of the cause of the regression with critical path analysis. Other alpha values cannot detect regression and do not perform critical path analysis.
 
-\pagebreak
+
 \begin{table}[htb]
 	\caption{Test Cases}
 	\label{testcases}
@@ -245,37 +263,37 @@ which can successfully detect the regression and determine the source of the cau
 		\multicolumn{1}{l|}{\textbf{User}} &
 		\textbf{Description} \\ \hline
 		IS1 &
-		CheckoutService/PlaceOrder &
+		Checkout/PlaceOrder &
 		100ms &
 		25 &
 		Extra latency case \#1 \\ \hline
 		IS2 &
-		CheckoutService/PlaceOrder &
+		Checkout/PlaceOrder &
 		250ms &
 		25 &
 		Extra latency case \#2 \\ \hline
 		IS3 &
-		CheckoutService/PlaceOrder &
+		Checkout/PlaceOrder &
 		350ms &
 		25 &
 		Extra latency case \#3 \\ \hline
 		IS4 &
-		CheckoutService/PlaceOrder &
+		Checkout/PlaceOrder &
 		250ms &
 		75 &
 		\begin{tabular}[c]{@{}l@{}}Extra latency with\\ increased user\end{tabular} \\ \hline
 		IS5 &
-		CheckoutService/PlaceOrder &
+		Checkout/PlaceOrder &
 		250ms &
 		150 &
 		\begin{tabular}[c]{@{}l@{}}Extra latency with\\ increased user\end{tabular} \\ \hline
 		IS6 &
-		CheckoutService/PlaceOrder &
+		Checkout/PlaceOrder &
 		- &
 		25 &
 		Extra CPU case \\ \hline
 		\multirow{5}{*}{IS7} &
-		CheckoutService/PlaceOrder &
+		Checkout/PlaceOrder &
 		\multirow{5}{*}{250ms} &
 		\multirow{5}{*}{25} &
 		\multirow{5}{*}{\begin{tabular}[c]{@{}l@{}}Extra latency case\\ with multiple \\ services\end{tabular}} \\ \cline{2-2}
@@ -384,7 +402,7 @@ which can successfully detect the regression and determine the source of the cau
 	\end{tabular}
 \end{table}
 
-\pagebreak
+%\pagebreak
 
 \subsection{Overhead Testing}
 Of the 11 test cases, the average PRA Engine tool uses 0.046
@@ -415,7 +433,7 @@ resulting in CPU overhead as much as 0.78\% and Memory as much as 0.67\% to the 
 	\end{tabular}
 \end{table}
 %\pagebreak
-
+%
 \section{Analysis}
 Of all the test cases, the results obtained from the test will be
 depending on the significant value used to test each case.
