@@ -1,11 +1,11 @@
 from scipy.stats import ks_2samp
 
 
-def ks_test_same_dist(data1: list[float], data2: list[float],
-                      alpha: float, debug: bool = False) -> bool:
+def ks_test_same_dist(data1, data2, alpha):
 
     test = ks_2samp(data1, data2)
-    critical_value = count_critical_value(len(data1), len(data2), alpha)
+    critical_value = count_critical_value(len(data1), 
+    			len(data2), alpha)
     pvalue, statistic = test.pvalue, test.statistic
 
     if pvalue < alpha:
