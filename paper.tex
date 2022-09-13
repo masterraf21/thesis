@@ -197,7 +197,7 @@ Fig. \ref{flow-pra} illustrates the phases to be executed by the PRA system. In 
 and the periodic analysis phase. The first phase, namely the loading phase, will look for stable application activity data that can be used as a baseline or a reference for the analysis to be executed in the next stages. This application activity data can be acquired by observing a period of the microservice application that can be considered as a normal or stable activity. For example we can extract latency data from the distributed tracing tool for a period of one day that can represent the entirety of the stable latency performance that can be used in the next phases as our baseline performance data. This phase will produce two artifacts, the latency data of all recorded traces by the tracing system, and operating data that occurs on the critical path of all traces along with its latency value which will be stored as a key-value pair as well.
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[width=0.45\textwidth,scale=5]{resources/ch3/alur_v2.png}
+	\includegraphics[width=0.35\textwidth,scale=5]{resources/ch3/alur_v2.png}
 	\caption{PRA system workflow}
 	\label{flow-pra}
 \end{figure}
