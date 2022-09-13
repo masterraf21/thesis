@@ -411,35 +411,35 @@ which can successfully detect the regression and determine the source of the cau
 %
 %\pagebreak
 
-\subsection{Overhead Testing}
-Of the 11 test cases, the average PRA Engine tool uses 0.046
-vCPU with standard deviation of 0.0038 and 154.41 MiB Memory with standard
-deviation of 17.91 in one analysis. The entire cluster has resources
-as much as 6 vCPUs and 22.5 GiB, so that in one time doing PRA Engine analysis
-resulting in CPU overhead as much as 0.78\% and Memory as much as 0.67\% to the Kubernetes cluster. Overhead caused by the tool is low so that the use of PRA Engine tools will have no impact on the overall performance of the Kubernetes cluster. Tab. \ref{overhead-tbl} shows the result of the overhead testing.
-
-\begin{table}[!htb]
-	\caption{Overhead testing result}
-	\label{overhead-tbl}
-	\centering
-	\begin{tabular}{|l|c|c|}
-		\hline
-		\multicolumn{1}{|l|}{ID} & \multicolumn{1}{l|}{CPU (vCPU)} & \multicolumn{1}{l|}{Memory (MiB)} \\ \hline
-		\textbf{IS1}     & 0,042 & 137,82  \\ \hline
-		\textbf{IS2}     & 0,043 & 128,71  \\ \hline
-		\textbf{IS3}     & 0,04  & 131,55  \\ \hline
-		\textbf{IS4}     & 0,045 & 146,6   \\ \hline
-		\textbf{IS5}     & 0,046 & 153,61  \\ \hline
-		\textbf{IS6}     & 0,047 & 152,71  \\ \hline
-		\textbf{IS7}     & 0,048 & 152,71  \\ \hline
-		\textbf{ES1}     & 0,049 & 168,8   \\ \hline
-		\textbf{ES2}     & 0,05  & 183,68  \\ \hline
-		\textbf{ES3}     & 0,051 & 176,59  \\ \hline
-		\textbf{ES4}     & 0,052 & 165,75  \\ \hline
-		\textbf{Average} & 0,046 & 154,411 \\ \hline
-		\textbf{STD}     & 0,038 & 17,916  \\ \hline
-	\end{tabular}
-\end{table}
+%\subsection{Overhead Testing}
+%Of the 11 test cases, the average PRA Engine tool uses 0.046
+%vCPU with standard deviation of 0.0038 and 154.41 MiB Memory with standard
+%deviation of 17.91 in one analysis. The entire cluster has resources
+%as much as 6 vCPUs and 22.5 GiB, so that in one time doing PRA Engine analysis
+%resulting in CPU overhead as much as 0.78\% and Memory as much as 0.67\% to the Kubernetes cluster. Overhead caused by the tool is low so that the use of PRA Engine tools will have no impact on the overall performance of the Kubernetes cluster. Tab. \ref{overhead-tbl} shows the result of the overhead testing.
+%
+%\begin{table}[!htb]
+%	\caption{Overhead testing result}
+%	\label{overhead-tbl}
+%	\centering
+%	\begin{tabular}{|l|c|c|}
+%		\hline
+%		\multicolumn{1}{|l|}{ID} & \multicolumn{1}{l|}{CPU (vCPU)} & \multicolumn{1}{l|}{Memory (MiB)} \\ \hline
+%		\textbf{IS1}     & 0,042 & 137,82  \\ \hline
+%		\textbf{IS2}     & 0,043 & 128,71  \\ \hline
+%		\textbf{IS3}     & 0,04  & 131,55  \\ \hline
+%		\textbf{IS4}     & 0,045 & 146,6   \\ \hline
+%		\textbf{IS5}     & 0,046 & 153,61  \\ \hline
+%		\textbf{IS6}     & 0,047 & 152,71  \\ \hline
+%		\textbf{IS7}     & 0,048 & 152,71  \\ \hline
+%		\textbf{ES1}     & 0,049 & 168,8   \\ \hline
+%		\textbf{ES2}     & 0,05  & 183,68  \\ \hline
+%		\textbf{ES3}     & 0,051 & 176,59  \\ \hline
+%		\textbf{ES4}     & 0,052 & 165,75  \\ \hline
+%		\textbf{Average} & 0,046 & 154,411 \\ \hline
+%		\textbf{STD}     & 0,038 & 17,916  \\ \hline
+%	\end{tabular}
+%\end{table}
 
 %
 \section{Analysis}
